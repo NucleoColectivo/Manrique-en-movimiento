@@ -582,6 +582,827 @@ body{background:#fff}
 @media(max-width:620px){.ia-grid{grid-template-columns:1fr}.ia-card{min-height:250px}.ia-intro-copy,.ia-note,.ia-tools,.ia-ethics{padding:25px}.ia-resource-list div{display:block}.ia-resource-list span{display:block;text-align:left;margin-top:4px}}
 </style>
 
+
+<style id="v20-hero-background">
+/* V20 · Hero: la imagen gráfica pasa al fondo.
+   El contenido queda siempre por encima y nunca es cubierto. */
+
+.hero{
+  position:relative;
+  min-height:calc(100svh - 76px);
+  padding:0;
+  display:block;
+  overflow:hidden;
+  background:#fff;
+}
+
+.hero-bg{
+  position:absolute;
+  z-index:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:70%;
+  pointer-events:none;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+}
+
+.hero-bg::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(255,255,255,1) 0%,
+    rgba(255,255,255,.92) 10%,
+    rgba(255,255,255,0) 38%
+  );
+  pointer-events:none;
+}
+
+.hero-art{
+  position:absolute !important;
+  z-index:0 !important;
+  left:50%;
+  bottom:-2%;
+  width:min(1500px,100vw) !important;
+  max-width:none !important;
+  max-height:none !important;
+  height:auto !important;
+  transform:translateX(-50%);
+  object-fit:contain;
+  object-position:center bottom;
+  animation:heroBreathV20 13s ease-in-out infinite alternate !important;
+}
+
+@keyframes heroBreathV20{
+  from{transform:translateX(-50%) scale(1)}
+  to{transform:translateX(-50%) scale(1.018) translateY(-5px)}
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+  width:min(100%,1500px);
+  min-height:calc(100svh - 76px);
+  margin:0 auto;
+  padding:clamp(28px,5vh,72px) clamp(20px,5vw,72px) 8vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.hero-logo{
+  position:relative !important;
+  z-index:3 !important;
+  top:auto !important;
+  left:auto !important;
+  transform:none !important;
+  align-self:center;
+  width:clamp(280px,32vw,560px) !important;
+  max-width:62vw;
+  display:block;
+  line-height:0;
+  margin-top:0;
+}
+
+.hero-logo img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.hero-copy{
+  position:relative !important;
+  z-index:3 !important;
+  left:auto !important;
+  bottom:auto !important;
+  margin:0;
+  max-width:650px;
+  padding-bottom:2vh;
+  text-shadow:0 2px 25px rgba(255,255,255,.85);
+}
+
+.hero-copy h1{
+  position:relative;
+  z-index:3;
+}
+
+@media(max-width:900px){
+  .hero{
+    min-height:calc(100svh - 68px);
+  }
+
+  .hero-bg{
+    height:64%;
+  }
+
+  .hero-inner{
+    min-height:calc(100svh - 68px);
+    padding:26px 5vw 5vh;
+  }
+
+  .hero-logo{
+    width:clamp(260px,46vw,430px) !important;
+  }
+
+  .hero-copy{
+    max-width:590px;
+  }
+}
+
+@media(max-width:620px){
+  .hero{
+    min-height:88svh;
+  }
+
+  .hero-bg{
+    height:56%;
+  }
+
+  .hero-bg::after{
+    background:linear-gradient(
+      to bottom,
+      rgba(255,255,255,1) 0%,
+      rgba(255,255,255,.94) 15%,
+      rgba(255,255,255,0) 52%
+    );
+  }
+
+  .hero-inner{
+    min-height:88svh;
+    padding:22px 14px 4vh;
+  }
+
+  .hero-logo{
+    width:min(310px,72vw) !important;
+    max-width:none;
+  }
+
+  .hero-copy{
+    margin:0 0 0;
+    max-width:100%;
+  }
+
+  .hero-copy h1{
+    font-size:clamp(3.5rem,15vw,5.2rem);
+  }
+
+  .hero-art{
+    width:130vw !important;
+    bottom:-1%;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-art{
+    animation:none !important;
+  }
+}
+</style>
+
+
+<style id="v21-hero-adjustments">
+/* V21 · Hero: subir la imagen y reducir el titular */
+.hero-bg{
+  bottom:8% !important;
+  height:72% !important;
+}
+
+.hero-art{
+  bottom:4% !important;
+}
+
+.hero-copy h1{
+  font-size:clamp(2.8rem,5.2vw,5.8rem) !important;
+  line-height:.88 !important;
+  letter-spacing:-.035em !important;
+}
+
+@media(max-width:900px){
+  .hero-bg{
+    bottom:7% !important;
+    height:68% !important;
+  }
+  .hero-art{
+    bottom:3% !important;
+  }
+  .hero-copy h1{
+    font-size:clamp(2.7rem,7vw,4.8rem) !important;
+  }
+}
+
+@media(max-width:620px){
+  .hero-bg{
+    bottom:8% !important;
+    height:59% !important;
+  }
+  .hero-art{
+    bottom:4% !important;
+  }
+  .hero-copy h1{
+    font-size:clamp(2.5rem,10.5vw,4rem) !important;
+  }
+}
+</style>
+
+
+<style id="v22-hero-adjustments">
+/* V22 · Hero: imagen claramente más arriba + logo principal 50% mayor */
+
+.hero-bg{
+  bottom:18% !important;
+  height:68% !important;
+}
+
+.hero-art{
+  bottom:5% !important;
+}
+
+.hero-logo{
+  width:clamp(420px,48vw,840px) !important;
+  max-width:76vw !important;
+}
+
+@media(max-width:900px){
+  .hero-bg{
+    bottom:14% !important;
+    height:66% !important;
+  }
+
+  .hero-art{
+    bottom:4% !important;
+  }
+
+  .hero-logo{
+    width:clamp(360px,58vw,650px) !important;
+    max-width:78vw !important;
+  }
+}
+
+@media(max-width:620px){
+  .hero-bg{
+    bottom:10% !important;
+    height:58% !important;
+  }
+
+  .hero-art{
+    bottom:4% !important;
+  }
+
+  .hero-logo{
+    width:min(465px,82vw) !important;
+    max-width:none !important;
+  }
+}
+</style>
+
+
+<style id="v23-editorial-hero">
+/* V23 · Rediagramación editorial del Hero
+   La composición deja de pelear por espacio:
+   logo → imagen → mensaje → acción.
+   La fotografía permanece detrás como paisaje visual,
+   pero el texto tiene una zona blanca propia y legible. */
+
+.hero{
+  position:relative !important;
+  min-height:clamp(760px,100svh,980px) !important;
+  height:auto !important;
+  padding:0 !important;
+  overflow:hidden !important;
+  background:#fff !important;
+}
+
+.hero-inner{
+  position:relative !important;
+  z-index:3 !important;
+  width:100% !important;
+  max-width:none !important;
+  min-height:clamp(760px,100svh,980px) !important;
+  margin:0 !important;
+  padding:0 clamp(24px,4vw,64px) 34px !important;
+  display:grid !important;
+  grid-template-rows:auto 1fr auto !important;
+  align-items:start !important;
+}
+
+.hero-logo{
+  justify-self:center !important;
+  align-self:start !important;
+  width:clamp(460px,42vw,700px) !important;
+  max-width:78vw !important;
+  margin-top:clamp(18px,3vh,34px) !important;
+  position:relative !important;
+  z-index:5 !important;
+}
+
+.hero-bg{
+  position:absolute !important;
+  z-index:1 !important;
+  left:0 !important;
+  right:0 !important;
+  top:clamp(245px,28vh,330px) !important;
+  bottom:auto !important;
+  width:100% !important;
+  height:clamp(390px,49vh,530px) !important;
+  display:flex !important;
+  align-items:flex-end !important;
+  justify-content:center !important;
+  overflow:visible !important;
+}
+
+.hero-bg::after{
+  display:none !important;
+}
+
+.hero-art{
+  position:absolute !important;
+  left:50% !important;
+  top:auto !important;
+  bottom:0 !important;
+  width:min(1540px,108vw) !important;
+  max-width:none !important;
+  height:auto !important;
+  transform:translateX(-50%) !important;
+  object-fit:contain !important;
+  object-position:center bottom !important;
+}
+
+.hero-copy{
+  position:relative !important;
+  z-index:6 !important;
+  left:auto !important;
+  bottom:auto !important;
+  width:min(1120px,100%) !important;
+  margin:0 auto !important;
+  padding:16px 0 0 !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr) !important;
+  column-gap:clamp(28px,5vw,80px) !important;
+  align-items:end !important;
+  background:#fff !important;
+  text-shadow:none !important;
+}
+
+.hero-copy .eyebrow{
+  grid-column:1 / -1 !important;
+  margin-bottom:8px !important;
+}
+
+.hero-copy h1{
+  grid-column:1 !important;
+  font-size:clamp(3.1rem,5vw,5.4rem) !important;
+  line-height:.86 !important;
+  letter-spacing:-.025em !important;
+  margin:0 !important;
+  max-width:650px !important;
+}
+
+.hero-copy p{
+  grid-column:2 !important;
+  grid-row:2 !important;
+  align-self:end !important;
+  max-width:500px !important;
+  margin:0 0 14px !important;
+  font-size:clamp(1rem,1.35vw,1.22rem) !important;
+  line-height:1.45 !important;
+}
+
+.hero-copy .cta{
+  grid-column:2 !important;
+  grid-row:3 !important;
+  justify-self:start !important;
+  margin-top:0 !important;
+}
+
+@media(max-width:900px){
+  .hero{
+    min-height:900px !important;
+  }
+
+  .hero-inner{
+    min-height:900px !important;
+  }
+
+  .hero-logo{
+    width:min(520px,68vw) !important;
+  }
+
+  .hero-bg{
+    top:250px !important;
+    height:450px !important;
+  }
+
+  .hero-art{
+    width:112vw !important;
+  }
+
+  .hero-copy{
+    grid-template-columns:1fr !important;
+    gap:6px !important;
+    width:min(720px,100%) !important;
+  }
+
+  .hero-copy .eyebrow,
+  .hero-copy h1,
+  .hero-copy p,
+  .hero-copy .cta{
+    grid-column:1 !important;
+    grid-row:auto !important;
+  }
+
+  .hero-copy h1{
+    font-size:clamp(3rem,8vw,4.6rem) !important;
+  }
+
+  .hero-copy p{
+    margin:5px 0 8px !important;
+    max-width:650px !important;
+  }
+}
+
+@media(max-width:620px){
+  .hero{
+    min-height:820px !important;
+  }
+
+  .hero-inner{
+    min-height:820px !important;
+    padding:0 16px 26px !important;
+  }
+
+  .hero-logo{
+    width:min(390px,84vw) !important;
+    margin-top:18px !important;
+  }
+
+  .hero-bg{
+    top:210px !important;
+    height:370px !important;
+  }
+
+  .hero-art{
+    width:138vw !important;
+    bottom:0 !important;
+  }
+
+  .hero-copy{
+    padding-top:10px !important;
+  }
+
+  .hero-copy h1{
+    font-size:clamp(2.6rem,11vw,3.8rem) !important;
+    line-height:.88 !important;
+  }
+
+  .hero-copy p{
+    font-size:1rem !important;
+    line-height:1.4 !important;
+  }
+}
+</style>
+
+
+<style id="v24-hero-composition">
+/* V24 · Composición solicitada:
+   NAV → LOGO GRANDE → FOTOGRAFÍA → BLOQUE EDITORIAL INFERIOR */
+.hero{
+  position:relative !important;
+  min-height:100svh !important;
+  height:auto !important;
+  overflow:hidden !important;
+  background:#fff !important;
+}
+
+.hero-inner{
+  position:relative !important;
+  z-index:4 !important;
+  min-height:100svh !important;
+  height:auto !important;
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  padding:0 clamp(28px,4vw,64px) clamp(30px,4vh,48px) !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+}
+
+/* LOGO GRANDE, pero sin competir con la navegación */
+.hero-logo{
+  position:relative !important;
+  z-index:6 !important;
+  display:block !important;
+  width:clamp(500px,44vw,760px) !important;
+  max-width:82vw !important;
+  margin:clamp(24px,4vh,42px) auto 0 !important;
+  flex:0 0 auto !important;
+}
+
+.hero-logo img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+}
+
+/* La fotografía ocupa el centro del Hero */
+.hero-bg{
+  position:absolute !important;
+  z-index:1 !important;
+  left:50% !important;
+  top:clamp(245px,30vh,315px) !important;
+  bottom:auto !important;
+  width:100% !important;
+  height:clamp(350px,43vh,480px) !important;
+  transform:translateX(-50%) !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  overflow:visible !important;
+}
+
+.hero-art{
+  position:relative !important;
+  left:auto !important;
+  top:auto !important;
+  bottom:auto !important;
+  width:min(1540px,108vw) !important;
+  max-width:none !important;
+  height:auto !important;
+  transform:none !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+}
+
+/* BLOQUE EDITORIAL: separado de la fotografía */
+.hero-copy{
+  position:absolute !important;
+  z-index:7 !important;
+  left:50% !important;
+  bottom:clamp(30px,5vh,58px) !important;
+  width:min(1120px,calc(100% - 80px)) !important;
+  transform:translateX(-50%) !important;
+  margin:0 !important;
+  padding:18px 0 0 !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr) !important;
+  column-gap:clamp(35px,6vw,90px) !important;
+  align-items:end !important;
+  background:#fff !important;
+  text-shadow:none !important;
+}
+
+.hero-copy .eyebrow{
+  grid-column:1 / -1 !important;
+  margin:0 0 7px !important;
+}
+
+.hero-copy h1{
+  grid-column:1 !important;
+  grid-row:2 / span 2 !important;
+  align-self:end !important;
+  margin:0 !important;
+  max-width:650px !important;
+  font-size:clamp(2.8rem,4.2vw,4.7rem) !important;
+  line-height:.88 !important;
+  letter-spacing:-.025em !important;
+}
+
+.hero-copy p{
+  grid-column:2 !important;
+  grid-row:2 !important;
+  margin:0 0 8px !important;
+  max-width:500px !important;
+  font-size:clamp(1rem,1.25vw,1.16rem) !important;
+  line-height:1.45 !important;
+}
+
+.hero-copy .cta{
+  grid-column:2 !important;
+  grid-row:3 !important;
+  justify-self:start !important;
+  margin:0 !important;
+}
+
+/* Evita que reglas anteriores creen una capa sobre la foto */
+.hero-bg::after{
+  display:none !important;
+}
+
+@media (max-width:900px){
+  .hero-inner{min-height:100svh !important;}
+  .hero-logo{
+    width:min(560px,72vw) !important;
+    margin-top:24px !important;
+  }
+  .hero-bg{
+    top:235px !important;
+    height:390px !important;
+  }
+  .hero-art{width:118vw !important;}
+  .hero-copy{
+    width:calc(100% - 48px) !important;
+    bottom:28px !important;
+    grid-template-columns:1fr !important;
+    row-gap:7px !important;
+  }
+  .hero-copy .eyebrow,
+  .hero-copy h1,
+  .hero-copy p,
+  .hero-copy .cta{
+    grid-column:1 !important;
+    grid-row:auto !important;
+  }
+  .hero-copy h1{
+    font-size:clamp(2.7rem,7vw,4rem) !important;
+  }
+}
+
+@media (max-width:620px){
+  .hero{
+    min-height:900px !important;
+  }
+  .hero-inner{
+    min-height:900px !important;
+    padding:0 18px 24px !important;
+  }
+  .hero-logo{
+    width:min(400px,84vw) !important;
+    margin-top:20px !important;
+  }
+  .hero-bg{
+    top:205px !important;
+    height:390px !important;
+  }
+  .hero-art{
+    width:142vw !important;
+  }
+  .hero-copy{
+    width:calc(100% - 36px) !important;
+    bottom:24px !important;
+    padding-top:12px !important;
+  }
+  .hero-copy h1{
+    font-size:clamp(2.5rem,11vw,3.6rem) !important;
+  }
+  .hero-copy p{
+    font-size:1rem !important;
+  }
+}
+</style>
+
+
+<style id="v26-final-editorial-logo">
+/* V26 — corrección definitiva:
+   las reglas anteriores V17–V25 quedaban sobreescritas por V24.
+   Esta capa se coloca al final para controlar realmente el logo. */
+
+.hero-logo{
+  width:min(78vw,1100px) !important;
+  max-width:1100px !important;
+  margin-top:clamp(24px,3vh,42px) !important;
+  position:relative !important;
+  z-index:20 !important;
+}
+
+/* El logo crece sin deformarse y conserva el PNG transparente. */
+.hero-logo img{
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  object-fit:contain !important;
+}
+
+/* Damos más espacio vertical a la composición editorial. */
+.hero{
+  min-height:max(100svh,1040px) !important;
+}
+
+.hero-inner{
+  min-height:max(100svh,1040px) !important;
+}
+
+/* La fotografía comienza después del logo ampliado. */
+.hero-bg{
+  top:clamp(350px,39vh,430px) !important;
+  height:clamp(380px,43vh,500px) !important;
+  z-index:1 !important;
+}
+
+.hero-art{
+  width:min(1540px,108vw) !important;
+}
+
+/* Pantalla grande */
+@media (min-width:1441px){
+  .hero-logo{
+    width:min(76vw,1200px) !important;
+    max-width:1200px !important;
+  }
+
+  .hero{
+    min-height:max(100svh,1120px) !important;
+  }
+
+  .hero-inner{
+    min-height:max(100svh,1120px) !important;
+  }
+
+  .hero-bg{
+    top:400px !important;
+    height:500px !important;
+  }
+}
+
+/* Desktop estándar */
+@media (max-width:1440px) and (min-width:901px){
+  .hero-logo{
+    width:min(78vw,1100px) !important;
+    max-width:1100px !important;
+  }
+
+  .hero-bg{
+    top:380px !important;
+    height:480px !important;
+  }
+}
+
+/* Tablet */
+@media (max-width:900px) and (min-width:621px){
+  .hero{
+    min-height:980px !important;
+  }
+
+  .hero-inner{
+    min-height:980px !important;
+  }
+
+  .hero-logo{
+    width:min(82vw,700px) !important;
+    max-width:700px !important;
+    margin-top:24px !important;
+  }
+
+  .hero-bg{
+    top:285px !important;
+    height:410px !important;
+  }
+}
+
+/* Móvil */
+@media (max-width:620px){
+  .hero{
+    min-height:900px !important;
+  }
+
+  .hero-inner{
+    min-height:900px !important;
+  }
+
+  .hero-logo{
+    width:min(90vw,430px) !important;
+    max-width:430px !important;
+    margin-top:20px !important;
+  }
+
+  .hero-bg{
+    top:220px !important;
+    height:390px !important;
+  }
+}
+</style>
+
+
+<style id="v27-logo-position">
+/* V27 — bajar el logo para que tenga aire superior y no se corte */
+.hero-logo{
+  margin-top:clamp(52px,7vh,88px) !important;
+}
+
+@media (min-width:1441px){
+  .hero-logo{
+    margin-top:clamp(58px,7vh,100px) !important;
+  }
+}
+
+@media (max-width:900px){
+  .hero-logo{
+    margin-top:clamp(44px,6vh,70px) !important;
+  }
+}
+
+@media (max-width:620px){
+  .hero-logo{
+    margin-top:clamp(34px,5vh,54px) !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
@@ -593,13 +1414,22 @@ body{background:#fff}
 
 <main id="main">
 <section class="hero" id="inicio">
-<div class="hero-stage">
-  <img class="hero-art" src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/banner_1.png" alt="Composición principal de Manrique en Movimiento: barrio, familias, fotografías históricas y territorio">
-  <a class="hero-logo" href="#inicio" aria-label="Manrique, Memoria en Movimiento">
-    <img src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/logospng/logo_home.png" alt="Manrique, Memoria en Movimiento">
-  </a>
-</div>
-<div class="hero-copy"><div class="eyebrow">Archivo vivo · Comuna 3 · Medellín</div><h1>La memoria<br>está en movimiento.</h1><p>Fotografías, voces, lugares y nuevas tecnologías se encuentran para contar la memoria de Manrique desde la comunidad.</p><a class="cta" href="#archivo">Explorar el archivo →</a></div>
+  <div class="hero-bg" aria-hidden="true">
+    <img class="hero-art" src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/banner_1.png" alt="">
+  </div>
+
+  <div class="hero-inner">
+    <a class="hero-logo" href="#inicio" aria-label="Manrique, Memoria en Movimiento">
+      <img src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/logospng/logo_home.png" alt="Manrique, Memoria en Movimiento">
+    </a>
+
+    <div class="hero-copy">
+      <div class="eyebrow">Archivo vivo · Comuna 3 · Medellín</div>
+      <h1>La memoria<br>está en movimiento.</h1>
+      <p>Fotografías, voces, lugares y nuevas tecnologías se encuentran para contar la memoria de Manrique desde la comunidad.</p>
+      <a class="cta" href="#archivo">Explorar el archivo →</a>
+    </div>
+  </div>
 </section>
 
 <section class="section manifesto"><div class="wrap manifesto-grid reveal"><div><div class="eyebrow">Manifiesto</div><h2>Las fotografías<br>guardan <span style="color:var(--orange)">recuerdos.</span></h2></div><p>Juntos podemos <em>devolverles la vida</em> sin borrar sus huellas. La IA es una herramienta; la memoria pertenece a la comunidad.</p></div></section>
