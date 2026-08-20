@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Manrique en Movimiento: memoria fotográfica animada del barrio. Archivo vivo comunitario de Manrique, Medellín.">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/logospng/logo_home.png" as="image" type="image/svg+xml">
+<meta property="og:title" content="Manrique, Memoria en Movimiento">
+<meta property="og:description" content="Las fotografías guardan recuerdos. Juntos podemos devolverles la vida.">
+<meta property="og:type" content="website">
+<title>MANRIQUE, — Memoria en Movimiento</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+:root{--paper:#f4efe7;--ink:#090909;--orange:#c65b2a;--blue:#07506c;--teal:#2d858e;--gold:#e7a94e;--muted:#66615b;--line:#1112;--max:1380px;font-size:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.5}a{color:inherit;text-decoration:none}button{font:inherit}:focus-visible{outline:3px solid var(--orange);outline-offset:4px}
+.skip{position:fixed;top:10px;left:10px;z-index:999;background:var(--blue);color:#fff;padding:10px 14px;border-radius:8px;transform:translateY(-150%)}.skip:focus{transform:none}
+.wrap{width:min(calc(100% - 40px),var(--max));margin:auto}.cond{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase}
+.nav{position:fixed;z-index:50;left:0;right:0;top:0;padding:14px 20px;transition:.35s}.nav.scrolled{background:#ffffffee;backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav-in{width:min(100%,var(--max));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}.mark{font:900 2rem/.75 "Barlow Condensed";letter-spacing:-.03em}.mark small{display:block;font:500 .55rem "DM Sans";letter-spacing:.26em;color:var(--orange);margin-top:5px}
+.navlinks{display:flex;gap:18px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}.navlinks a:hover{color:var(--orange)}
+.tool{border:1px solid var(--line);background:transparent;border-radius:99px;padding:7px 11px;cursor:pointer}
+.hero{min-height:100svh;display:grid;align-items:center;position:relative;overflow:hidden;padding:95px 0 40px}.hero-stage{position:relative;width:min(100%,1320px);margin:auto}
+.hero-stage img{display:block;width:100%;height:auto;animation:breath 11s ease-in-out infinite alternate}@keyframes breath{from{transform:scale(1)}to{transform:scale(1.018) translateY(-5px)}}
+.hero-copy{position:absolute;left:7%;bottom:8%;max-width:590px;text-shadow:0 2px 25px #fff8}.eyebrow{font-size:.7rem;text-transform:uppercase;letter-spacing:.2em;font-weight:800;color:var(--orange)}.hero h1{font:900 clamp(4rem,8vw,8.5rem)/.72 "Barlow Condensed";text-transform:uppercase;letter-spacing:-.045em;margin:10px 0}.hero p{font-size:clamp(1rem,1.6vw,1.25rem);max-width:560px}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:white;border:0;border-radius:99px;padding:13px 19px;font-weight:800;cursor:pointer}.cta.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.section{padding:115px 0}.head{display:grid;grid-template-columns:1fr 1.1fr;gap:50px;align-items:end;margin-bottom:48px}h2{font:900 clamp(3.5rem,7vw,7.5rem)/.76 "Barlow Condensed";text-transform:uppercase;letter-spacing:-.045em;margin:7px 0}.lead{color:var(--muted);font-size:1.1rem;max-width:680px}
+.manifesto{background:var(--ink);color:#fff}.manifesto-grid{display:grid;grid-template-columns:.9fr 1.5fr;gap:80px;align-items:center}.manifesto p{font-size:clamp(1.7rem,3.4vw,3.6rem);line-height:.98;margin:0}.manifesto em{color:var(--gold);font-style:normal}
+.full-art{border-radius:26px;overflow:hidden;background:#fff;box-shadow:0 25px 80px #0002}.full-art img{display:block;width:100%;height:auto}
+.archive-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.panel{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden}.panel img{width:100%;display:block}.panel-body{padding:25px}.panel-body h3{font:800 2.5rem/.85 "Barlow Condensed";text-transform:uppercase;margin:5px 0 12px}
+.compare{height:560px;position:relative;overflow:hidden;background:#222;border-radius:24px}.compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.compare .after{clip-path:inset(0 0 0 50%)}.compare input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize}.handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;pointer-events:none}.handle:after{content:"↔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:#111;font-weight:900}
+.story-strip{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch}.story-card{border-radius:24px;overflow:hidden;position:relative;background:#fff}.story-card img{width:100%;height:100%;object-fit:cover;display:block}.story-copy{position:absolute;left:0;right:0;bottom:0;padding:28px;color:#fff;background:linear-gradient(transparent,#000d)}.story-copy h3{font:800 3.2rem/.8 "Barlow Condensed";text-transform:uppercase;margin:8px 0}
+.timeline{display:flex;gap:10px;overflow:auto;padding-bottom:12px}.dec{flex:0 0 145px;padding:16px;background:#fff;border:1px solid var(--line);border-radius:18px;text-align:left;cursor:pointer}.dec b{display:block;font:900 3.4rem/.75 "Barlow Condensed"}.dec.active{background:var(--orange);color:#fff;border-color:var(--orange)}.time-panel{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:25px;background:#fff;border-radius:24px;overflow:hidden;border:1px solid var(--line)}.time-copy{padding:35px;align-self:end}.time-copy h3{font:900 4.5rem/.75 "Barlow Condensed";text-transform:uppercase;margin:8px 0}.time-image img{width:100%;height:100%;object-fit:cover;display:block;min-height:350px}
+.map{position:relative;min-height:590px;border-radius:24px;overflow:hidden;background:#d9cfbf}.map-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42;filter:sepia(.1)}.map-shade{position:absolute;inset:0;background:linear-gradient(90deg,#f4efe7ed 0 30%,transparent 65%)}.map-copy{position:absolute;left:30px;top:30px;max-width:380px}.hot{position:absolute;width:23px;height:23px;border:0;border-radius:50%;background:var(--orange);box-shadow:0 0 0 8px #c65b2a30;cursor:pointer}.h1{left:38%;top:48%}.h2{left:59%;top:31%}.h3{left:70%;top:63%}.h4{left:47%;top:74%}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{background:#fff;border-top:5px solid var(--orange);padding:25px;border-radius:0 0 18px 18px;min-height:240px}.step b{font:900 3rem "Barlow Condensed";color:var(--blue)}.step h3{font:800 2rem/.85 "Barlow Condensed";text-transform:uppercase}
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}.gallery figure{margin:0;overflow:hidden;border-radius:18px;background:#fff}.gallery figure:first-child{grid-row:span 2}.gallery img{width:100%;height:100%;min-height:220px;object-fit:cover;display:block;transition:.6s}.gallery figure:hover img{transform:scale(1.025)}
+.participate{background:var(--blue);color:#fff;border-radius:26px;padding:55px;display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}.participate h2{margin:0}.number{font:900 clamp(2.5rem,5vw,5rem)/.8 "Barlow Condensed";color:var(--gold)}
+footer{background:var(--ink);color:#fff;padding:80px 0 25px}.foot-grid{display:grid;grid-template-columns:1.4fr .6fr .6fr;gap:40px}.foot-title{font:900 5rem/.75 "Barlow Condensed";text-transform:uppercase}.foot-bottom{margin-top:50px;padding-top:18px;border-top:1px solid #fff2;color:#aaa;font-size:.75rem;display:flex;justify-content:space-between}
+dialog{width:min(720px,calc(100% - 28px));border:0;border-radius:24px;padding:0;background:#fff;color:#111;box-shadow:0 30px 100px #0008}dialog::backdrop{background:#0009}.dialog{padding:30px}.close{float:right;border:0;background:none;font-size:1.7rem;cursor:pointer}
+.reveal{opacity:0;transform:translateY(24px);transition:.8s}.reveal.on{opacity:1;transform:none}
+@media(max-width:900px){.navlinks{display:none}.head,.manifesto-grid,.archive-grid,.story-strip,.time-panel,.participate,.foot-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.hero-copy{left:5%;bottom:4%}}
+@media(max-width:620px){.wrap{width:calc(100% - 28px)}.section{padding:80px 0}.hero{padding-top:88px;min-height:88svh}.hero-copy{position:relative;left:auto;bottom:auto;margin:-12px 14px 0}.hero h1{font-size:4.6rem}.steps,.gallery{grid-template-columns:1fr}.gallery figure:first-child{grid-row:auto}.compare{height:400px}.participate{padding:32px}.foot-title{font-size:4rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* ARCHIVO PATRIMONIAL — V4 layer */
+.archive-object{display:grid;grid-template-columns:1.08fr .92fr;gap:0;background:#fff;border-radius:28px;overflow:hidden;border:1px solid var(--line)}
+.archive-image{min-height:650px;background:#171717;position:relative;overflow:hidden}
+.archive-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease}
+.archive-image:hover img{transform:scale(1.025)}
+.archive-caption{position:absolute;left:22px;bottom:22px;right:22px;color:#fff;background:#000a;padding:15px 18px;border-radius:15px;backdrop-filter:blur(8px)}
+.archive-data{padding:32px;display:flex;flex-direction:column;min-width:0}
+.archive-data h3{font:900 clamp(3rem,5vw,5.4rem)/.78 "Barlow Condensed";text-transform:uppercase;margin:8px 0 16px}
+.object-meta{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin:18px 0 22px}
+.object-meta div{background:#fff;padding:13px}
+.object-meta small{display:block;color:var(--muted);font-size:.66rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800}
+.object-meta strong{display:block;margin-top:3px;font-size:.9rem}
+.object-tabs{display:flex;gap:7px;overflow:auto;border-bottom:1px solid var(--line);padding-bottom:8px}
+.object-tab{white-space:nowrap;border:1px solid var(--line);background:transparent;border-radius:999px;padding:9px 13px;cursor:pointer;font-size:.75rem;font-weight:800}
+.object-tab.active{background:var(--orange);border-color:var(--orange);color:#fff}
+.object-panel{padding-top:20px;min-height:220px}
+.object-panel h4{font:800 2.2rem/.85 "Barlow Condensed";text-transform:uppercase;margin:0 0 12px}
+.object-panel[hidden]{display:none}
+.ai-record{background:#f2ede5;border-radius:16px;padding:15px}
+.ai-record code{display:block;white-space:pre-wrap;font-size:.75rem;color:#4c4640}
+.audio-row{display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+.audio-circle{width:42px;height:42px;border:0;border-radius:50%;background:var(--blue);color:#fff;cursor:pointer}
+.rights{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:18px}
+.rights span{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;border:1px solid var(--line);border-radius:99px;padding:6px 9px}
+@media(max-width:900px){.archive-object{grid-template-columns:1fr}.archive-image{min-height:500px}.archive-data{padding:24px}}
+@media(max-width:620px){.archive-image{min-height:360px}.object-meta{grid-template-columns:1fr}.archive-data h3{font-size:3.5rem}}
+
+
+/* Identidad gráfica oficial */
+.brand-logo{display:block;width:174px;line-height:0}
+.brand-logo img{display:block;width:100%;height:auto}
+.nav{background:#fff}
+.hero{background:#fff}
+.hero-stage{background:#fff}
+.hero-stage img{background:#fff}
+.section{background:#fff}
+.manifesto{background:#080808}
+.archive-object,.panel,.time-panel,.step,.story-card,.gallery figure{background:#fff}
+@media(max-width:620px){
+  .brand-logo{width:148px}
+}
+
+
+.hero{min-height:calc(100svh - 76px);padding:76px 0 24px;align-items:center}
+.hero-stage{width:min(100%,1500px);margin:0 auto}
+.hero-stage img{width:100%;max-height:78svh;object-fit:contain;object-position:center bottom}
+.hero-copy{left:6%;bottom:2%;max-width:650px}
+.hero h1{font-size:clamp(3.8rem,7vw,7.8rem);text-shadow:0 3px 18px #fff}
+@media(max-width:900px){
+  .hero{padding-top:88px}
+  .hero-stage img{max-height:62svh}
+}
+@media(max-width:620px){
+  .hero{min-height:auto;padding-top:92px}
+  .hero-stage img{max-height:none}
+  .hero-copy{margin:-2px 14px 0}
+}
+
+
+.hero-stage{position:relative}
+.hero-brand-overlay-disabled{
+  position:absolute;
+  z-index:5;
+  top:2.5%;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(34vw,470px);
+  min-width:250px;
+  display:block;
+  line-height:0;
+  mix-blend-mode:multiply;
+  filter:drop-shadow(0 2px 4px rgba(255,255,255,.35));
+}
+.hero-brand-overlay-disabled img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+@media(max-width:900px){
+  .hero-brand-overlay-disabled{width:min(44vw,360px);top:3%}
+}
+@media(max-width:620px){
+  .hero-brand-overlay-disabled{width:260px;min-width:0;top:2%}
+}
+
+
+@media(min-width:901px){
+  .nav .brand-logo{width:145px}
+}
+
+
+.hero-brand-overlay-disabled{
+  top:4%;
+  width:min(40vw,560px);
+  min-width:300px;
+  z-index:20;
+  pointer-events:auto;
+}
+.hero-brand-overlay-disabled img{
+  display:block;
+  width:100%;
+  height:auto;
+  opacity:1;
+  visibility:visible;
+  mix-blend-mode:normal;
+  filter:drop-shadow(0 2px 5px rgba(255,255,255,.7));
+}
+@media(max-width:900px){
+  .hero-brand-overlay-disabled{width:min(52vw,430px);min-width:260px;top:3%}
+}
+@media(max-width:620px){
+  .hero-brand-overlay-disabled{width:280px;min-width:0;top:2%}
+}
+
+
+.hero-brand-overlay-disabled{
+  position:absolute !important;
+  top:24px !important;
+  left:50% !important;
+  transform:translateX(-50%) !important;
+  width:min(52vw,520px) !important;
+  min-width:300px !important;
+  z-index:50 !important;
+  display:block !important;
+  line-height:0 !important;
+}
+.hero-brand-overlay-disabled img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+@media(max-width:620px){
+  .hero-brand-overlay-disabled{
+    width:280px !important;
+    min-width:0 !important;
+    top:16px !important;
+  }
+}
+
+
+/* HERO — identidad gráfica oficial */
+.hero-stage{
+  position:relative;
+  width:min(100%,1320px);
+  margin:auto;
+}
+.hero-stage .hero-art{
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  height:auto;
+  animation:breath 11s ease-in-out infinite alternate;
+}
+.hero-logo{
+  position:absolute;
+  z-index:10;
+  top:4%;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(46%,560px);
+  display:block;
+  line-height:0;
+}
+.hero-logo img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.hero-logo:focus-visible{
+  outline:3px solid var(--orange);
+  outline-offset:8px;
+  border-radius:6px;
+}
+@media (max-width:900px){
+  .hero-logo{width:min(48%,430px);top:3%}
+}
+@media (max-width:620px){
+  .hero-logo{width:min(58%,310px);top:2%}
+}
+
+
+/* Logo oficial de Home: logo_home.png */
+.nav .brand-logo,
+.nav .brand img,
+header .brand img{
+  display:block;
+  width:auto;
+  height:46px;
+  max-width:190px;
+  object-fit:contain;
+}
+.hero-logo img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:150px;
+  object-fit:contain;
+}
+@media(max-width:620px){
+  .nav .brand-logo,
+  .nav .brand img,
+  header .brand img{height:38px;max-width:155px}
+  .hero-logo{width:min(58%,310px)}
+}
+
+
+/* V10 — transparent official PNG variants */
+body{background:#fff}
+.nav{background:#fff}
+.nav .brand-logo,
+.nav .brand-logo img,
+.nav .brand img{
+  display:block;
+  background:transparent!important;
+}
+.nav .brand-logo,
+.nav .brand img{
+  width:auto;
+  height:34px;
+  max-width:150px;
+}
+.hero-logo{
+  position:absolute;
+  z-index:10;
+  top:4%;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(34%,390px);
+  display:block;
+  background:transparent!important;
+  line-height:0;
+}
+.hero-logo img{
+  display:block;
+  width:100%;
+  height:auto;
+  background:transparent!important;
+  object-fit:contain;
+  opacity:1;
+}
+@media(max-width:900px){
+  .nav .brand-logo,.nav .brand img{height:31px;max-width:135px}
+  .hero-logo{width:min(38%,300px);top:3%}
+}
+@media(max-width:620px){
+  .nav .brand-logo,.nav .brand img{height:28px;max-width:125px}
+  .hero-logo{width:min(44%,260px);top:2.5%}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="nav" id="nav"><nav class="nav-in" aria-label="Navegación principal">
+<a class="brand-logo" href="#inicio" aria-label="Manrique, Memoria en Movimiento"><img src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/logospng/logo_home.png" alt="Manrique, Memoria en Movimiento"></a>
+<div class="navlinks"><a href="#archivo">Archivo</a><a href="#historias">Historias</a><a href="#tiempo">Tiempo</a><a href="#mapa">Mapa</a><a href="#talleres">Talleres</a><a href="#participa">Participa</a></div>
+<div><button class="tool" id="minus" aria-label="Reducir tamaño de texto">A−</button> <button class="tool" id="plus" aria-label="Aumentar tamaño de texto">A+</button></div>
+</nav></header>
+
+<main id="main">
+<section class="hero" id="inicio">
+<div class="hero-stage">
+  <img class="hero-art" src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/banner_1.png" alt="Composición principal de Manrique en Movimiento: barrio, familias, fotografías históricas y territorio">
+  <a class="hero-logo" href="#inicio" aria-label="Manrique, Memoria en Movimiento">
+    <img src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/logospng/logo_home.png" alt="Manrique, Memoria en Movimiento">
+  </a>
+</div>
+<div class="hero-copy"><div class="eyebrow">Archivo vivo · Comuna 3 · Medellín</div><h1>La memoria<br>está en movimiento.</h1><p>Fotografías, voces, lugares y nuevas tecnologías se encuentran para contar la memoria de Manrique desde la comunidad.</p><a class="cta" href="#archivo">Explorar el archivo →</a></div>
+</section>
+
+<section class="section manifesto"><div class="wrap manifesto-grid reveal"><div><div class="eyebrow">Manifiesto</div><h2>Las fotografías<br>guardan <span style="color:var(--orange)">recuerdos.</span></h2></div><p>Juntos podemos <em>devolverles la vida</em> sin borrar sus huellas. La IA es una herramienta; la memoria pertenece a la comunidad.</p></div></section>
+
+<section class="section" id="archivo"><div class="wrap">
+<div class="head reveal"><div><div class="eyebrow">01 · Archivo fotográfico</div><h2>Un archivo<br>que <span style="color:var(--orange)">respira.</span></h2></div><p class="lead">La imagen es el centro de la experiencia. El archivo final podrá conservar original, restauración, colorización, animación, historia, autoría, procedencia y consentimiento.</p></div>
+<div class="archive-grid">
+<article class="panel reveal"><img src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/collage_1.png" alt="Collage documental de Manrique con fotografías y comunidad"><div class="panel-body"><div class="eyebrow">Colección · Demo</div><h3>Una fotografía abre una historia.</h3><p>Haz clic sobre una pieza para descubrir sus capas: imagen original, intervención, memoria oral y territorio.</p><button class="cta" onclick="openDialog('Ficha de fotografía','La ficha real integrará fecha, ubicación, familia, autoría, procedencia, derechos, restauración IA, modelo utilizado, prompt y transcripción.')">Ver ficha →</button></div></article>
+<div class="reveal"><div class="compare"><img src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/collage_2.png" alt="Imagen de referencia del archivo antes de intervención"><img class="after" id="after" src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/collage_2.png" alt="Imagen de referencia del archivo después de intervención"><input id="range" type="range" min="0" max="100" value="50" aria-label="Mover comparador antes y después"><div class="handle" id="handle"></div></div><p class="lead" style="font-size:.82rem">Comparador interactivo · mueve la línea central.</p></div>
+</div></div></section>
+
+<section class="section" id="historias"><div class="wrap">
+<div class="head reveal"><div><div class="eyebrow">02 · Historias</div><h2>Voces que<br><span style="color:var(--blue)">permanecen.</span></h2></div><p class="lead">La fotografía se completa cuando alguien la recuerda. Aquí cada imagen podrá convivir con audio, transcripción, subtítulos y contexto.</p></div>
+<div class="story-strip"><article class="story-card reveal"><img src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/editorial_1.png" alt="Composición editorial de memoria familiar"><div class="story-copy"><div class="eyebrow" style="color:#e7a94e">Relato · Demo</div><h3>“Aquí cada esquina tenía una historia.”</h3><button class="cta" onclick="openDialog('Testimonio demo','Audio y transcripción del testimonio. Este contenido es demostrativo y será sustituido por voces comunitarias autorizadas.')">Escuchar / leer</button></div></article>
+<article class="story-card reveal"><img src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/editorial_2.png" alt="Composición editorial sobre territorio y memoria"><div class="story-copy"><div class="eyebrow" style="color:#e7a94e">Memoria · Demo</div><h3>El barrio también se recuerda con los ojos.</h3><button class="cta" onclick="openDialog('Relato demo','Historia completa vinculada a fotografías, lugar, fecha y archivos relacionados.')">Abrir historia</button></div></article></div>
+</div></section>
+
+
+<section class="section" id="objeto-patrimonial">
+<div class="wrap">
+  <div class="head reveal">
+    <div>
+      <div class="eyebrow">01.5 · Objeto patrimonial</div>
+      <h2>Cada foto<br>es un <span style="color:var(--orange)">archivo.</span></h2>
+    </div>
+    <p class="lead">Una fotografía deja de ser una imagen aislada y se convierte en un objeto documental: tiene contexto, procedencia, voces, territorio, intervención tecnológica y derechos.</p>
+  </div>
+
+  <article class="archive-object reveal" aria-label="Ficha patrimonial de fotografía">
+    <div class="archive-image">
+      <img id="objectImage"
+           src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/collage_1.png"
+           alt="Fotografía documental de referencia del archivo Manrique en Movimiento">
+      <div class="archive-caption">
+        <div class="eyebrow" style="color:#e7a94e">MM-0001 · Colección demo</div>
+        <strong>Una memoria compartida</strong>
+      </div>
+    </div>
+
+    <div class="archive-data">
+      <div class="eyebrow">Ficha patrimonial</div>
+      <h3>La fotografía<br>como testigo.</h3>
+      <p id="objectDescription">Esta ficha representa la estructura futura de cada fotografía del archivo comunitario.</p>
+
+      <div class="object-meta">
+        <div><small>Fecha</small><strong>1974 · aproximada</strong></div>
+        <div><small>Lugar</small><strong>Manrique · Medellín</strong></div>
+        <div><small>Colección</small><strong>Memoria familiar</strong></div>
+        <div><small>Estado</small><strong>Restauración demo</strong></div>
+      </div>
+
+      <div class="object-tabs" role="tablist" aria-label="Capas de la ficha">
+        <button class="object-tab active" data-panel="ficha" role="tab" aria-selected="true">Ficha</button>
+        <button class="object-tab" data-panel="antes" role="tab" aria-selected="false">Antes / Después</button>
+        <button class="object-tab" data-panel="animacion" role="tab" aria-selected="false">Animación</button>
+        <button class="object-tab" data-panel="testimonio" role="tab" aria-selected="false">Testimonio</button>
+        <button class="object-tab" data-panel="mapa" role="tab" aria-selected="false">Mapa</button>
+        <button class="object-tab" data-panel="ia" role="tab" aria-selected="false">IA</button>
+        <button class="object-tab" data-panel="derechos" role="tab" aria-selected="false">Derechos</button>
+      </div>
+
+      <div class="object-panel" id="panel-ficha">
+        <h4>Contexto</h4>
+        <p>La fotografía será acompañada por una descripción histórica, nombres autorizados, fecha aproximada, lugar, fuente y relato de quien la aporta.</p>
+        <p class="muted">La información marcada como demo se reemplazará por datos verificados durante el proceso comunitario.</p>
+      </div>
+
+      <div class="object-panel" id="panel-antes" hidden>
+        <h4>Restauración visible</h4>
+        <div class="compare" style="height:230px">
+          <img src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/collage_2.png" alt="Estado original de referencia">
+          <img class="after objectAfter" src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/collage_2.png" alt="Estado restaurado de referencia">
+          <input class="objectRange" type="range" min="0" max="100" value="50" aria-label="Comparar restauración">
+          <div class="handle objectHandle"></div>
+        </div>
+      </div>
+
+      <div class="object-panel" id="panel-animacion" hidden>
+        <h4>Fotografía que respira</h4>
+        <p>En producción, aquí aparecerá la animación fotográfica generada a partir del original. El movimiento estará claramente identificado como reconstrucción asistida por IA.</p>
+        <div class="audio-row"><button class="audio-circle" id="motionButton" aria-label="Activar demostración de movimiento">▶</button><div><strong>Demo de movimiento</strong><br><span class="muted">Movimiento visual local · sin video pesado</span></div></div>
+      </div>
+
+      <div class="object-panel" id="panel-testimonio" hidden>
+        <h4>Una voz detrás de la imagen</h4>
+        <p>“Aquí cada esquina tenía una historia.”</p>
+        <div class="audio-row"><button class="audio-circle" id="voiceButton" aria-label="Reproducir demostración de testimonio">▶</button><div><strong>Testimonio demo</strong><br><span class="muted">Transcripción disponible · audio comunitario futuro</span></div></div>
+      </div>
+
+      <div class="object-panel" id="panel-mapa" hidden>
+        <h4>Territorio</h4>
+        <p><strong>Manrique · Comuna 3 · Medellín</strong></p>
+        <p class="muted">La ficha podrá mostrar coordenadas, lugar histórico, recorrido y otros objetos relacionados del archivo.</p>
+        <button class="cta" id="openMapFromObject">Abrir mapa narrativo →</button>
+      </div>
+
+      <div class="object-panel" id="panel-ia" hidden>
+        <h4>Transparencia IA</h4>
+        <div class="ai-record">
+          <strong>Proceso registrado</strong>
+          <code>Restauración: demo
+Colorización: demo
+Animación: pendiente
+Modelo: reemplazable
+Prompt: documentar en ficha
+Intervención humana: revisión y curaduría</code>
+        </div>
+      </div>
+
+      <div class="object-panel" id="panel-derechos" hidden>
+        <h4>Créditos y derechos</h4>
+        <p>Los derechos, autoría, fuente, licencia y consentimiento deben quedar asociados al objeto antes de su publicación.</p>
+        <div class="rights">
+          <span>Autoría pendiente</span><span>Consentimiento requerido</span><span>Crédito obligatorio</span><span>Archivo comunitario</span>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+</section>
+
+<section class="section" id="tiempo"><div class="wrap">
+<div class="head reveal"><div><div class="eyebrow">03 · Línea del tiempo</div><h2>Manrique<br>por <span style="color:var(--teal)">décadas.</span></h2></div><p class="lead">Selecciona una década para recorrer fotografías, relatos, sonidos y transformaciones del barrio.</p></div>
+<div class="timeline" role="tablist" aria-label="Décadas históricas"><button class="dec active" data-y="1940">1940<b>40</b></button><button class="dec" data-y="1950">1950<b>50</b></button><button class="dec" data-y="1960">1960<b>60</b></button><button class="dec" data-y="1970">1970<b>70</b></button><button class="dec" data-y="1980">1980<b>80</b></button><button class="dec" data-y="1990">1990<b>90</b></button><button class="dec" data-y="2000">2000<b>00</b></button><button class="dec" data-y="hoy">HOY<b>∞</b></button></div>
+<div class="time-panel reveal"><div class="time-copy"><div class="eyebrow" id="year">1940 · DEMO</div><h3 id="timeTitle">Primeros relatos</h3><p id="timeText">Fotografías familiares y documentos que ayudan a reconstruir los primeros capítulos del archivo.</p></div><div class="time-image"><img id="timeImage" src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/banner_2.png" alt="Pieza visual de referencia para la línea del tiempo"></div></div>
+</div></section>
+
+<section class="section" id="mapa"><div class="wrap">
+<div class="head reveal"><div><div class="eyebrow">04 · Mapa de memoria</div><h2>Caminar<br>el <span style="color:var(--orange)">barrio.</span></h2></div><p class="lead">Una cartografía afectiva donde cada punto podrá abrir una fotografía, una voz, un video y una historia.</p></div>
+<div class="map reveal"><img class="map-bg" src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/collage_3.png" alt="" aria-hidden="true"><div class="map-shade"></div><div class="map-copy"><div class="eyebrow">Cartografía afectiva</div><h3 class="cond" style="font-size:3.2rem;line-height:.82;margin:7px 0">Los lugares también recuerdan.</h3><p>Los puntos son conceptuales en esta versión. Posteriormente podrán conectarse con coordenadas reales del archivo.</p></div>
+<button class="hot h1" data-name="La esquina" aria-label="Abrir memoria: La esquina"></button><button class="hot h2" data-name="La casa" aria-label="Abrir memoria: La casa"></button><button class="hot h3" data-name="El camino" aria-label="Abrir memoria: El camino"></button><button class="hot h4" data-name="La cancha" aria-label="Abrir memoria: La cancha"></button></div>
+</div></section>
+
+<section class="section" id="documental"><div class="wrap">
+<div class="head reveal"><div><div class="eyebrow">05 · Documental</div><h2>El pasado<br>camina <span style="color:var(--orange)">con nosotros.</span></h2></div><p class="lead">La narrativa visual del proyecto se convierte en una experiencia audiovisual: trailer, documental, making-of y storyboard.</p></div>
+<div class="full-art reveal"><img src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/banner_4.png" alt="Banner documental de Manrique en Movimiento"></div>
+</div></section>
+
+<section class="section" id="talleres"><div class="wrap">
+<div class="head reveal"><div><div class="eyebrow">06 · Talleres + IA</div><h2>Aprender<br><span style="color:var(--blue)">haciendo.</span></h2></div><p class="lead">Restaurar, animar, documentar y compartir. La tecnología se presenta de forma transparente y crítica.</p></div>
+<div class="steps"><article class="step reveal"><b>01</b><h3>Digitalizar</h3><p>Conservar el original y registrar procedencia.</p></article><article class="step reveal"><b>02</b><h3>Restaurar</h3><p>Intervenir sin ocultar qué fue reconstruido.</p></article><article class="step reveal"><b>03</b><h3>Animar</h3><p>Movimiento sutil, narrativo y claramente identificado.</p></article><article class="step reveal"><b>04</b><h3>Documentar</h3><p>Modelo, prompt, herramienta, autoría y licencia.</p></article></div>
+<div class="full-art reveal" style="margin-top:18px"><img src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/collage_6.png" alt="Composición gráfica de taller y memoria"></div>
+</div></section>
+
+<section class="section" id="galeria"><div class="wrap">
+<div class="head reveal"><div><div class="eyebrow">07 · Galería</div><h2>Fragmentos<br>del <span style="color:var(--orange)">archivo.</span></h2></div><p class="lead">Las imágenes del repositorio de GitHub se cargan como fuente visual del prototipo. En producción se podrán servir optimizadas desde CDN o Supabase Storage.</p></div>
+<div class="gallery">
+<figure class="reveal"><img loading="lazy" src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/banner_3.png" alt="Banner 3 del proyecto"></figure>
+<figure class="reveal"><img loading="lazy" src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/banner_5.png" alt="Banner 5 del proyecto"></figure>
+<figure class="reveal"><img loading="lazy" src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/banner_6.png" alt="Banner 6 del proyecto"></figure>
+<figure class="reveal"><img loading="lazy" src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/collage_4.png" alt="Collage 4 del proyecto"></figure>
+<figure class="reveal"><img loading="lazy" src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/collage_5.png" alt="Collage 5 del proyecto"></figure>
+</div></div></section>
+
+<section class="section" id="participa"><div class="wrap">
+<div class="participate reveal"><div><div class="eyebrow" style="color:var(--gold)">Convocatoria permanente</div><h2>Tu álbum también hace parte de la historia.</h2><p>El archivo crece con las fotografías y relatos de quienes han vivido Manrique.</p></div><div><div style="font-weight:800;text-transform:uppercase">Envía tus fotos por WhatsApp</div><div class="number">+57 319 624 2779</div><a class="cta" href="https://wa.me/573196242779" target="_blank" rel="noopener">Compartir una memoria →</a></div></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><div class="foot-grid"><div><div class="foot-title">Manrique,<br>memoria<br>en movimiento.</div></div><div><div class="eyebrow">Explorar</div><p>Archivo</p><p>Historias</p><p>Tiempo</p><p>Talleres</p></div><div><div class="eyebrow">Principio</div><p>La IA es una herramienta.</p><p>La memoria pertenece a la comunidad.</p></div></div><div class="foot-bottom"><span>Manrique en Movimiento · V4</span><span>Imágenes: repositorio GitHub del proyecto</span></div></div></footer>
+
+<dialog id="dialog"><div class="dialog"><button class="close" onclick="dialog.close()" aria-label="Cerrar">×</button><div class="eyebrow">Archivo vivo</div><h2 id="dialogTitle" style="font-size:3.5rem">Historia</h2><p id="dialogText"></p><button class="cta" onclick="dialog.close()">Cerrar</button></div></dialog>
+
+<script>
+const nav=document.getElementById('nav');addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
+const root=document.documentElement;
+document.getElementById('plus').onclick=()=>root.style.fontSize=Math.min(21,parseFloat(getComputedStyle(root).fontSize)+1)+'px';
+document.getElementById('minus').onclick=()=>root.style.fontSize=Math.max(14,parseFloat(getComputedStyle(root).fontSize)-1)+'px';
+const range=document.getElementById('range'),after=document.getElementById('after'),handle=document.getElementById('handle');
+range.oninput=()=>{after.style.clipPath=`inset(0 0 0 ${range.value}%)`;handle.style.left=range.value+'%'};
+const years={
+1940:['1940 · DEMO','Primeros relatos','Fotografías familiares y documentos que ayudan a reconstruir los primeros capítulos del archivo.','banner_2.png'],
+1950:['1950 · DEMO','Expansión urbana','Calles, nuevos vecinos, oficios y transformaciones del paisaje.','banner_3.png'],
+1960:['1960 · DEMO','Calles y familias','Memorias domésticas, escuela, transporte, música y vida cotidiana.','collage_1.png'],
+1970:['1970 · DEMO','Transformaciones','Cambios en arquitectura, comercio, movilidad y relaciones comunitarias.','collage_2.png'],
+1980:['1980 · DEMO','Nuevas voces','Una década compleja narrada desde la experiencia de quienes la vivieron.','collage_3.png'],
+1990:['1990 · DEMO','Resiliencia','Historias de cuidado, creación, organización y transformación.','editorial_1.png'],
+2000:['2000 · DEMO','Presente cercano','Nuevas generaciones, tecnologías y formas de habitar el barrio.','editorial_2.png'],
+hoy:['HOY · ARCHIVO VIVO','Memoria en construcción','La comunidad continúa aportando imágenes, relatos, sonidos y nuevas interpretaciones.','banner_8.png']};
+document.querySelectorAll('.dec').forEach(b=>b.onclick=()=>{document.querySelectorAll('.dec').forEach(x=>x.classList.remove('active'));b.classList.add('active');const d=years[b.dataset.y];year.textContent=d[0];timeTitle.textContent=d[1];timeText.textContent=d[2];timeImage.src='https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/'+d[3]});
+const dialog=document.getElementById('dialog');function openDialog(t,x){dialogTitle.textContent=t;dialogText.textContent=x;dialog.showModal()}
+document.querySelectorAll('.hot').forEach(b=>b.onclick=()=>openDialog('Punto de memoria · '+b.dataset.name,'Este nodo podrá conectar fotografía, audio, video, testimonio, fecha, autoría y coordenadas reales.'));
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('on')),{threshold:.1});document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+
+/* Object archival tabs */
+document.querySelectorAll('.object-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.object-tab').forEach(t=>{
+      t.classList.remove('active');
+      t.setAttribute('aria-selected','false');
+    });
+    document.querySelectorAll('.object-panel').forEach(p=>p.hidden=true);
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected','true');
+    const target=document.getElementById('panel-'+tab.dataset.panel);
+    if(target) target.hidden=false;
+  });
+});
+
+/* Local before/after object control */
+document.querySelectorAll('.objectRange').forEach(range=>{
+  range.addEventListener('input',()=>{
+    const wrap=range.closest('.compare');
+    const after=wrap.querySelector('.objectAfter');
+    const handle=wrap.querySelector('.objectHandle');
+    after.style.clipPath=`inset(0 0 0 ${range.value}%)`;
+    handle.style.left=range.value+'%';
+  });
+});
+
+/* Lightweight "breathing photograph" demo */
+const objectImage=document.getElementById('objectImage');
+const motionButton=document.getElementById('motionButton');
+let breathing=false;
+if(motionButton){
+  motionButton.addEventListener('click',()=>{
+    breathing=!breathing;
+    objectImage.style.transition='transform 1.2s ease';
+    objectImage.style.transform=breathing?'scale(1.055) translateY(-5px)':'scale(1) translateY(0)';
+    motionButton.textContent=breathing?'Ⅱ':'▶';
+  });
+}
+
+/* Audio placeholder: announces instead of pretending to contain a real recording. */
+document.querySelectorAll('#voiceButton').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    btn.textContent='✓';
+    setTimeout(()=>btn.textContent='▶',1400);
+  });
+});
+
+const openMap=document.getElementById('openMapFromObject');
+if(openMap) openMap.addEventListener('click',()=>{
+  document.getElementById('mapa').scrollIntoView({behavior:'smooth'});
+});
+
+</script>
+</body></html>
