@@ -1,3 +1,4 @@
+```
 <!doctype html>
 <html lang="es">
 <head>
@@ -5,7 +6,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Manrique en Movimiento: memoria fotográfica animada del barrio. Archivo vivo comunitario de Manrique, Medellín.">
 <meta name="theme-color" content="#ffffff">
-<link rel="preload" href="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/logospng/logo_home.png" as="image" type="image/svg+xml">
+<link rel="preload" href="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/logospng/logo_home.png" as="image" type="image/png">
 <meta property="og:title" content="Manrique, Memoria en Movimiento">
 <meta property="og:description" content="Las fotografías guardan recuerdos. Juntos podemos devolverles la vida.">
 <meta property="og:type" content="website">
@@ -295,12 +296,298 @@ body{background:#fff}
 }
 
 </style>
+
+<style id="v14-editorial-adjustments">
+/* V14 — ajuste editorial solicitado */
+
+/* Más aire en los textos/titulares principales */
+.hero h1,
+.section h2,
+.head h2,
+.manifesto h2,
+.archive-data h3,
+.story-copy h3,
+.time-copy h3,
+.participate h2,
+.foot-title,
+.panel-body h3,
+.object-panel h4 {
+  letter-spacing: 0.025em !important;
+}
+
+/* Kicker/eyebrow con mayor respiración */
+.eyebrow {
+  letter-spacing: 0.24em !important;
+}
+
+/* Logo del banner Home: +50% respecto al tamaño V10 */
+.hero-logo {
+  width: min(51%, 585px) !important;
+  max-width: 585px !important;
+}
+
+@media (max-width: 900px) {
+  .hero-logo {
+    width: min(57%, 450px) !important;
+    max-width: 450px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero-logo {
+    width: min(66%, 390px) !important;
+    max-width: 390px !important;
+  }
+
+  .hero h1,
+  .section h2,
+  .head h2,
+  .manifesto h2,
+  .archive-data h3,
+  .story-copy h3,
+  .time-copy h3,
+  .participate h2,
+  .panel-body h3,
+  .object-panel h4 {
+    letter-spacing: 0.015em !important;
+  }
+}
+</style>
+
+
+<style id="v15-logo-position">
+/* V15 — ajuste de escala y posición de logotipos */
+
+/* Logo sobre el banner: más arriba */
+.hero-logo {
+  top: -2% !important;
+}
+
+/* Logo de navegación: 25% más pequeño */
+.nav .brand-logo,
+.nav .brand img {
+  height: 25.5px !important; /* 34px × 75% */
+  max-width: 112.5px !important; /* 150px × 75% */
+}
+
+@media (max-width: 900px) {
+  .nav .brand-logo,
+  .nav .brand img {
+    height: 23.25px !important; /* 31px × 75% */
+    max-width: 101.25px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .nav .brand-logo,
+  .nav .brand img {
+    height: 21px !important; /* 28px × 75% */
+    max-width: 93.75px !important;
+  }
+}
+</style>
+
+
+<style id="v16-editorial-hero-logo">
+/* V16 — logo Home más grande, editorial y ligeramente más arriba */
+
+.hero-logo {
+  width: min(62%, 700px) !important;
+  max-width: 700px !important;
+  top: -7% !important;
+}
+
+/* Mantener proporción y transparencia del PNG */
+.hero-logo img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .hero-logo {
+    width: min(66%, 650px) !important;
+    max-width: 650px !important;
+    top: -6% !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-logo {
+    width: min(70%, 520px) !important;
+    max-width: 520px !important;
+    top: -4% !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero-logo {
+    width: min(76%, 400px) !important;
+    max-width: 400px !important;
+    top: -2% !important;
+  }
+}
+</style>
+
+
+<style id="v17-hero-logo-scale">
+/* V17 — logo principal del banner +50% */
+.hero-logo {
+  width: min(93%, 1050px) !important;
+  max-width: 1050px !important;
+  top: -7% !important;
+}
+
+.hero-logo img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+@media (max-width: 1200px) {
+  .hero-logo {
+    width: min(96%, 900px) !important;
+    max-width: 900px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-logo {
+    width: min(94%, 700px) !important;
+    max-width: 700px !important;
+    top: -5% !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero-logo {
+    width: min(94%, 500px) !important;
+    max-width: 500px !important;
+    top: -3% !important;
+  }
+}
+</style>
+
+
+<style id="v18-responsive-hero-logo">
+/* V18 — escala real del logo principal según viewport.
+   El PNG tiene área transparente; usamos scale() para aumentar
+   la marca visible sin deformar ni sustituir el archivo. */
+
+.hero-logo {
+  width: min(93vw, 1050px) !important;
+  max-width: 1050px !important;
+  top: -7% !important;
+  transform: translateX(-50%) scale(1.48) !important;
+  transform-origin: center center !important;
+}
+
+/* Pantallas grandes */
+@media (min-width: 1441px) {
+  .hero-logo {
+    width: min(76vw, 1120px) !important;
+    max-width: 1120px !important;
+    transform: translateX(-50%) scale(1.5) !important;
+    top: -8% !important;
+  }
+}
+
+/* Laptops / desktop */
+@media (max-width: 1440px) and (min-width: 1201px) {
+  .hero-logo {
+    width: min(78vw, 1000px) !important;
+    max-width: 1000px !important;
+    transform: translateX(-50%) scale(1.48) !important;
+    top: -7% !important;
+  }
+}
+
+/* Tablet horizontal / pantallas medias */
+@media (max-width: 1200px) and (min-width: 901px) {
+  .hero-logo {
+    width: min(82vw, 850px) !important;
+    max-width: 850px !important;
+    transform: translateX(-50%) scale(1.38) !important;
+    top: -6% !important;
+  }
+}
+
+/* Tablet vertical */
+@media (max-width: 900px) and (min-width: 621px) {
+  .hero-logo {
+    width: min(84vw, 680px) !important;
+    max-width: 680px !important;
+    transform: translateX(-50%) scale(1.28) !important;
+    top: -4% !important;
+  }
+}
+
+/* Móvil */
+@media (max-width: 620px) {
+  .hero-logo {
+    width: min(88vw, 500px) !important;
+    max-width: 500px !important;
+    transform: translateX(-50%) scale(1.12) !important;
+    top: -2% !important;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 390px) {
+  .hero-logo {
+    width: 88vw !important;
+    transform: translateX(-50%) scale(1.05) !important;
+    top: -1% !important;
+  }
+}
+</style>
+
+
+<style id="v19-aprende-ia">
+.object-workflow{display:grid;grid-template-columns:repeat(5,1fr);margin:2px 0 22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.object-workflow div{padding:12px 10px;border-right:1px solid var(--line)}
+.object-workflow div:last-child{border-right:0}
+.object-workflow b{display:block;font:900 1.45rem/.8 "Barlow Condensed";color:var(--orange)}
+.object-workflow span{display:block;margin-top:5px;font-size:.62rem;text-transform:uppercase;letter-spacing:.09em;font-weight:800}
+
+.aprende-ia{background:var(--paper)}
+.ia-intro{display:grid;grid-template-columns:1.4fr .6fr;gap:20px;margin-bottom:20px}
+.ia-intro-copy,.ia-note{border:1px solid var(--line);border-radius:24px;background:#fff;padding:32px}
+.ia-intro-copy h3{font:900 clamp(3rem,5vw,5rem)/.78 "Barlow Condensed";text-transform:uppercase;margin:8px 0 15px}
+.ia-intro-copy p{max-width:760px;color:var(--muted);font-size:1.05rem}
+.ia-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.ia-pills span{border:1px solid var(--line);border-radius:999px;padding:7px 10px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em}
+.ia-note{background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:center}
+.ia-note-mark{font-size:2rem;color:var(--gold);line-height:1}
+.ia-note strong{margin-top:15px;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem}
+.ia-note p{font:700 clamp(1.4rem,2.5vw,2.2rem)/.95 "Barlow Condensed";margin:10px 0 0}
+.ia-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ia-card{min-height:300px;padding:25px;background:#fff;border:1px solid var(--line);border-radius:20px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .3s ease,box-shadow .3s ease}
+.ia-card:hover{transform:translateY(-4px);box-shadow:0 18px 50px #00000012}
+.ia-number{font:900 3.5rem/.75 "Barlow Condensed";color:var(--orange)}
+.ia-card h3{font:900 2.8rem/.78 "Barlow Condensed";text-transform:uppercase;margin:7px 0 12px}
+.ia-card p{color:var(--muted);font-size:.9rem}
+.ia-link{display:inline-block;margin-top:12px;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:var(--blue)}
+.ia-tools{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:start;margin-top:20px;padding:35px;background:#fff;border:1px solid var(--line);border-radius:24px}
+.ia-tools h3{font:900 clamp(2.8rem,4vw,4.2rem)/.8 "Barlow Condensed";text-transform:uppercase;margin:8px 0}
+.ia-resource-list{border-top:1px solid var(--line)}
+.ia-resource-list div{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid var(--line)}
+.ia-resource-list b{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}
+.ia-resource-list span{color:var(--muted);font-size:.82rem;text-align:right}
+.ia-ethics{margin-top:20px;padding:30px 35px;background:var(--orange);color:#fff;border-radius:24px;display:grid;grid-template-columns:.35fr 1fr auto;gap:25px;align-items:center}
+.ia-ethics h3{font:900 clamp(2.5rem,4vw,4rem)/.8 "Barlow Condensed";text-transform:uppercase;margin:5px 0 10px}
+.ia-ethics p{margin:0;max-width:700px}.ia-ethics .eyebrow{color:#fff}
+@media(max-width:900px){.object-workflow{overflow:auto}.ia-intro,.ia-tools,.ia-ethics{grid-template-columns:1fr}.ia-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.ia-grid{grid-template-columns:1fr}.ia-card{min-height:250px}.ia-intro-copy,.ia-note,.ia-tools,.ia-ethics{padding:25px}.ia-resource-list div{display:block}.ia-resource-list span{display:block;text-align:left;margin-top:4px}}
+</style>
+
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
 <header class="nav" id="nav"><nav class="nav-in" aria-label="Navegación principal">
 <a class="brand-logo" href="#inicio" aria-label="Manrique, Memoria en Movimiento"><img src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/logospng/logo_home.png" alt="Manrique, Memoria en Movimiento"></a>
-<div class="navlinks"><a href="#archivo">Archivo</a><a href="#historias">Historias</a><a href="#tiempo">Tiempo</a><a href="#mapa">Mapa</a><a href="#talleres">Talleres</a><a href="#participa">Participa</a></div>
+<div class="navlinks"><a href="#archivo">Archivo</a><a href="#historias">Historias</a><a href="#aprende-ia">Aprende IA</a><a href="#tiempo">Tiempo</a><a href="#mapa">Mapa</a><a href="#talleres">Talleres</a><a href="#participa">Participa</a></div>
 <div><button class="tool" id="minus" aria-label="Reducir tamaño de texto">A−</button> <button class="tool" id="plus" aria-label="Aumentar tamaño de texto">A+</button></div>
 </nav></header>
 
@@ -336,7 +623,7 @@ body{background:#fff}
   <div class="head reveal">
     <div>
       <div class="eyebrow">01.5 · Objeto patrimonial</div>
-      <h2>Cada foto<br>es un <span style="color:var(--orange)">archivo.</span></h2>
+      <h2>No es una foto.<br>Es un <span style="color:var(--orange)">objeto de memoria.</span></h2>
     </div>
     <p class="lead">Una fotografía deja de ser una imagen aislada y se convierte en un objeto documental: tiene contexto, procedencia, voces, territorio, intervención tecnológica y derechos.</p>
   </div>
@@ -362,6 +649,14 @@ body{background:#fff}
         <div><small>Lugar</small><strong>Manrique · Medellín</strong></div>
         <div><small>Colección</small><strong>Memoria familiar</strong></div>
         <div><small>Estado</small><strong>Restauración demo</strong></div>
+      </div>
+
+      <div class="object-workflow" aria-label="Recorrido del objeto patrimonial">
+        <div><b>01</b><span>Origen</span></div>
+        <div><b>02</b><span>Restauración</span></div>
+        <div><b>03</b><span>Memoria</span></div>
+        <div><b>04</b><span>Territorio</span></div>
+        <div><b>05</b><span>Derechos</span></div>
       </div>
 
       <div class="object-tabs" role="tablist" aria-label="Capas de la ficha">
@@ -432,6 +727,57 @@ Intervención humana: revisión y curaduría</code>
     </div>
   </article>
 </div>
+</section>
+
+<section class="section aprende-ia" id="aprende-ia">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="eyebrow">Aprende IA · Laboratorio abierto</div>
+        <h2>La tecnología<br>también se <span style="color:var(--orange)">aprende.</span></h2>
+      </div>
+      <p class="lead">Aquí la inteligencia artificial se explica sin misterio: como una herramienta para restaurar, documentar y animar fotografías, siempre con revisión humana, contexto histórico y respeto por la memoria de la comunidad.</p>
+    </div>
+
+    <div class="ia-intro reveal">
+      <div class="ia-intro-copy">
+        <div class="eyebrow">De la fotografía al archivo vivo</div>
+        <h3>Aprender haciendo.</h3>
+        <p>Explora el proceso de Manrique en Movimiento paso a paso. Aprende qué puede hacer la tecnología y qué decisiones siguen perteneciendo a las personas, las familias y la comunidad.</p>
+        <div class="ia-pills">
+          <span>IA como herramienta</span><span>Proceso documentado</span><span>Revisión humana</span><span>Memoria comunitaria</span>
+        </div>
+      </div>
+      <div class="ia-note">
+        <span class="ia-note-mark">✦</span>
+        <strong>Una regla del archivo</strong>
+        <p>La IA puede transformar una imagen. No puede decidir qué significa una memoria.</p>
+      </div>
+    </div>
+
+    <div class="ia-grid reveal">
+      <article class="ia-card"><div class="ia-number">01</div><div><div class="eyebrow">Restaurar</div><h3>Recuperar<br>sin inventar.</h3><p>Aprende a limpiar, mejorar contraste, recuperar detalles y preparar una fotografía para su conservación digital.</p><span class="ia-link">Guía de restauración →</span></div></article>
+      <article class="ia-card"><div class="ia-number">02</div><div><div class="eyebrow">Colorizar</div><h3>Dar color<br>con contexto.</h3><p>Conoce qué decisiones son interpretativas y cómo distinguir una colorización de un documento original.</p><span class="ia-link">Ver metodología →</span></div></article>
+      <article class="ia-card"><div class="ia-number">03</div><div><div class="eyebrow">Animar</div><h3>Hacer que<br>la imagen respire.</h3><p>Explora movimientos sutiles y narrativos. Toda animación se presenta como reconstrucción asistida por IA.</p><span class="ia-link">Explorar animación →</span></div></article>
+      <article class="ia-card"><div class="ia-number">04</div><div><div class="eyebrow">Narrar</div><h3>Convertir<br>datos en historia.</h3><p>Combina fotografía, testimonio, transcripción, mapas y metadatos para construir una pieza documental accesible.</p><span class="ia-link">Crear una historia →</span></div></article>
+    </div>
+
+    <div class="ia-tools reveal">
+      <div><div class="eyebrow">Caja de herramientas</div><h3>Recursos para<br>empezar.</h3></div>
+      <div class="ia-resource-list">
+        <div><b>Restauración</b><span>Preparación · limpieza · mejora</span></div>
+        <div><b>Color</b><span>Colorización · comparación · registro</span></div>
+        <div><b>Movimiento</b><span>Animación · dirección · consentimiento</span></div>
+        <div><b>Prompts</b><span>Plantillas · ejemplos · buenas prácticas</span></div>
+      </div>
+    </div>
+
+    <div class="ia-ethics reveal">
+      <div class="eyebrow">Transparencia</div>
+      <div><h3>Lo que ves debe poder explicarse.</h3><p>Cada intervención IA podrá registrar herramienta, modelo, prompt, fecha, operador, cambios realizados y revisión humana.</p></div>
+      <a class="cta alt" href="#objeto-patrimonial">Ver ficha patrimonial →</a>
+    </div>
+  </div>
 </section>
 
 <section class="section" id="tiempo"><div class="wrap">
@@ -551,3 +897,4 @@ if(openMap) openMap.addEventListener('click',()=>{
 
 </script>
 </body></html>
+```
