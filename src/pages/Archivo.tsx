@@ -17,7 +17,7 @@ interface Photograph {
 
 const DEFAULT_PHOTOS: Photograph[] = [
   {
-    id: 'demo-1',
+    id: 'bpp-1',
     title: 'Tranvía de Medellín',
     location: 'Manrique Central',
     year: '1970',
@@ -26,7 +26,7 @@ const DEFAULT_PHOTOS: Photograph[] = [
     tags: ['transporte', 'tranvía', 'calles']
   },
   {
-    id: 'demo-2',
+    id: 'bpp-2',
     title: 'Esquina Comercial',
     location: 'La 45',
     year: '1960',
@@ -35,7 +35,7 @@ const DEFAULT_PHOTOS: Photograph[] = [
     tags: ['comercio', 'arquitectura', 'vecinos']
   },
   {
-    id: 'demo-3',
+    id: 'bpp-3',
     title: 'Iglesia de Manrique',
     location: 'Plaza Principal',
     year: '1950',
@@ -44,43 +44,34 @@ const DEFAULT_PHOTOS: Photograph[] = [
     tags: ['iglesia', 'arquitectura', 'religión']
   },
   {
-    id: 'demo-4',
-    title: 'Panorámica del Barrio',
+    id: 'bpp-4',
+    title: 'Calles del barrio',
     location: 'Manrique Oriental',
-    year: '1980',
-    imageUrl: 'https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/Captura%20de%20pantalla%202026-08-10%20210431.png',
-    author: 'Archivo Familiar',
-    tags: ['paisaje', 'montaña', 'urbanismo']
+    year: '1960',
+    imageUrl: 'https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/DAP-F-04-63275.0001.jpg',
+    author: 'Biblioteca Pública Piloto',
+    tags: ['calles', 'cotidiano']
   },
   {
-    id: 'demo-5',
-    title: 'Familia en la puerta',
+    id: 'bpp-5',
+    title: 'Casas tradicionales',
     location: 'Las Granjas',
     year: '1970',
-    imageUrl: 'https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/Captura%20de%20pantalla%202026-08-10%20210542.png',
-    author: 'Archivo Familiar',
-    tags: ['familia', 'retrato', 'cotidiano']
-  },
-  {
-    id: 'demo-6',
-    title: 'Callejón histórico',
-    location: 'Manrique Central',
-    year: '1960',
-    imageUrl: 'https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/Captura%20de%20pantalla%202026-08-10%20210743.png',
+    imageUrl: 'https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/DAP-F-04-63276.0001.jpg',
     author: 'Biblioteca Pública Piloto',
-    tags: ['calles', 'niños', 'juego']
+    tags: ['vivienda', 'arquitectura']
   },
   {
-    id: 'demo-7',
-    title: 'Construcción de viviendas',
-    location: 'Manrique Oriental',
+    id: 'bpp-6',
+    title: 'Panorámica',
+    location: 'Manrique',
     year: '1980',
-    imageUrl: 'https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/Captura%20de%20pantalla%202026-08-10%20211441.png',
-    author: 'Archivo Comunitario',
-    tags: ['construcción', 'comunidad', 'vivienda']
+    imageUrl: 'https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/DAP-F-04-63277.0001.jpg',
+    author: 'Biblioteca Pública Piloto',
+    tags: ['paisaje', 'urbanismo']
   },
   {
-    id: 'demo-8',
+    id: 'bpp-7',
     title: 'Transporte público antiguo',
     location: 'La 45',
     year: '1970',
@@ -89,37 +80,48 @@ const DEFAULT_PHOTOS: Photograph[] = [
     tags: ['transporte', 'buses', 'historia']
   },
   {
-    id: 'demo-9',
-    title: 'Vecinos conversando',
-    location: 'Las Granjas',
+    id: 'bpp-8',
+    title: 'Comunidad',
+    location: 'Manrique Central',
     year: '1990',
-    imageUrl: 'https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/Captura%20de%20pantalla%202026-08-10%20212607.png',
-    author: 'Archivo Familiar',
+    imageUrl: 'https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/DAP-F-04-63279.0001.jpg',
+    author: 'Biblioteca Pública Piloto',
     tags: ['vecinos', 'cotidiano', 'comunidad']
+  },
+  {
+    id: 'bpp-9',
+    title: 'Vida de barrio',
+    location: 'Manrique',
+    year: '1960',
+    imageUrl: 'https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/DAP-F-04-63280.0001.jpg',
+    author: 'Biblioteca Pública Piloto',
+    tags: ['calles', 'historia']
+  },
+  {
+    id: 'bpp-10',
+    title: 'Construcción y desarrollo',
+    location: 'Manrique',
+    year: '1970',
+    imageUrl: 'https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/DAP-F-04-63281.0001.jpg',
+    author: 'Biblioteca Pública Piloto',
+    tags: ['construcción', 'urbanismo']
+  },
+  {
+    id: 'bpp-11',
+    title: 'Memoria en movimiento',
+    location: 'Manrique',
+    year: '1980',
+    imageUrl: 'https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/DAP-F-04-63287.0001.jpg',
+    author: 'Biblioteca Pública Piloto',
+    tags: ['paisaje', 'comunidad']
   }
 ];
 
 export function Archivo() {
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedYear, setSelectedYear] = useState<string>('');
-  const [selectedLocation, setSelectedLocation] = useState<string>('');
-
   const [selectedPhoto, setSelectedPhoto] = useState<Photograph | null>(null);
   const [showOriginal, setShowOriginal] = useState(false);
 
-  const { data: ARCHIVE_PHOTOS, loading, error } = useFirestoreCollection<Photograph>('photographs');
-
-  const photosToDisplay = ARCHIVE_PHOTOS.length > 0 ? ARCHIVE_PHOTOS : DEFAULT_PHOTOS;
-
-  const filteredPhotos = photosToDisplay.filter(photo => {
-    const matchesSearch = photo.title?.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          (photo.tags || []).some(t => t.toLowerCase().includes(searchQuery.toLowerCase()));
-    const matchesYear = selectedYear ? photo.year === selectedYear : true;
-    const matchesLocation = selectedLocation ? photo.location === selectedLocation : true;
-    
-    return matchesSearch && matchesYear && matchesLocation;
-  });
+  const photosToDisplay = DEFAULT_PHOTOS;
 
   return (
     <div className="min-h-screen pt-32 px-6 md:px-12 max-w-7xl mx-auto">
@@ -129,97 +131,9 @@ export function Archivo() {
         transition={{ duration: 0.8 }}
       >
         <h1 className="font-editorial text-5xl md:text-7xl mb-4">Archivo Fotográfico</h1>
-        <p className="font-light text-foreground/80 max-w-2xl text-lg mb-12">
+        <p className="font-light text-foreground/80 max-w-2xl text-lg mb-16">
           Explora la memoria visual de Manrique. Un archivo vivo construido por la comunidad.
         </p>
-      </motion.div>
-
-      {/* Advanced Search Bar */}
-      <motion.div 
-        className="bg-muted/30 p-4 md:p-6 mb-12 border border-foreground/10"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
-        <div className="flex flex-col md:flex-row gap-4">
-          <div className="relative flex-1">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-foreground/50" size={20} />
-            <input 
-              type="text" 
-              placeholder="Buscar por palabra clave..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-background border border-foreground/20 text-foreground px-12 py-3 focus:outline-none focus:border-medellin-orange transition-colors"
-            />
-          </div>
-          
-          <button 
-            onClick={() => setIsFilterOpen(!isFilterOpen)}
-            className={cn(
-              "flex items-center justify-center gap-2 px-6 py-3 border transition-colors md:w-auto w-full",
-              isFilterOpen ? "border-medellin-orange bg-medellin-orange/10 text-medellin-orange" : "border-foreground/20 hover:border-foreground/50"
-            )}
-          >
-            <Filter size={20} />
-            <span className="font-montserrat uppercase tracking-wider text-sm font-medium">Filtros</span>
-          </button>
-        </div>
-
-        <AnimatePresence>
-          {isFilterOpen && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="overflow-hidden"
-            >
-              <div className="pt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="flex items-center gap-2 font-montserrat text-xs uppercase tracking-widest text-foreground/60 mb-3">
-                    <Calendar size={14} /> Década / Año
-                  </label>
-                  <select 
-                    value={selectedYear}
-                    onChange={(e) => setSelectedYear(e.target.value)}
-                    className="w-full bg-background border border-foreground/20 text-foreground px-4 py-3 focus:outline-none focus:border-medellin-orange transition-colors appearance-none"
-                  >
-                    <option value="">Todas las épocas</option>
-                    <option value="1968">Años 60s</option>
-                    <option value="1972">Años 70s</option>
-                    <option value="1985">Años 80s</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="flex items-center gap-2 font-montserrat text-xs uppercase tracking-widest text-foreground/60 mb-3">
-                    <MapPin size={14} /> Ubicación
-                  </label>
-                  <select 
-                    value={selectedLocation}
-                    onChange={(e) => setSelectedLocation(e.target.value)}
-                    className="w-full bg-background border border-foreground/20 text-foreground px-4 py-3 focus:outline-none focus:border-medellin-orange transition-colors appearance-none"
-                  >
-                    <option value="">Todos los lugares</option>
-                    <option value="Manrique Central">Manrique Central</option>
-                    <option value="La 45">La 45</option>
-                    <option value="Cancha La González">Cancha La González</option>
-                  </select>
-                </div>
-              </div>
-              <div className="pt-6 flex justify-end">
-                <button 
-                  onClick={() => {
-                    setSearchQuery('');
-                    setSelectedYear('');
-                    setSelectedLocation('');
-                  }}
-                  className="text-sm font-montserrat uppercase tracking-wider text-foreground/60 hover:text-foreground transition-colors"
-                >
-                  Limpiar filtros
-                </button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </motion.div>
 
       {/* Gallery Grid */}
@@ -227,9 +141,9 @@ export function Archivo() {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
       >
-        {filteredPhotos.map((photo, index) => (
+        {photosToDisplay.map((photo, index) => (
           <motion.div
             key={photo.id}
             initial={{ opacity: 0, y: 20 }}
@@ -262,11 +176,6 @@ export function Archivo() {
             </div>
           </motion.div>
         ))}
-        {filteredPhotos.length === 0 && (
-          <div className="col-span-full py-20 text-center">
-            <p className="text-foreground/60 text-lg">No se encontraron fotografías con esos filtros.</p>
-          </div>
-        )}
       </motion.div>
 
       {/* Lightbox Modal */}

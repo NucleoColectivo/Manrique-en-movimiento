@@ -14,14 +14,14 @@ export function Home() {
   return (
     <div className="relative bg-background">
       {/* Hero Section */}
-      <section className="bg-white min-h-[calc(100svh-76px)] pt-[20px] md:pt-[40px] pb-12 flex flex-col justify-center items-center relative overflow-hidden" id="inicio">
+      <section className="bg-white min-h-[calc(100svh-76px)] pt-[100px] md:pt-[120px] pb-12 flex flex-col justify-center items-center relative overflow-hidden" id="inicio">
         
         {/* Logo (Top, subtle overlap with negative margin) */}
         <motion.div 
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="relative z-10 w-[85vw] md:w-[55vw] max-w-[750px] mx-auto -mb-[8%] md:-mb-[10%] drop-shadow-sm pointer-events-none"
+          className="relative z-10 w-[85vw] md:w-[55vw] max-w-[750px] mx-auto -mb-[2%] md:-mb-[4%] drop-shadow-sm pointer-events-none"
         >
           <img 
             src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/logospng/logo_home.png" 
@@ -31,7 +31,7 @@ export function Home() {
         </motion.div>
 
         {/* Main Image with breathing animation */}
-        <div className="relative w-full max-w-[1400px] mx-auto px-4 z-0">
+        <div className="relative w-full max-w-[1120px] mx-auto px-4 z-0">
           <motion.img 
             animate={{ scale: [1, 1.015], y: [0, -5] }}
             transition={{ duration: 11, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
@@ -41,8 +41,8 @@ export function Home() {
           />
         </div>
 
-        {/* Text Area (Bottom, subtle overlap with negative margin) */}
-        <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 relative z-20 -mt-[10%] md:-mt-[12%]">
+        {/* Text Area (Bottom) */}
+        <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 relative z-20 mt-4 md:mt-2">
           {/* Desktop Text */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
