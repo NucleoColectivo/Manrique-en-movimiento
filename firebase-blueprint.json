@@ -1,0 +1,233 @@
+{
+  "collections": [
+    {
+      "name": "photographs",
+      "description": "Historical photographs of Manrique.",
+      "securityRules": {
+        "read": "true",
+        "create": "request.auth != null",
+        "update": "request.auth != null",
+        "delete": "request.auth != null"
+      },
+      "schema": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "imageUrl": { "type": "string" },
+          "originalUrl": { "type": "string" },
+          "year": { "type": "number" },
+          "decade": { "type": "number" },
+          "locationId": { "type": "string" },
+          "authorId": { "type": "string" },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "eventId": { "type": "string" },
+          "createdAt": { "type": "timestamp" },
+          "updatedAt": { "type": "timestamp" }
+        },
+        "required": ["title", "imageUrl", "createdAt"]
+      }
+    },
+    {
+      "name": "stories",
+      "description": "Oral histories and testimonies.",
+      "securityRules": {
+        "read": "true",
+        "create": "request.auth != null",
+        "update": "request.auth != null",
+        "delete": "request.auth != null"
+      },
+      "schema": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "content": { "type": "string" },
+          "audioUrl": { "type": "string" },
+          "videoUrl": { "type": "string" },
+          "authorId": { "type": "string" },
+          "photographIds": { "type": "array", "items": { "type": "string" } },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "isPublished": { "type": "boolean" },
+          "createdAt": { "type": "timestamp" },
+          "updatedAt": { "type": "timestamp" }
+        },
+        "required": ["title", "content", "createdAt"]
+      }
+    },
+    {
+      "name": "people",
+      "description": "People from the neighborhood.",
+      "securityRules": {
+        "read": "true",
+        "create": "request.auth != null",
+        "update": "request.auth != null",
+        "delete": "request.auth != null"
+      },
+      "schema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "biography": { "type": "string" },
+          "birthYear": { "type": "number" },
+          "deathYear": { "type": "number" },
+          "familyId": { "type": "string" },
+          "createdAt": { "type": "timestamp" },
+          "updatedAt": { "type": "timestamp" }
+        },
+        "required": ["name", "createdAt"]
+      }
+    },
+    {
+      "name": "families",
+      "description": "Families from the neighborhood.",
+      "securityRules": {
+        "read": "true",
+        "create": "request.auth != null",
+        "update": "request.auth != null",
+        "delete": "request.auth != null"
+      },
+      "schema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "createdAt": { "type": "timestamp" },
+          "updatedAt": { "type": "timestamp" }
+        },
+        "required": ["name", "createdAt"]
+      }
+    },
+    {
+      "name": "locations",
+      "description": "Important places in Manrique.",
+      "securityRules": {
+        "read": "true",
+        "create": "request.auth != null",
+        "update": "request.auth != null",
+        "delete": "request.auth != null"
+      },
+      "schema": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "lat": { "type": "number" },
+          "lng": { "type": "number" },
+          "year": { "type": "string" },
+          "imageUrl": { "type": "string" },
+          "createdAt": { "type": "timestamp" },
+          "updatedAt": { "type": "timestamp" }
+        },
+        "required": ["title", "lat", "lng", "createdAt"]
+      }
+    },
+    {
+      "name": "events",
+      "description": "Historical events.",
+      "securityRules": {
+        "read": "true",
+        "create": "request.auth != null",
+        "update": "request.auth != null",
+        "delete": "request.auth != null"
+      },
+      "schema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "date": { "type": "string" },
+          "decade": { "type": "number" },
+          "createdAt": { "type": "timestamp" },
+          "updatedAt": { "type": "timestamp" }
+        },
+        "required": ["name", "createdAt"]
+      }
+    },
+    {
+      "name": "authors",
+      "description": "Authors of photographs and stories.",
+      "securityRules": {
+        "read": "true",
+        "create": "request.auth != null",
+        "update": "request.auth != null",
+        "delete": "request.auth != null"
+      },
+      "schema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "bio": { "type": "string" },
+          "createdAt": { "type": "timestamp" },
+          "updatedAt": { "type": "timestamp" }
+        },
+        "required": ["name", "createdAt"]
+      }
+    },
+    {
+      "name": "workshops",
+      "description": "Workshops and activities.",
+      "securityRules": {
+        "read": "true",
+        "create": "request.auth != null",
+        "update": "request.auth != null",
+        "delete": "request.auth != null"
+      },
+      "schema": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "date": { "type": "string" },
+          "time": { "type": "string" },
+          "location": { "type": "string" },
+          "materials": { "type": "array", "items": { "type": "string" } },
+          "isActive": { "type": "boolean" },
+          "imageUrl": { "type": "string" },
+          "createdAt": { "type": "timestamp" },
+          "updatedAt": { "type": "timestamp" }
+        },
+        "required": ["title", "createdAt"]
+      }
+    },
+    {
+      "name": "tags",
+      "description": "Tags for categorization.",
+      "securityRules": {
+        "read": "true",
+        "create": "request.auth != null",
+        "update": "request.auth != null",
+        "delete": "request.auth != null"
+      },
+      "schema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "createdAt": { "type": "timestamp" },
+          "updatedAt": { "type": "timestamp" }
+        },
+        "required": ["name", "createdAt"]
+      }
+    },
+    {
+      "name": "documents",
+      "description": "Historical documents and resources.",
+      "securityRules": {
+        "read": "true",
+        "create": "request.auth != null",
+        "update": "request.auth != null",
+        "delete": "request.auth != null"
+      },
+      "schema": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "url": { "type": "string" },
+          "type": { "type": "string" },
+          "createdAt": { "type": "timestamp" },
+          "updatedAt": { "type": "timestamp" }
+        },
+        "required": ["title", "url", "createdAt"]
+      }
+    }
+  ]
+}
