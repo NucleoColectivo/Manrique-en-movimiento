@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
+import { Calendar as CalendarIcon, MapPin } from 'lucide-react';
 import { AnimatedImage } from '../components/ui/AnimatedImage';
 
 const GALLERY = [
@@ -103,22 +104,126 @@ export function Home() {
         </div>
       </section>
 
+      {/* Workshop Banner */}
+      <section className="bg-background py-[80px] md:py-[115px]">
+        <div className="w-[min(calc(100%-40px),1380px)] mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="bg-blue rounded-[26px] overflow-hidden flex flex-col md:flex-row relative"
+          >
+            <div className="p-8 md:p-14 lg:p-20 flex-1 flex flex-col justify-center relative z-10 text-white">
+              <div className="inline-block bg-orange text-white px-3 py-1 rounded-full text-[0.65rem] font-extrabold uppercase tracking-[0.2em] w-max mb-6">
+                Taller Presencial
+              </div>
+              <h2 className="text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[0.85] font-barlow uppercase font-extrabold mb-6">
+                Memoria, Creatividad<br/>e Inteligencia Artificial
+              </h2>
+              <p className="text-white/90 text-lg md:text-xl font-dm mb-8 max-w-xl">
+                Aprende a usar la IA para reconstruir fotografías y contar las historias de Manrique. No necesitas experiencia previa. Entrada gratuita.
+              </p>
+              <div className="flex flex-wrap items-center gap-4">
+                 <Link to="/talleres" className="inline-flex items-center gap-2.5 bg-white text-blue border-0 rounded-full py-[15px] px-[28px] font-extrabold cursor-pointer hover:bg-orange hover:text-white transition-colors">
+                  Más Información →
+                </Link>
+                <a href="https://wa.me/573196242779" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 bg-transparent border border-white/30 text-white rounded-full py-[15px] px-[28px] font-extrabold cursor-pointer hover:bg-white/10 transition-colors">
+                  Inscribirse por WhatsApp
+                </a>
+              </div>
+            </div>
+            
+            {/* Banner Image */}
+            <div className="md:w-[40%] xl:w-[45%] relative min-h-[400px] md:min-h-full bg-white flex items-center justify-center p-8 md:p-12">
+              <AnimatedImage 
+                src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/talleres/talleres_ok_01.png"
+                alt="Taller de IA"
+                wrapperClassName="relative w-full h-full bg-transparent"
+                className="w-full h-full object-contain object-center"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </motion.div>
+
+          {/* Convocatoria Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="border-[5px] border-[#1112] rounded-[26px] overflow-hidden flex flex-col lg:flex-row relative mt-12 bg-paper"
+          >
+            {/* Image side (Poster) */}
+            <div className="lg:w-[45%] xl:w-[40%] bg-white relative min-h-[400px] lg:min-h-full border-b lg:border-b-0 lg:border-r border-[#1112] flex items-center justify-center p-8 lg:p-12">
+               <AnimatedImage 
+                  src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/talleres/convocatorias_01.png" 
+                  alt="Convocatoria historias familiares" 
+                  wrapperClassName="relative w-full h-full bg-transparent"
+                  className="w-full h-full object-contain object-center"
+                  referrerPolicy="no-referrer"
+                />
+            </div>
+
+            {/* Content side */}
+            <div className="lg:w-[55%] xl:w-[60%] p-8 md:p-14 lg:p-20 flex flex-col justify-center">
+              <div className="inline-block bg-orange/10 text-orange px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-widest w-max mb-6">
+                Convocatoria Permanente
+              </div>
+              
+              <h2 className="text-[clamp(2.2rem,4vw,4rem)] leading-[0.9] uppercase font-extrabold font-barlow text-ink mb-6">
+                Buscamos las historias que aún viven en los álbumes familiares
+              </h2>
+              
+              <div className="space-y-3 mb-8 text-sm md:text-base text-ink font-medium">
+                <div className="flex items-center gap-3">
+                  <CalendarIcon size={18} className="text-orange" />
+                  <span>Convocatoria Abierta | 2026</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <MapPin size={18} className="text-orange" />
+                  <span>Comuna 3, Manrique</span>
+                </div>
+              </div>
+              
+              <p className="text-ink/80 mb-10 text-base md:text-lg font-dm leading-relaxed max-w-2xl">
+                ¿Conoces a un adulto mayor que haya vivido toda su vida en Manrique, conserve fotografías de su juventud y tenga historias para contar? Buscamos fotografías familiares y del barrio de los años 40, 50, 60 y 70 para un documental.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-auto">
+                <a 
+                  href="https://wa.me/573196242779"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 bg-[#124C65] text-white border-0 rounded-full py-[15px] px-[24px] font-extrabold cursor-pointer hover:bg-blue transition-colors"
+                >
+                  Escríbenos al WhatsApp →
+                </a>
+                <span className="font-extrabold text-orange uppercase tracking-widest text-sm">
+                  Participa
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Gallery / Archive preview section matching reference design */}
-      <section className="py-[80px] md:py-[115px] bg-background">
+      <section className="py-[80px] md:py-[115px] bg-ink">
         <div className="w-[min(calc(100%-40px),1380px)] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-12 items-end mb-12">
             <div>
               <div className="text-[0.7rem] uppercase tracking-[0.2em] font-extrabold text-orange">07 · Galería</div>
-              <h2 className="text-[clamp(3.5rem,7vw,7.5rem)] my-2">Fragmentos<br/>del <span className="text-orange">archivo.</span></h2>
+              <h2 className="text-[clamp(3.5rem,7vw,7.5rem)] my-2 text-white">Fragmentos<br/>del <span className="text-orange">archivo.</span></h2>
             </div>
-            <p className="text-muted text-[1.1rem] max-w-[680px]">
+            <p className="text-white/70 text-[1.1rem] max-w-[680px]">
               La inteligencia artificial hace posible lo que el tiempo había borrado: devuelve el color a las imágenes en blanco y negro, reconstruye los detalles, y da movimiento sutil a los rostros congelados.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-3">
             {GALLERY.map((src, i) => (
-              <figure key={i} className={`m-0 overflow-hidden rounded-[18px] bg-white relative group ${i === 0 ? 'md:row-span-2' : ''}`}>
+              <figure key={i} className={`m-0 overflow-hidden rounded-[18px] bg-[#222] relative group ${i === 0 ? 'md:row-span-2' : ''}`}>
                 <AnimatedImage 
                   src={src} 
                   alt={`Galería ${i + 1}`} 
@@ -131,7 +236,7 @@ export function Home() {
           </div>
           
           <div className="mt-12 text-center">
-             <Link to="/archivo" className="inline-flex items-center gap-2.5 bg-transparent text-ink border border-[#1112] rounded-full py-[13px] px-[19px] font-extrabold cursor-pointer hover:bg-line transition-colors">
+             <Link to="/archivo" className="inline-flex items-center gap-2.5 bg-transparent text-white border border-white/20 rounded-full py-[13px] px-[19px] font-extrabold cursor-pointer hover:bg-white/10 transition-colors">
               Ver Archivo Completo →
             </Link>
           </div>
