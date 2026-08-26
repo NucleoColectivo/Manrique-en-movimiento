@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Calendar as CalendarIcon, MapPin } from 'lucide-react';
 import { AnimatedImage } from '../components/ui/AnimatedImage';
+import { ImageModal } from '../components/ui/ImageModal';
 
 const GALLERY = [
   "https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/DAP-F-04-63270.0001.jpg",
@@ -12,6 +14,8 @@ const GALLERY = [
 ];
 
 export function Home() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <div className="relative bg-background">
       {/* Hero Section */}
@@ -135,11 +139,14 @@ export function Home() {
             </div>
             
             {/* Banner Image */}
-            <div className="md:w-[40%] xl:w-[45%] relative min-h-[400px] md:min-h-full bg-white flex items-center justify-center p-8 md:p-12">
+            <div 
+              className="md:w-[40%] xl:w-[45%] relative min-h-[400px] md:min-h-full bg-white flex items-center justify-center p-8 md:p-12 cursor-pointer group"
+              onClick={() => setSelectedImage("https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/talleres/talleres_ok_01.png")}
+            >
               <AnimatedImage 
                 src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/talleres/talleres_ok_01.png"
                 alt="Taller de IA"
-                wrapperClassName="relative w-full h-full bg-transparent"
+                wrapperClassName="relative w-full h-full bg-transparent transition-transform duration-500 group-hover:scale-[1.02]"
                 className="w-full h-full object-contain object-center"
                 referrerPolicy="no-referrer"
               />
@@ -155,11 +162,14 @@ export function Home() {
             className="border-[5px] border-[#1112] rounded-[26px] overflow-hidden flex flex-col lg:flex-row relative mt-12 bg-paper"
           >
             {/* Image side (Poster) */}
-            <div className="lg:w-[45%] xl:w-[40%] bg-white relative min-h-[400px] lg:min-h-full border-b lg:border-b-0 lg:border-r border-[#1112] flex items-center justify-center p-8 lg:p-12">
+            <div 
+              className="lg:w-[45%] xl:w-[40%] bg-white relative min-h-[400px] lg:min-h-full border-b lg:border-b-0 lg:border-r border-[#1112] flex items-center justify-center p-8 lg:p-12 cursor-pointer group"
+              onClick={() => setSelectedImage("https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/talleres/convocatorias_01.png")}
+            >
                <AnimatedImage 
                   src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/talleres/convocatorias_01.png" 
                   alt="Convocatoria historias familiares" 
-                  wrapperClassName="relative w-full h-full bg-transparent"
+                  wrapperClassName="relative w-full h-full bg-transparent transition-transform duration-500 group-hover:scale-[1.02]"
                   className="w-full h-full object-contain object-center"
                   referrerPolicy="no-referrer"
                 />
@@ -223,7 +233,11 @@ export function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-3">
             {GALLERY.map((src, i) => (
-              <figure key={i} className={`m-0 overflow-hidden rounded-[18px] bg-[#222] relative group ${i === 0 ? 'md:row-span-2' : ''}`}>
+              <figure 
+                key={i} 
+                className={`m-0 overflow-hidden rounded-[18px] bg-[#222] relative group cursor-pointer ${i === 0 ? 'md:row-span-2' : ''}`}
+                onClick={() => setSelectedImage(src)}
+              >
                 <AnimatedImage 
                   src={src} 
                   alt={`Galería ${i + 1}`} 
@@ -242,6 +256,11 @@ export function Home() {
           </div>
         </div>
       </section>
+
+      <ImageModal 
+        src={selectedImage} 
+        onClose={() => setSelectedImage(null)} 
+      />
     </div>
   );
 }

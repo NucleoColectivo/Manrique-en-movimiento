@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Calendar as CalendarIcon, MapPin, ArrowRight } from 'lucide-react';
 import { AnimatedImage } from '../components/ui/AnimatedImage';
+import { ImageModal } from '../components/ui/ImageModal';
 
 const REAL_EVENTS = [
   {
@@ -32,6 +34,8 @@ const REAL_EVENTS = [
 ];
 
 export function Talleres() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <div className="min-h-screen pt-32 pb-20 bg-background">
       <div className="w-[min(calc(100%-40px),1380px)] mx-auto">
@@ -61,11 +65,14 @@ export function Talleres() {
               className="bg-paper border-[5px] border-[#1112] rounded-[18px] overflow-hidden flex flex-col lg:flex-row"
             >
               {/* Image side (Poster) */}
-              <div className="lg:w-[45%] xl:w-[40%] bg-white relative min-h-[400px] lg:min-h-full border-b lg:border-b-0 lg:border-r border-[#1112] flex items-center justify-center p-8 lg:p-12">
+              <div 
+                className="lg:w-[45%] xl:w-[40%] bg-white relative min-h-[400px] lg:min-h-full border-b lg:border-b-0 lg:border-r border-[#1112] flex items-center justify-center p-8 lg:p-12 cursor-pointer group"
+                onClick={() => setSelectedImage(event.imageUrl)}
+              >
                  <AnimatedImage 
                     src={event.imageUrl} 
                     alt={event.title} 
-                    wrapperClassName="relative w-full h-full bg-transparent"
+                    wrapperClassName="relative w-full h-full bg-transparent transition-transform duration-500 group-hover:scale-[1.02]"
                     className="w-full h-full object-contain object-center"
                     referrerPolicy="no-referrer"
                   />
@@ -114,6 +121,11 @@ export function Talleres() {
           ))}
         </div>
       </div>
+
+      <ImageModal 
+        src={selectedImage} 
+        onClose={() => setSelectedImage(null)} 
+      />
     </div>
   );
 }
