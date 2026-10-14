@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { motion, useScroll, useSpring } from 'motion/react';
 import { PlayCircle, Image as ImageIcon, Users, ArchiveRestore } from 'lucide-react';
 import { BeforeAfterSlider } from '../components/BeforeAfterSlider';
 import { AnimatedImage } from '../components/ui/AnimatedImage';
+import { VideoModal } from '../components/ui/VideoModal';
 
 const TEAM = [
   { name: 'Carlos Andrés Londoño Ruiz', role: 'Director Creativo & IA Manager' },
@@ -10,6 +12,7 @@ const TEAM = [
 ];
 
 export function Proyecto() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -103,7 +106,17 @@ export function Proyecto() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="rounded-[26px] overflow-hidden bg-white shadow-[0_25px_80px_#0002] mb-24 relative group cursor-pointer"
+          onClick={() => setIsVideoOpen(true)}
+          className="rounded-[26px] overflow-hidden bg-white shadow-[0_25px_80px_#0002] mb-24 relative group cursor-pointer border-2 border-transparent hover:border-orange/60 transition-all duration-300"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              setIsVideoOpen(true);
+            }
+          }}
+          aria-label="Reproducir cortometraje Manrique, Memoria en Movimiento"
         >
           <div className="absolute inset-0 z-0">
              <AnimatedImage 
@@ -113,12 +126,23 @@ export function Proyecto() {
                 className="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-1000"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-ink/70 pointer-events-none" />
+              <div className="absolute inset-0 bg-ink/75 group-hover:bg-ink/65 transition-colors pointer-events-none" />
           </div>
-          <div className="relative z-10 flex flex-col items-center text-center p-[80px_20px]">
-            <PlayCircle size={64} className="text-orange mb-6 group-hover:scale-110 transition-transform duration-500" />
-            <h2 className="text-[clamp(3rem,5vw,5rem)] text-white my-2">Ver Documental</h2>
-            <p className="text-white/80 max-w-md text-[1.1rem]">Cortometraje "Manrique, Memoria en Movimiento" (4-5 min) que integra fotografías restauradas con los testimonios de nuestros adultos mayores.</p>
+          <div className="relative z-10 flex flex-col items-center text-center p-[60px_20px] md:p-[80px_20px]">
+            <div className="inline-block bg-orange/90 text-white px-3.5 py-1 rounded-full text-xs font-extrabold uppercase tracking-widest mb-6 backdrop-blur-sm shadow-md">
+              Disponible en YouTube
+            </div>
+            <div className="relative mb-6">
+              <div className="absolute -inset-3 bg-orange/30 rounded-full blur-xl group-hover:bg-orange/50 transition-all opacity-70 group-hover:scale-125" />
+              <PlayCircle size={72} className="relative text-orange group-hover:scale-110 group-hover:text-white transition-all duration-300 drop-shadow-lg" />
+            </div>
+            <h2 className="text-[clamp(3rem,5vw,5rem)] text-white my-2 group-hover:text-gold transition-colors">Ver Documental</h2>
+            <p className="text-white/80 max-w-lg text-[1.05rem] md:text-[1.15rem] leading-relaxed mb-6 font-medium">
+              Cortometraje "Manrique, Memoria en Movimiento" (4-5 min) que integra fotografías restauradas con los testimonios de nuestros adultos mayores.
+            </p>
+            <div className="inline-flex items-center gap-2 bg-orange text-white px-6 py-3 rounded-full font-extrabold text-sm uppercase tracking-wider shadow-lg group-hover:bg-white group-hover:text-ink transition-colors">
+              Reproducir ahora →
+            </div>
           </div>
         </motion.div>
 
@@ -141,6 +165,13 @@ export function Proyecto() {
 
       </div>
     </div>
+
+    <VideoModal 
+      isOpen={isVideoOpen} 
+      onClose={() => setIsVideoOpen(false)} 
+      videoId="dJDJZqNPbcE"
+      title="Cortometraje: Manrique, Memoria en Movimiento"
+    />
     </>
   );
 }

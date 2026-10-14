@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { Calendar as CalendarIcon, MapPin } from 'lucide-react';
+import { Calendar as CalendarIcon, MapPin, PlayCircle } from 'lucide-react';
 import { AnimatedImage } from '../components/ui/AnimatedImage';
 import { ImageModal } from '../components/ui/ImageModal';
+import { VideoModal } from '../components/ui/VideoModal';
 
 const GALLERY = [
   "https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/DAP-F-04-63270.0001.jpg",
@@ -15,6 +16,7 @@ const GALLERY = [
 
 export function Home() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
     <div className="relative bg-background">
@@ -62,9 +64,19 @@ export function Home() {
             <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-ink max-w-[560px] font-medium mb-6">
               Fotografías, voces, lugares y nuevas tecnologías se encuentran para contar la memoria de Manrique desde la comunidad.
             </p>
-            <Link to="/archivo" className="inline-flex items-center gap-2.5 bg-blue text-white border-0 rounded-full py-[13px] px-[19px] font-extrabold cursor-pointer hover:bg-teal transition-colors drop-shadow-none">
-              Explorar el archivo →
-            </Link>
+            <div className="flex flex-wrap items-center gap-3">
+              <Link to="/archivo" className="inline-flex items-center gap-2.5 bg-blue text-white border-0 rounded-full py-[13px] px-[19px] font-extrabold cursor-pointer hover:bg-teal transition-colors drop-shadow-none">
+                Explorar el archivo →
+              </Link>
+              <button
+                type="button"
+                onClick={() => setIsVideoOpen(true)}
+                className="inline-flex items-center gap-2.5 bg-ink text-white hover:bg-orange border-0 rounded-full py-[13px] px-[20px] font-extrabold cursor-pointer transition-all shadow-md group"
+              >
+                <PlayCircle size={18} className="text-orange group-hover:text-white transition-colors" />
+                <span>Ver documental</span>
+              </button>
+            </div>
           </motion.div>
 
           {/* Mobile Text */}
@@ -76,9 +88,19 @@ export function Home() {
             <p className="text-[1rem] text-ink max-w-[560px] font-medium mb-6">
               Fotografías, voces, lugares y nuevas tecnologías se encuentran para contar la memoria de Manrique desde la comunidad.
             </p>
-            <Link to="/archivo" className="inline-flex items-center gap-2.5 bg-blue text-white border-0 rounded-full py-[13px] px-[19px] font-extrabold cursor-pointer hover:bg-teal transition-colors">
-              Explorar el archivo →
-            </Link>
+            <div className="flex flex-wrap items-center gap-3">
+              <Link to="/archivo" className="inline-flex items-center gap-2.5 bg-blue text-white border-0 rounded-full py-[13px] px-[19px] font-extrabold cursor-pointer hover:bg-teal transition-colors">
+                Explorar el archivo →
+              </Link>
+              <button
+                type="button"
+                onClick={() => setIsVideoOpen(true)}
+                className="inline-flex items-center gap-2 bg-ink text-white hover:bg-orange border-0 rounded-full py-[13px] px-[18px] font-extrabold cursor-pointer transition-all shadow-md group"
+              >
+                <PlayCircle size={18} className="text-orange group-hover:text-white transition-colors" />
+                <span>Ver documental</span>
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -260,6 +282,13 @@ export function Home() {
       <ImageModal 
         src={selectedImage} 
         onClose={() => setSelectedImage(null)} 
+      />
+
+      <VideoModal
+        isOpen={isVideoOpen}
+        onClose={() => setIsVideoOpen(false)}
+        videoId="dJDJZqNPbcE"
+        title="Cortometraje: Manrique, Memoria en Movimiento"
       />
     </div>
   );
