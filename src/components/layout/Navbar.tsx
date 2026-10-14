@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Search } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'motion/react';
+import { InstitutionalTopRightLogo } from './InstitutionalCredits';
 
 const NAV_LINKS = [
   { label: 'Inicio', href: '/' },
@@ -47,43 +48,57 @@ export function Navbar() {
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-colors duration-300 px-5 py-3',
-          isScrolled ? 'bg-white/90 backdrop-blur-md border-b border-[#1112]' : 'bg-white'
+          isScrolled ? 'bg-white/95 backdrop-blur-md border-b border-[#1112] shadow-sm' : 'bg-white'
         )}
       >
         <div className="w-[min(100%,1380px)] mx-auto flex items-center justify-between gap-5">
           <Link to="/" className="flex flex-col z-50 block">
             <img 
-              src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/logospng/logo_home.png" 
+              src="/img/logospng/logo_home.png" 
               alt="Manrique, Memoria en Movimiento" 
               className="h-8 md:h-11 w-auto max-w-[150px] md:max-w-[190px] object-contain" 
             />
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center space-x-6 text-[0.75rem] font-bold uppercase tracking-[0.08em]">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={cn(
-                  "transition-colors hover:text-orange",
-                  location.pathname === link.href ? "text-orange" : "text-ink"
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <div className="flex items-center space-x-4 border-l border-[#1112] pl-6 ml-2">
-              <button aria-label="Buscar" className="text-ink hover:text-orange transition-colors">
-                <Search size={18} />
-              </button>
-            </div>
-          </nav>
+          {/* Desktop Nav + Official PP Cultura Top-Right Mark */}
+          <div className="hidden lg:flex items-center space-x-6">
+            <nav className="flex items-center space-x-6 text-[0.75rem] font-bold uppercase tracking-[0.08em]">
+              {NAV_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={cn(
+                    "transition-colors hover:text-orange",
+                    location.pathname === link.href ? "text-orange" : "text-ink"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className="flex items-center space-x-4 border-l border-[#1112] pl-6 ml-2">
+                <button aria-label="Buscar" className="text-ink hover:text-orange transition-colors">
+                  <Search size={18} />
+                </button>
+              </div>
+            </nav>
 
-          {/* Mobile Menu Toggle */}
-          <div className="lg:hidden flex items-center space-x-4 z-50">
+            {/* Official PP Cultura Logo in Top-Right Position */}
+            <div className="border-l border-ink/15 pl-5 ml-2">
+              <InstitutionalTopRightLogo />
+            </div>
+          </div>
+
+          {/* Mobile Menu & Institutional Logo */}
+          <div className="lg:hidden flex items-center space-x-3.5 z-50">
+            <img
+              src="/img/logospng/logo pp.png"
+              alt="Presupuesto Participativo Cultura"
+              width={34}
+              height={34}
+              className="h-8 w-auto object-contain"
+            />
             <button
-              className="text-ink hover:text-orange transition-colors"
+              className="text-ink hover:text-orange transition-colors p-1"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
             >
@@ -101,36 +116,62 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: '-100%' }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center space-y-8"
+            className="fixed inset-0 z-40 bg-white flex flex-col justify-between p-8 pt-24 overflow-y-auto"
           >
-            {NAV_LINKS.map((link, i) => (
-              <motion.div
-                key={link.href}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 * i + 0.2 }}
-              >
-                <Link
-                  to={link.href}
-                  className={cn(
-                    "font-barlow text-5xl transition-colors hover:text-orange block text-center uppercase font-bold",
-                    location.pathname === link.href ? "text-orange" : "text-ink"
-                  )}
+            <div className="flex flex-col items-center space-y-6">
+              {NAV_LINKS.map((link, i) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.08 * i + 0.15 }}
                 >
-                  {link.label}
-                </Link>
-              </motion.div>
-            ))}
-            <motion.button 
+                  <Link
+                    to={link.href}
+                    className={cn(
+                      "font-barlow text-4xl sm:text-5xl transition-colors hover:text-orange block text-center uppercase font-bold",
+                      location.pathname === link.href ? "text-orange" : "text-ink"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.button 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+                aria-label="Buscar" 
+                className="flex items-center space-x-3 text-ink hover:text-orange transition-colors mt-4"
+              >
+                <Search size={22} />
+                <span className="font-dm text-sm tracking-widest uppercase font-bold">Buscar en archivo</span>
+              </motion.button>
+            </div>
+
+            {/* Mobile Institutional Footer */}
+            <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-              aria-label="Buscar" 
-              className="flex items-center space-x-3 text-ink hover:text-orange transition-colors mt-8"
+              transition={{ delay: 0.7 }}
+              className="mt-8 pt-6 border-t border-ink/10 flex flex-col items-center gap-4 text-center"
             >
-              <Search size={24} />
-              <span className="font-dm text-sm tracking-widest uppercase font-bold">Buscar en archivo</span>
-            </motion.button>
+              <div className="flex items-center justify-center gap-6">
+                <img
+                  src="/img/logospng/logo pp.png"
+                  alt="Presupuesto Participativo Cultura"
+                  className="h-10 w-auto object-contain"
+                />
+                <img
+                  src="/img/logospng/logo alcaldia.png"
+                  alt="Alcaldía de Medellín"
+                  className="h-10 w-auto object-contain"
+                />
+              </div>
+              <p className="text-[11px] text-ink/70 max-w-sm font-montserrat">
+                “Proyecto beneficiado con recursos del programa de Planeación del Desarrollo Local y Presupuesto Participativo de Cultura.”
+              </p>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

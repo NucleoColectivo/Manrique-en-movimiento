@@ -31,7 +31,7 @@ export function Home() {
           className="relative z-10 w-[85vw] md:w-[55vw] max-w-[750px] mx-auto -mb-[2%] md:-mb-[4%] drop-shadow-sm pointer-events-none"
         >
           <img 
-            src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/logospng/logo_home.png" 
+            src="/img/logospng/logo_home.png" 
             alt="Manrique, Memoria en Movimiento" 
             className="w-full h-auto object-contain"
           />
@@ -142,21 +142,18 @@ export function Home() {
           >
             <div className="p-8 md:p-14 lg:p-20 flex-1 flex flex-col justify-center relative z-10 text-white">
               <div className="inline-block bg-orange text-white px-3 py-1 rounded-full text-[0.65rem] font-extrabold uppercase tracking-[0.2em] w-max mb-6">
-                Taller Presencial
+                Taller Realizado · Registro y Memoria
               </div>
               <h2 className="text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[0.85] font-barlow uppercase font-extrabold mb-6">
                 Memoria, Creatividad<br/>e Inteligencia Artificial
               </h2>
               <p className="text-white/90 text-lg md:text-xl font-dm mb-8 max-w-xl">
-                Aprende a usar la IA para reconstruir fotografías y contar las historias de Manrique. No necesitas experiencia previa. Entrada gratuita.
+                Los talleres comunitarios en la Casa de la Cultura Manrique fueron realizados con gran participación comunitaria. Explora el registro fotográfico del proceso.
               </p>
               <div className="flex flex-wrap items-center gap-4">
                  <Link to="/talleres" className="inline-flex items-center gap-2.5 bg-white text-blue border-0 rounded-full py-[15px] px-[28px] font-extrabold cursor-pointer hover:bg-orange hover:text-white transition-colors">
-                  Más Información →
+                  Ver Registro Fotográfico →
                 </Link>
-                <a href="https://wa.me/573196242779" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 bg-transparent border border-white/30 text-white rounded-full py-[15px] px-[28px] font-extrabold cursor-pointer hover:bg-white/10 transition-colors">
-                  Inscribirse por WhatsApp
-                </a>
               </div>
             </div>
             
@@ -223,18 +220,65 @@ export function Home() {
               </p>
               
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-auto">
-                <a 
-                  href="https://wa.me/573196242779"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link 
+                  to="/talleres"
                   className="inline-flex items-center gap-2.5 bg-[#124C65] text-white border-0 rounded-full py-[15px] px-[24px] font-extrabold cursor-pointer hover:bg-blue transition-colors"
                 >
-                  Escríbenos al WhatsApp →
-                </a>
+                  Ver Registro de Convocatoria →
+                </Link>
                 <span className="font-extrabold text-orange uppercase tracking-widest text-sm">
-                  Participa
+                  Archivo en Custodia
                 </span>
               </div>
+            </div>
+          </motion.div>
+
+          {/* Socialización del Proyecto Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="bg-[#124C65] rounded-[26px] overflow-hidden flex flex-col md:flex-row relative mt-12 text-white"
+          >
+            <div className="p-8 md:p-14 lg:p-20 flex-1 flex flex-col justify-center relative z-10">
+              <div className="inline-block bg-orange text-white px-3 py-1 rounded-full text-[0.65rem] font-extrabold uppercase tracking-[0.2em] w-max mb-6">
+                Socialización Comunitaria · Entrega de Resultados
+              </div>
+              <h2 className="text-[clamp(2.3rem,4.2vw,4.2rem)] leading-[0.88] font-barlow uppercase font-extrabold mb-6">
+                Socialización del Proyecto<br/>Manrique Memoria en Movimiento
+              </h2>
+              <div className="space-y-3 mb-8 text-sm md:text-base text-white/90 font-medium">
+                <div className="flex items-center gap-3">
+                  <CalendarIcon size={18} className="text-orange" />
+                  <span>Martes 20 de Octubre, 2026 • 6:00 p. m.</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <MapPin size={18} className="text-orange" />
+                  <span>Casa de la Cultura Manrique - La 45 (Carrera 45 # 72-62)</span>
+                </div>
+              </div>
+              <p className="text-white/90 text-lg font-dm mb-8 max-w-xl">
+                Jornada comunitaria de cierre: presentación de resultados, proyección de cápsulas audiovisuales, exposición de fotografías históricas restauradas y diálogo abierto con los habitantes del territorio.
+              </p>
+              <div className="flex flex-wrap items-center gap-4">
+                <Link to="/talleres" className="inline-flex items-center gap-2.5 bg-white text-[#124C65] border-0 rounded-full py-[15px] px-[28px] font-extrabold cursor-pointer hover:bg-orange hover:text-white transition-colors">
+                  Ver Afiches y Registro →
+                </Link>
+              </div>
+            </div>
+            
+            {/* Poster side */}
+            <div 
+              className="md:w-[40%] xl:w-[45%] relative min-h-[420px] md:min-h-full bg-white flex items-center justify-center p-8 md:p-12 cursor-pointer group"
+              onClick={() => setSelectedImage("/img/talleres/socializacion_01.png")}
+            >
+              <AnimatedImage 
+                src="/img/talleres/socializacion_01.png"
+                alt="Afiche de Socialización Manrique Memoria en Movimiento"
+                wrapperClassName="relative w-full h-full bg-transparent transition-transform duration-500 group-hover:scale-[1.02]"
+                className="w-full h-full object-contain object-center"
+              />
             </div>
           </motion.div>
         </div>

@@ -95,8 +95,10 @@ export function Proyecto() {
           
           <div className="rounded-[24px] overflow-hidden border border-[#1112] bg-[#222]">
             <BeforeAfterSlider 
-              beforeImage="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/DAP-F-04-63270.0001.jpg"
-              afterImage="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/DAP-F-04-63270.0001.jpg" 
+              beforeImage="/img/ANTES Y DESPUES/TEATRO MANRIQUE 1/Captura de pantalla 2026-08-10 212607.png"
+              afterImage="/img/ANTES Y DESPUES/TEATRO MANRIQUE 1/Captura_de_pantalla_2026-08-10_212607.png_202609021941.jpeg"
+              beforeLabel="ORIGINAL · CINE MANRIQUE"
+              afterLabel="RESTAURADA 2K"
             />
           </div>
           <p className="text-[0.82rem] text-muted mt-4 text-center font-bold">Comparador interactivo · mueve la línea central.</p>

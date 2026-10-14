@@ -6,6 +6,8 @@ import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from '../ThemeProvider';
 import { Instagram, Youtube, Facebook, ArrowUpRight } from 'lucide-react';
 
+import { InstitutionalCredits } from './InstitutionalCredits';
+
 export function Layout() {
   const lenisRef = useRef<Lenis | null>(null);
   const location = useLocation();
@@ -47,8 +49,8 @@ export function Layout() {
             <Outlet />
           </main>
           
-          <footer className="border-t border-foreground/10 py-16 px-6 md:px-12 mt-20">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+          <footer className="border-t border-foreground/10 pt-16 px-6 md:px-12 mt-20">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 pb-14">
               <div className="md:col-span-2">
                 <span className="font-editorial text-4xl text-foreground leading-none block mb-2">Manrique</span>
                 <span className="font-montserrat text-sm text-aged-yellow font-light tracking-wider uppercase mb-6 block">en Movimiento</span>
@@ -94,10 +96,9 @@ export function Layout() {
                 </form>
               </div>
             </div>
-            <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-foreground/10 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-foreground/50 text-xs font-montserrat uppercase tracking-widest">
-              <span>© 2026 Manrique, Memoria en Movimiento</span>
-              <span className="mt-4 md:mt-0">Proyecto PP Cultura Medellín</span>
-            </div>
+
+            {/* Bloque institucional oficial PP Cultura y Alcaldía de Medellín */}
+            <InstitutionalCredits />
           </footer>
         </div>
       </HelmetProvider>
