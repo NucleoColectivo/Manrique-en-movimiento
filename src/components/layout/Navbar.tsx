@@ -4,6 +4,7 @@ import { Menu, X, Search } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'motion/react';
 import { InstitutionalTopRightLogo } from './InstitutionalCredits';
+import { BRAND_LOGOS, handleImageFallback } from '../../constants/logos';
 
 const NAV_LINKS = [
   { label: 'Inicio', href: '/' },
@@ -54,9 +55,10 @@ export function Navbar() {
         <div className="w-[min(100%,1380px)] mx-auto flex items-center justify-between gap-5">
           <Link to="/" className="flex flex-col z-50 block">
             <img 
-              src="/img/logospng/logo_home.png" 
-              alt="Manrique, Memoria en Movimiento" 
+              src={BRAND_LOGOS.home.src} 
+              alt={BRAND_LOGOS.home.alt} 
               className="h-8 md:h-11 w-auto max-w-[150px] md:max-w-[190px] object-contain" 
+              onError={(e) => handleImageFallback(e, BRAND_LOGOS.home.fallback)}
             />
           </Link>
 
@@ -91,11 +93,12 @@ export function Navbar() {
           {/* Mobile Menu & Institutional Logo */}
           <div className="lg:hidden flex items-center space-x-3.5 z-50">
             <img
-              src="/img/logospng/logo pp.png"
-              alt="Presupuesto Participativo Cultura"
+              src={BRAND_LOGOS.pp.src}
+              alt={BRAND_LOGOS.pp.alt}
               width={34}
               height={34}
               className="h-8 w-auto object-contain"
+              onError={(e) => handleImageFallback(e, BRAND_LOGOS.pp.fallback)}
             />
             <button
               className="text-ink hover:text-orange transition-colors p-1"
@@ -158,14 +161,16 @@ export function Navbar() {
             >
               <div className="flex items-center justify-center gap-6">
                 <img
-                  src="/img/logospng/logo pp.png"
-                  alt="Presupuesto Participativo Cultura"
+                  src={BRAND_LOGOS.pp.src}
+                  alt={BRAND_LOGOS.pp.alt}
                   className="h-10 w-auto object-contain"
+                  onError={(e) => handleImageFallback(e, BRAND_LOGOS.pp.fallback)}
                 />
                 <img
-                  src="/img/logospng/logo alcaldia.png"
-                  alt="Alcaldía de Medellín"
+                  src={BRAND_LOGOS.alcaldia.src}
+                  alt={BRAND_LOGOS.alcaldia.alt}
                   className="h-10 w-auto object-contain"
+                  onError={(e) => handleImageFallback(e, BRAND_LOGOS.alcaldia.fallback)}
                 />
               </div>
               <p className="text-[11px] text-ink/70 max-w-sm font-montserrat">

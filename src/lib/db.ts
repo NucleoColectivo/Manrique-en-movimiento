@@ -1,6 +1,52 @@
 import { useState, useEffect } from 'react';
-import { collection, query, getDocs, orderBy, Timestamp, addDoc, updateDoc, deleteDoc, doc, DocumentData } from 'firebase/firestore';
-import { db } from './firebase';
+import { collection, query, getDocs, addDoc, updateDoc, deleteDoc, doc, DocumentData } from 'firebase/firestore';
+import { db, auth } from './firebase';
+
+export enum OperationType {
+  CREATE = 'create',
+  UPDATE = 'update',
+  DELETE = 'delete',
+  LIST = 'list',
+  GET = 'get',
+  WRITE = 'write',
+}
+
+export interface FirestoreErrorInfo {
+  error: string;
+  operationType: OperationType;
+  path: string | null;
+  authInfo: {
+    userId?: string | null;
+    email?: string | null;
+    emailVerified?: boolean | null;
+    isAnonymous?: boolean | null;
+    tenantId?: string | null;
+    providerInfo?: {
+      providerId?: string | null;
+      email?: string | null;
+    }[];
+  };
+}
+
+export function handleFirestoreError(error: unknown, operationType: OperationType, path: string | null) {
+  const errInfo: FirestoreErrorInfo = {
+    error: error instanceof Error ? error.message : String(error),
+    authInfo: {
+      userId: auth.currentUser?.uid,
+      email: auth.currentUser?.email,
+      emailVerified: auth.currentUser?.emailVerified,
+      isAnonymous: auth.currentUser?.isAnonymous,
+      tenantId: auth.currentUser?.tenantId,
+      providerInfo: auth.currentUser?.providerData?.map(provider => ({
+        providerId: provider.providerId,
+        email: provider.email,
+      })) || []
+    },
+    operationType,
+    path
+  };
+  return errInfo;
+}
 
 export function useFirestoreCollection<T>(collectionName: string) {
   const [data, setData] = useState<T[]>([]);
@@ -19,8 +65,8 @@ export function useFirestoreCollection<T>(collectionName: string) {
       })) as T[];
       setData(items);
     } catch (err) {
+      handleFirestoreError(err, OperationType.GET, collectionName);
       setError(err as Error);
-      console.error(`Error fetching ${collectionName}:`, err);
     } finally {
       setLoading(false);
     }
@@ -41,7 +87,7 @@ export async function addDocument(collectionName: string, data: DocumentData) {
     });
     return docRef.id;
   } catch (error) {
-    console.error("Error adding document: ", error);
+    handleFirestoreError(error, OperationType.CREATE, collectionName);
     throw error;
   }
 }
@@ -54,7 +100,7 @@ export async function updateDocument(collectionName: string, id: string, data: D
       updatedAt: new Date(),
     });
   } catch (error) {
-    console.error("Error updating document: ", error);
+    handleFirestoreError(error, OperationType.UPDATE, `${collectionName}/${id}`);
     throw error;
   }
 }
@@ -64,7 +110,8 @@ export async function deleteDocument(collectionName: string, id: string) {
     const docRef = doc(db, collectionName, id);
     await deleteDoc(docRef);
   } catch (error) {
-    console.error("Error deleting document: ", error);
+    handleFirestoreError(error, OperationType.DELETE, `${collectionName}/${id}`);
     throw error;
   }
 }
+

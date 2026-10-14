@@ -1,4 +1,5 @@
 import React from 'react';
+import { BRAND_LOGOS, handleImageFallback } from '../../constants/logos';
 
 interface InstitutionalCreditsProps {
   className?: string;
@@ -45,12 +46,13 @@ export function InstitutionalCredits({ className = '', variant = 'full' }: Insti
                 Programa
               </span>
               <img
-                src="/img/logospng/logo pp.png"
-                alt="Presupuesto Participativo Cultura - Alcaldía de Medellín"
+                src={BRAND_LOGOS.pp.src}
+                alt={BRAND_LOGOS.pp.alt}
                 width={70}
                 height={70}
                 className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform duration-200 hover:scale-105"
                 loading="lazy"
+                onError={(e) => handleImageFallback(e, BRAND_LOGOS.pp.fallback)}
               />
             </div>
 
@@ -63,12 +65,13 @@ export function InstitutionalCredits({ className = '', variant = 'full' }: Insti
                 Distrito de Medellín
               </span>
               <img
-                src="/img/logospng/logo alcaldia.png"
-                alt="Alcaldía de Medellín - Distrito de Ciencia, Tecnología e Innovación"
+                src={BRAND_LOGOS.alcaldia.src}
+                alt={BRAND_LOGOS.alcaldia.alt}
                 width={120}
                 height={92}
                 className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform duration-200 hover:scale-105"
                 loading="lazy"
+                onError={(e) => handleImageFallback(e, BRAND_LOGOS.alcaldia.fallback)}
               />
             </div>
           </div>
@@ -103,11 +106,12 @@ export function InstitutionalTopRightLogo({ className = '' }: { className?: stri
         </span>
       </div>
       <img
-        src="/img/logospng/logo pp.png"
-        alt="Presupuesto Participativo Cultura - Alcaldía de Medellín"
+        src={BRAND_LOGOS.pp.src}
+        alt={BRAND_LOGOS.pp.alt}
         width={40}
         height={40}
         className="h-8 md:h-9 w-auto object-contain transition-transform duration-200 hover:scale-105"
+        onError={(e) => handleImageFallback(e, BRAND_LOGOS.pp.fallback)}
       />
     </div>
   );

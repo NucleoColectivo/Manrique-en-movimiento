@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { Calendar as CalendarIcon, MapPin, PlayCircle } from 'lucide-react';
+import { Calendar as CalendarIcon, MapPin, PlayCircle, ExternalLink, Film, Maximize2 } from 'lucide-react';
 import { AnimatedImage } from '../components/ui/AnimatedImage';
 import { ImageModal } from '../components/ui/ImageModal';
 import { VideoModal } from '../components/ui/VideoModal';
+import { BRAND_LOGOS, handleImageFallback } from '../constants/logos';
 
 const GALLERY = [
   "https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/DAP-F-04-63270.0001.jpg",
@@ -23,83 +24,132 @@ export function Home() {
       {/* Hero Section */}
       <section className="bg-white min-h-[calc(100svh-76px)] pt-[100px] md:pt-[120px] pb-12 flex flex-col justify-center items-center relative overflow-hidden" id="inicio">
         
-        {/* Logo (Top, subtle overlap with negative margin) */}
+        {/* Logo (Top) */}
         <motion.div 
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="relative z-10 w-[85vw] md:w-[55vw] max-w-[750px] mx-auto -mb-[2%] md:-mb-[4%] drop-shadow-sm pointer-events-none"
+          className="relative z-10 w-[85vw] md:w-[50vw] max-w-[680px] mx-auto drop-shadow-sm pointer-events-none mb-4 md:mb-6"
         >
           <img 
-            src="/img/logospng/logo_home.png" 
-            alt="Manrique, Memoria en Movimiento" 
+            src={BRAND_LOGOS.home.src} 
+            alt={BRAND_LOGOS.home.alt} 
             className="w-full h-auto object-contain"
+            onError={(e) => handleImageFallback(e, BRAND_LOGOS.home.fallback)}
           />
         </motion.div>
 
-        {/* Main Image with breathing animation */}
-        <div className="relative w-full max-w-[1120px] mx-auto px-4 z-0">
-          <motion.img 
-            animate={{ scale: [1, 1.015], y: [0, -5] }}
-            transition={{ duration: 11, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
-            src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/banner_1.png" 
-            alt="Composición principal de Manrique en Movimiento" 
-            className="w-full h-auto object-contain"
-          />
-        </div>
-
-        {/* Text Area (Bottom) */}
-        <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 relative z-20 mt-4 md:mt-2">
-          {/* Desktop Text */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="hidden md:block max-w-[650px] drop-shadow-[0_2px_25px_rgba(255,255,255,0.8)]"
+        {/* Documental Oficial - Protagonista Central */}
+        <div id="documental" className="w-full max-w-[1220px] mx-auto px-4 sm:px-6 relative z-20 mb-12 scroll-mt-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-center mb-6 md:mb-8"
           >
-            <div className="text-[0.7rem] uppercase tracking-[0.2em] font-extrabold text-orange mb-2">Archivo vivo · Comuna 3 · Medellín</div>
-            <h1 className="font-editorial text-[clamp(3.8rem,6vw,7.5rem)] leading-[0.72] tracking-[0.025em] uppercase text-ink my-[10px]">
-              La memoria<br/>está en movimiento.
+            <div className="inline-flex items-center gap-2 bg-orange text-white px-4 py-1.5 rounded-full text-[0.72rem] font-extrabold uppercase tracking-[0.2em] shadow-sm mb-3">
+              <Film size={15} />
+              <span>Documental Oficial · Estreno Comuna 3</span>
+            </div>
+            <h1 className="font-editorial text-[clamp(2.6rem,5.5vw,5.8rem)] leading-[0.85] tracking-[0.02em] uppercase text-ink my-2">
+              Manrique, Memoria <span className="text-orange">en Movimiento</span>
             </h1>
-            <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-ink max-w-[560px] font-medium mb-6">
-              Fotografías, voces, lugares y nuevas tecnologías se encuentran para contar la memoria de Manrique desde la comunidad.
+            <p className="text-[clamp(1rem,1.35vw,1.25rem)] text-ink/80 max-w-[760px] mx-auto font-medium leading-relaxed">
+              Voces de adultos mayores, fotografías familiares rescatadas de los álbumes del barrio e inteligencia artificial se encuentran para revivir la memoria de la Comuna 3 de Medellín.
             </p>
-            <div className="flex flex-wrap items-center gap-3">
-              <Link to="/archivo" className="inline-flex items-center gap-2.5 bg-blue text-white border-0 rounded-full py-[13px] px-[19px] font-extrabold cursor-pointer hover:bg-teal transition-colors drop-shadow-none">
-                Explorar el archivo →
-              </Link>
-              <button
-                type="button"
-                onClick={() => setIsVideoOpen(true)}
-                className="inline-flex items-center gap-2.5 bg-ink text-white hover:bg-orange border-0 rounded-full py-[13px] px-[20px] font-extrabold cursor-pointer transition-all shadow-md group"
-              >
-                <PlayCircle size={18} className="text-orange group-hover:text-white transition-colors" />
-                <span>Ver documental</span>
-              </button>
+          </motion.div>
+
+          {/* Video Player Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="rounded-[22px] md:rounded-[32px] overflow-hidden bg-black shadow-[0_30px_90px_rgba(0,0,0,0.35)] border-2 md:border-4 border-ink/10 relative group"
+          >
+            <div className="relative aspect-video w-full">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/dJDJZqNPbcE?rel=0&modestbranding=1"
+                title="Cortometraje Documental: Manrique, Memoria en Movimiento"
+                className="absolute inset-0 w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
-          {/* Mobile Text */}
-          <div className="md:hidden mt-8">
-            <div className="text-[0.7rem] uppercase tracking-[0.2em] font-extrabold text-orange mb-2">Archivo vivo · Comuna 3 · Medellín</div>
-            <h1 className="font-editorial text-[4.2rem] leading-[0.72] tracking-[0.015em] uppercase text-ink my-[10px]">
-              La memoria<br/>está en movimiento.
-            </h1>
-            <p className="text-[1rem] text-ink max-w-[560px] font-medium mb-6">
-              Fotografías, voces, lugares y nuevas tecnologías se encuentran para contar la memoria de Manrique desde la comunidad.
-            </p>
-            <div className="flex flex-wrap items-center gap-3">
-              <Link to="/archivo" className="inline-flex items-center gap-2.5 bg-blue text-white border-0 rounded-full py-[13px] px-[19px] font-extrabold cursor-pointer hover:bg-teal transition-colors">
-                Explorar el archivo →
-              </Link>
+          {/* Video Metadata & Actions Bar */}
+          <div className="mt-5 flex flex-col sm:flex-row items-center justify-between gap-4 py-3 px-2">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-xs font-bold text-ink/75">
+              <span className="bg-sand/70 px-3 py-1.5 rounded-full">Comuna 3 · Manrique</span>
+              <span className="bg-sand/70 px-3 py-1.5 rounded-full">Archivo Oral y Fotográfico</span>
+              <span className="bg-sand/70 px-3 py-1.5 rounded-full">Alcaldía de Medellín · PP Cultura</span>
+            </div>
+
+            <div className="flex items-center gap-3">
               <button
                 type="button"
                 onClick={() => setIsVideoOpen(true)}
-                className="inline-flex items-center gap-2 bg-ink text-white hover:bg-orange border-0 rounded-full py-[13px] px-[18px] font-extrabold cursor-pointer transition-all shadow-md group"
+                className="inline-flex items-center gap-2 text-xs md:text-sm font-extrabold text-ink hover:text-white bg-sand hover:bg-ink px-4 py-2.5 rounded-full transition-colors cursor-pointer"
+                title="Abrir en pantalla completa / reproductor emergente"
               >
-                <PlayCircle size={18} className="text-orange group-hover:text-white transition-colors" />
-                <span>Ver documental</span>
+                <Maximize2 size={15} />
+                <span>Modo cine</span>
               </button>
+
+              <a
+                href="https://www.youtube.com/watch?v=dJDJZqNPbcE"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs md:text-sm font-extrabold text-orange hover:text-ink transition-colors py-2 px-3"
+              >
+                <span>Ver en YouTube</span>
+                <ExternalLink size={15} />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Archival Showcase Section */}
+        <div className="w-full max-w-[1380px] mx-auto px-6 md:px-12 mt-4 md:mt-8 pt-10 border-t border-ink/10 relative z-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 md:gap-14 items-center">
+            {/* Left: Text & CTA */}
+            <div>
+              <div className="text-[0.7rem] uppercase tracking-[0.2em] font-extrabold text-orange mb-2">
+                Archivo vivo · Comuna 3 · Medellín
+              </div>
+              <h2 className="font-editorial text-[clamp(3.2rem,5vw,6rem)] leading-[0.75] tracking-[0.025em] uppercase text-ink my-[12px]">
+                La memoria<br/>está en movimiento.
+              </h2>
+              <p className="text-[clamp(1rem,1.35vw,1.25rem)] text-ink/85 max-w-[560px] font-medium my-6 leading-relaxed">
+                Fotografías históricas, testimonios, lugares emblemáticos y nuevas tecnologías se encuentran para contar la memoria viva de Manrique desde la propia comunidad.
+              </p>
+              <div className="flex flex-wrap items-center gap-3">
+                <Link 
+                  to="/archivo" 
+                  className="inline-flex items-center gap-2.5 bg-blue text-white border-0 rounded-full py-[14px] px-[24px] font-extrabold cursor-pointer hover:bg-teal transition-colors shadow-sm"
+                >
+                  Explorar el archivo fotográfico →
+                </Link>
+                <a
+                  href="#documental"
+                  className="inline-flex items-center gap-2 bg-ink text-white hover:bg-orange border-0 rounded-full py-[14px] px-[22px] font-extrabold cursor-pointer transition-all shadow-md group"
+                >
+                  <PlayCircle size={18} className="text-orange group-hover:text-white transition-colors" />
+                  <span>Ver documental</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Right: Main Image with breathing animation */}
+            <div className="relative w-full">
+              <motion.img 
+                animate={{ scale: [1, 1.015], y: [0, -4] }}
+                transition={{ duration: 11, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
+                src="https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/banner_1.png" 
+                alt="Composición principal de Manrique en Movimiento" 
+                className="w-full h-auto object-contain rounded-2xl drop-shadow-sm"
+              />
             </div>
           </div>
         </div>

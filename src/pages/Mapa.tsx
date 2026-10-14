@@ -36,6 +36,54 @@ interface LocationData {
   imageUrl: string;
 }
 
+const DEFAULT_LOCATIONS: LocationData[] = [
+  {
+    id: 'tranvia-palos-verdes',
+    lat: 6.2692,
+    lng: -75.5535,
+    title: 'Estación Tranvía Palos Verdes',
+    year: '1928',
+    description: 'Terminal del histórico tranvía municipal eléctrico que conectaba la Comuna 3 con el centro de Medellín por la Carrera 45.',
+    imageUrl: '/img/banner_1.png'
+  },
+  {
+    id: 'carrera-45-gardel',
+    lat: 6.2735,
+    lng: -75.5520,
+    title: 'Carrera 45 - Avenida Carlos Gardel',
+    year: '1950',
+    description: 'El gran eje cultural, comercial y social de Manrique Central, cuna de tertulias de tango, comercio barrial y vida comunitaria.',
+    imageUrl: '/img/banner_2.png'
+  },
+  {
+    id: 'iglesia-la-salle',
+    lat: 6.2778,
+    lng: -75.5505,
+    title: 'Iglesia Ntra. Sra. de los Dolores (La Salle)',
+    year: '1942',
+    description: 'Hito arquitectónico y punto de referencia de Manrique. Testigo del crecimiento urbano y las jornadas de convites comunitarios.',
+    imageUrl: '/img/banner_3.png'
+  },
+  {
+    id: 'casa-gardeliana',
+    lat: 6.2710,
+    lng: -75.5528,
+    title: 'Casa Gardeliana',
+    year: '1972',
+    description: 'Monumento a la memoria del tango en Medellín, fundado por Leonardo Nieto como templo del patrimonio musical de Manrique.',
+    imageUrl: '/img/banner_5.png'
+  },
+  {
+    id: 'el-pomar-san-blas',
+    lat: 6.2815,
+    lng: -75.5480,
+    title: 'Sectores El Pomar y San Blas',
+    year: '1965',
+    description: 'Zonas de pioneros comunitarios que levantaron acueductos veredales y caminos de herradura transformados en barrios vivos.',
+    imageUrl: '/img/banner_4.png'
+  }
+];
+
 // Helper to update map theme (tile layer URL)
 function MapThemeUpdater({ theme }: { theme: 'dark' | 'light' }) {
   const map = useMap();
@@ -64,14 +112,15 @@ export function Mapa() {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   
-  const { data: MAP_LOCATIONS, loading, error } = useFirestoreCollection<LocationData>('locations');
+  const { data: firestoreLocations } = useFirestoreCollection<LocationData>('locations');
+  const MAP_LOCATIONS = firestoreLocations && firestoreLocations.length > 0 ? firestoreLocations : DEFAULT_LOCATIONS;
 
   // Use a different tile layer depending on the theme
   const tileUrl = theme === 'dark' 
     ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png' 
     : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
 
-  const handleLocationClick = (loc: typeof MAP_LOCATIONS[0]) => {
+  const handleLocationClick = (loc: LocationData) => {
     setActiveLocation(loc.id);
     setMapCenter([loc.lat, loc.lng]);
     setMapZoom(17);
