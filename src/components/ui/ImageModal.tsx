@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Download, Maximize, Minimize, ZoomIn, ZoomOut, RotateCcw } from 'lucide-react';
+import { X, Maximize, Minimize, ZoomIn, ZoomOut, RotateCcw } from 'lucide-react';
 import { useEffect, useState, useRef, type MouseEvent } from 'react';
 
 interface ImageModalProps {
@@ -14,7 +14,6 @@ interface ImageModalProps {
 export function ImageModal({ src, alt = 'Fotografía histórica', title, author, year, onClose }: ImageModalProps) {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [zoom, setZoom] = useState(1);
-  const [isDownloading, setIsDownloading] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Close on Escape key, zoom with +/-
@@ -76,33 +75,6 @@ export function ImageModal({ src, alt = 'Fotografía histórica', title, author,
     }
   };
 
-  const handleDownload = async (e: MouseEvent) => {
-    e.stopPropagation();
-    if (!src || isDownloading) return;
-    setIsDownloading(true);
-    try {
-      const response = await fetch(src, { mode: 'cors' });
-      const blob = await response.blob();
-      const blobUrl = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = blobUrl;
-      const cleanName = (title || alt || 'manrique-archivo-patrimonial')
-        .toLowerCase()
-        .replace(/[^a-z0-9]/g, '-')
-        .replace(/-+/g, '-');
-      a.download = `${cleanName}.jpg`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
-    } catch {
-      // Fallback
-      window.open(src, '_blank');
-    } finally {
-      setIsDownloading(false);
-    }
-  };
-
   return (
     <AnimatePresence>
       {src && (
@@ -135,7 +107,7 @@ export function ImageModal({ src, alt = 'Fotografía histórica', title, author,
                 <button
                   type="button"
                   onClick={() => setZoom(z => Math.max(z - 0.25, 0.75))}
-                  className="p-1.5 hover:text-orange transition-colors"
+                  className="p-1.5 hover:text-orange transition-colors cursor-pointer"
                   title="Alejar (-)"
                 >
                   <ZoomOut size={18} />
@@ -144,7 +116,7 @@ export function ImageModal({ src, alt = 'Fotografía histórica', title, author,
                 <button
                   type="button"
                   onClick={() => setZoom(z => Math.min(z + 0.25, 3))}
-                  className="p-1.5 hover:text-orange transition-colors"
+                  className="p-1.5 hover:text-orange transition-colors cursor-pointer"
                   title="Acercar (+)"
                 >
                   <ZoomIn size={18} />
@@ -153,7 +125,7 @@ export function ImageModal({ src, alt = 'Fotografía histórica', title, author,
                   <button
                     type="button"
                     onClick={() => setZoom(1)}
-                    className="p-1.5 hover:text-gold transition-colors ml-1 text-white/60 hover:text-white"
+                    className="p-1.5 hover:text-gold transition-colors ml-1 text-white/60 hover:text-white cursor-pointer"
                     title="Restablecer (0)"
                   >
                     <RotateCcw size={14} />
@@ -165,7 +137,7 @@ export function ImageModal({ src, alt = 'Fotografía histórica', title, author,
               <button
                 type="button"
                 onClick={toggleFullscreen}
-                className="text-white hover:text-gold transition-colors bg-white/10 hover:bg-white/20 p-2.5 md:p-3 rounded-full flex items-center gap-1.5 backdrop-blur-md border border-white/15"
+                className="text-white hover:text-gold transition-colors bg-white/10 hover:bg-white/20 p-2.5 md:p-3 rounded-full flex items-center gap-1.5 backdrop-blur-md border border-white/15 cursor-pointer"
                 title={isFullscreen ? 'Salir de pantalla completa' : 'Pantalla completa'}
               >
                 {isFullscreen ? <Minimize size={20} /> : <Maximize size={20} />}
@@ -173,25 +145,11 @@ export function ImageModal({ src, alt = 'Fotografía histórica', title, author,
                   {isFullscreen ? 'Normal' : 'Pantalla completa'}
                 </span>
               </button>
-
-              {/* Download / Guardar button */}
-              <button
-                type="button"
-                onClick={handleDownload}
-                disabled={isDownloading}
-                className="text-white bg-orange hover:bg-orange/90 transition-all p-2.5 md:p-3 rounded-full flex items-center gap-2 backdrop-blur-md shadow-lg shadow-orange/30 disabled:opacity-50"
-                title="Guardar / Descargar imagen"
-              >
-                <Download size={20} className={isDownloading ? 'animate-bounce' : ''} />
-                <span className="text-xs font-extrabold uppercase tracking-widest pr-1">
-                  {isDownloading ? 'Guardando...' : 'Guardar'}
-                </span>
-              </button>
               
               {/* Close Button */}
               <button 
                 type="button"
-                className="text-white hover:text-orange transition-colors bg-white/10 hover:bg-white/20 p-2.5 md:p-3 rounded-full backdrop-blur-md border border-white/15 ml-1"
+                className="text-white hover:text-orange transition-colors bg-white/10 hover:bg-white/20 p-2.5 md:p-3 rounded-full backdrop-blur-md border border-white/15 ml-1 cursor-pointer"
                 onClick={onClose}
                 title="Cerrar (Esc)"
               >
@@ -220,7 +178,9 @@ export function ImageModal({ src, alt = 'Fotografía histórica', title, author,
               <img
                 src={src}
                 alt={alt}
-                className="w-auto h-auto max-w-full max-h-[78vh] object-contain rounded-md shadow-2xl select-none"
+                draggable={false}
+                onContextMenu={(e) => e.preventDefault()}
+                className="w-auto h-auto max-w-full max-h-[78vh] object-contain rounded-md shadow-2xl select-none pointer-events-auto"
                 referrerPolicy="no-referrer"
               />
             </motion.div>

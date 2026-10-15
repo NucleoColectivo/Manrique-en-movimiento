@@ -1,18 +1,49 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { Calendar as CalendarIcon, MapPin, PlayCircle, ExternalLink, Film, Maximize2 } from 'lucide-react';
+import { Calendar as CalendarIcon, MapPin, ExternalLink, Film, Maximize2, Radio, Headphones, ArrowRight } from 'lucide-react';
 import { AnimatedImage } from '../components/ui/AnimatedImage';
 import { ImageModal } from '../components/ui/ImageModal';
 import { VideoModal } from '../components/ui/VideoModal';
 import { BRAND_LOGOS, handleImageFallback } from '../constants/logos';
+import { FALLBACK_STORIES } from './Historias';
 
-const GALLERY = [
-  "https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/DAP-F-04-63270.0001.jpg",
-  "https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/Captura%20de%20pantalla%202026-08-10%20210431.png",
-  "https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/DAP-F-04-63273.0001.jpg",
-  "https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/Captura%20de%20pantalla%202026-08-10%20210542.png",
-  "https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/fotos_piloto/DAP-F-04-63276.0001.jpg",
+const GALLERY_ITEMS = [
+  {
+    id: 'teatro-manrique',
+    src: '/img/ANTES Y DESPUES/TEATRO MANRIQUE 1/Captura_de_pantalla_2026-08-10_212607.png_202609021941.jpeg',
+    title: 'Cine Teatro Manrique',
+    subtitle: 'Hito patrimonial y cinematográfico de la Comuna 3 · Década de 1950',
+    tag: 'Restauración IA 2K'
+  },
+  {
+    id: 'abuela-cocina',
+    src: '/img/FOTOS VIZTAZ/RESTAURADAS/2700198-me-restaurada.png',
+    title: 'Cocina Tradicional y Saberes',
+    subtitle: 'Intimidad doméstica y recetas transmitidas por generaciones',
+    tag: 'Archivo Viztaz'
+  },
+  {
+    id: 'la45-tranvia',
+    src: '/img/ANTES Y DESPUES/LA 45/DAP-F-04-63273.0001.jpg_2K_202609022240.jpeg',
+    title: 'Carrera 45 y el Tranvía',
+    subtitle: 'El pulso de la arteria comercial y la movilidad histórica',
+    tag: 'Reconstrucción 2K'
+  },
+  {
+    id: 'iglesia-misericordias',
+    src: '/img/ANTES Y DESPUES/IGLESIA SEÑOR D ELAS MISERICORDIAS 2/Iglesia gótica bajo la montaña.png',
+    title: 'Templo Señor de las Misericordias',
+    subtitle: 'Arquitectura neogótica frente a las laderas andinas de Manrique',
+    tag: 'Patrimonio Cultural'
+  },
+  {
+    id: 'patio-familiar',
+    src: '/img/FOTOS VIZTAZ/RESTAURADAS/2702218-restaurada.png',
+    title: 'Patio Familiar y Generaciones',
+    subtitle: 'Encuentro barrial en patio ajedrezado tradicional de Manrique',
+    tag: 'Memoria Viva'
+  }
 ];
 
 export function Home() {
@@ -127,17 +158,10 @@ export function Home() {
               <div className="flex flex-wrap items-center gap-3">
                 <Link 
                   to="/archivo" 
-                  className="inline-flex items-center gap-2.5 bg-blue text-white border-0 rounded-full py-[14px] px-[24px] font-extrabold cursor-pointer hover:bg-teal transition-colors shadow-sm"
+                  className="inline-flex items-center gap-2.5 bg-blue text-white border-0 rounded-full py-[14px] px-[26px] font-extrabold cursor-pointer hover:bg-teal transition-colors shadow-sm text-sm md:text-base"
                 >
                   Explorar el archivo fotográfico →
                 </Link>
-                <a
-                  href="#documental"
-                  className="inline-flex items-center gap-2 bg-ink text-white hover:bg-orange border-0 rounded-full py-[14px] px-[22px] font-extrabold cursor-pointer transition-all shadow-md group"
-                >
-                  <PlayCircle size={18} className="text-orange group-hover:text-white transition-colors" />
-                  <span>Ver documental</span>
-                </a>
               </div>
             </div>
 
@@ -180,6 +204,73 @@ export function Home() {
         </div>
       </section>
 
+      {/* Voces que permanecen: Archivo Oral Showcase */}
+      <section className="bg-[#f8f6f2] py-20 md:py-28 border-b border-ink/10">
+        <div className="w-[min(calc(100%-40px),1380px)] mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <div className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.2em] text-orange mb-3">
+                <Radio size={14} className="animate-pulse" />
+                <span>Archivo de Memoria Oral · Núcleo Colectivo</span>
+              </div>
+              <h2 className="text-[clamp(2.6rem,5vw,5rem)] font-barlow font-black uppercase tracking-tight text-ink leading-[0.9]">
+                Voces que <span className="text-blue">permanecen.</span>
+              </h2>
+              <p className="text-muted font-serif italic text-lg md:text-xl mt-2 max-w-xl">
+                El barrio contado por quienes lo vivieron: seis crónicas orales y retratos de nuestros mayores.
+              </p>
+            </div>
+            <Link
+              to="/historias"
+              className="inline-flex items-center gap-2.5 bg-ink hover:bg-orange text-white px-6 py-3.5 rounded-full font-extrabold text-xs uppercase tracking-wider transition-colors cursor-pointer shadow-md self-start md:self-auto"
+            >
+              <Headphones size={16} />
+              <span>Escuchar las 6 crónicas orales</span>
+              <ArrowRight size={15} />
+            </Link>
+          </div>
+
+          {/* Grid of 6 characters */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5">
+            {FALLBACK_STORIES.map((story) => (
+              <Link
+                key={story.id}
+                to="/historias"
+                className="group relative rounded-2xl overflow-hidden bg-ink border border-ink/10 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block"
+              >
+                <div className="aspect-[3/4] relative overflow-hidden bg-ink">
+                  <AnimatedImage
+                    src={story.imageUrl!}
+                    alt={story.authorId}
+                    wrapperClassName="w-full h-full absolute inset-0 bg-ink"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10" />
+
+                  <span className="absolute top-2.5 left-2.5 z-20 px-2 py-0.5 rounded-full bg-orange text-white text-[0.65rem] font-black font-mono shadow">
+                    {story.number}
+                  </span>
+
+                  <span className="absolute top-2.5 right-2.5 z-20 px-2 py-0.5 rounded-full bg-black/60 text-white/90 text-[0.65rem] font-bold border border-white/10 backdrop-blur-sm">
+                    {story.duration}
+                  </span>
+
+                  <div className="absolute bottom-2.5 left-3 right-3 z-20 text-white">
+                    <h3 className="font-barlow font-black uppercase text-sm leading-tight text-white group-hover:text-gold transition-colors">
+                      {story.authorId}
+                    </h3>
+                    <p className="text-[0.68rem] text-white/70 truncate font-serif italic">
+                      {story.title}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Workshop Banner */}
       <section className="bg-background py-[80px] md:py-[115px]">
         <div className="w-[min(calc(100%-40px),1380px)] mx-auto">
@@ -197,12 +288,15 @@ export function Home() {
               <h2 className="text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[0.85] font-barlow uppercase font-extrabold mb-6">
                 Memoria, Creatividad<br/>e Inteligencia Artificial
               </h2>
-              <p className="text-white/90 text-lg md:text-xl font-dm mb-8 max-w-xl">
-                Los talleres comunitarios en la Casa de la Cultura Manrique fueron realizados con gran participación comunitaria. Explora el registro fotográfico del proceso.
+              <p className="text-white/95 text-base md:text-lg font-dm mb-8 max-w-xl leading-relaxed">
+                Dos talleres de inteligencia artificial realizados con habitantes de Manrique en la Casa de la Cultura. Un espacio práctico donde la comunidad aprendió a restaurar y preservar fotografías barriales, uniendo saberes tecnológicos contemporáneos y memoria local.
               </p>
               <div className="flex flex-wrap items-center gap-4">
-                 <Link to="/talleres" className="inline-flex items-center gap-2.5 bg-white text-blue border-0 rounded-full py-[15px] px-[28px] font-extrabold cursor-pointer hover:bg-orange hover:text-white transition-colors">
-                  Ver Registro Fotográfico →
+                <Link to="/talleres#talleres-comunitarios-ia-memoria" className="inline-flex items-center gap-2.5 bg-white text-blue border-0 rounded-full py-[15px] px-[28px] font-extrabold cursor-pointer hover:bg-orange hover:text-white transition-colors">
+                  Talleres de IA y Memoria →
+                </Link>
+                <Link to="/talleres#registro-fotografico" className="inline-flex items-center gap-2 border-2 border-white/60 text-white rounded-full py-[13px] px-[24px] font-extrabold cursor-pointer hover:bg-white hover:text-blue transition-colors">
+                  Registro Fotográfico
                 </Link>
               </div>
             </div>
@@ -347,20 +441,40 @@ export function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-3">
-            {GALLERY.map((src, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-3.5">
+            {GALLERY_ITEMS.map((item, i) => (
               <figure 
-                key={i} 
-                className={`m-0 overflow-hidden rounded-[18px] bg-[#222] relative group cursor-pointer ${i === 0 ? 'md:row-span-2' : ''}`}
-                onClick={() => setSelectedImage(src)}
+                key={item.id} 
+                className={`m-0 overflow-hidden rounded-[18px] bg-zinc-900 border border-white/10 relative group cursor-pointer transition-all duration-300 hover:border-orange/60 shadow-lg ${i === 0 ? 'md:row-span-2 min-h-[360px] md:min-h-[480px]' : 'min-h-[220px] md:min-h-[235px]'}`}
+                onClick={() => setSelectedImage(item.src)}
               >
                 <AnimatedImage 
-                  src={src} 
-                  alt={`Galería ${i + 1}`} 
-                  wrapperClassName="w-full h-full min-h-[220px]"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                  src={item.src} 
+                  alt={item.title} 
+                  wrapperClassName="w-full h-full"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   referrerPolicy="no-referrer"
                 />
+
+                {/* Subtle dark gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-65 group-hover:opacity-90 transition-opacity duration-300 pointer-events-none" />
+
+                {/* Badge top-left */}
+                <div className="absolute top-3.5 left-3.5 z-10">
+                  <span className="px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider font-bold bg-black/80 backdrop-blur-md text-white border border-white/20 rounded shadow">
+                    {item.tag}
+                  </span>
+                </div>
+
+                {/* Info on bottom */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 z-10 transition-transform duration-300 transform translate-y-1 group-hover:translate-y-0">
+                  <h4 className="font-editorial text-lg sm:text-xl text-white font-bold leading-tight group-hover:text-orange transition-colors">
+                    {item.title}
+                  </h4>
+                  <p className="text-white/75 text-xs font-sans line-clamp-1 mt-0.5">
+                    {item.subtitle}
+                  </p>
+                </div>
               </figure>
             ))}
           </div>

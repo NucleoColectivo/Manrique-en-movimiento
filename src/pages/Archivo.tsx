@@ -6,7 +6,6 @@ import {
   MapPin, 
   Calendar, 
   Camera, 
-  Download, 
   Maximize2, 
   ChevronLeft, 
   ChevronRight,
@@ -197,84 +196,106 @@ export const ARCHIVE_PHOTOS: Photograph[] = [
   },
 
   // =========================================================================
-  // --- COLECCIÓN 2: CORPORACIÓN CULTURAL VIZTAZ (7 Fotografías Patrimoniales) ---
+  // =========================================================================
+  // --- COLECCIÓN 2: CORPORACIÓN CULTURAL VIZTAZ (7 Fotografías Patrimoniales & Restauradas) ---
   // =========================================================================
   {
     id: 'viztaz-1',
     title: 'Cocina tradicional y saberes cotidianos',
     location: 'Manrique, Medellín',
     year: 'c. 1950',
-    imageUrl: '/img/FOTOS VIZTAZ/2700198-me.jpg',
-    author: 'Corporación Cultural Viztaz',
+    imageUrl: '/img/FOTOS VIZTAZ/RESTAURADAS/2700198-me-restaurada.png',
+    originalUrl: '/img/FOTOS VIZTAZ/2700198-me.jpg',
+    restoredUrl: '/img/FOTOS VIZTAZ/RESTAURADAS/2700198-me-restaurada.png',
+    author: 'Corporación Cultural Viztaz / Restauración IA',
     collectionName: 'Corporación Cultural Viztaz',
-    description: 'Registro de la cotidianidad doméstica en Manrique: mujer mayor preparando alimentos en estufa clásica de la época, con molino manual para maíz y utensilios de cocina tradicionales.',
-    tags: ['cocina', 'cotidiano', 'hogar', 'saberes', 'gastronomía']
+    description: 'Registro de la cotidianidad doméstica en Manrique: mujer mayor preparando alimentos en estufa clásica de la época, con molino manual para maíz y utensilios de cocina tradicionales. La restauración recupera la textura del metal, los contrastes de luz en la cocina y la calidez del momento íntimo.',
+    tags: ['cocina', 'cotidiano', 'hogar', 'saberes', 'gastronomía', 'restauración ia', 'antes y después'],
+    isBeforeAfter: true
   },
   {
     id: 'viztaz-2',
     title: 'Retrato de juventud y vestidos de época',
     location: 'Manrique, Medellín',
     year: 'c. 1955',
-    imageUrl: '/img/FOTOS VIZTAZ/2700864.jpg',
-    author: 'Corporación Cultural Viztaz',
+    imageUrl: '/img/FOTOS VIZTAZ/RESTAURADAS/2700864-restaurada.png',
+    originalUrl: '/img/FOTOS VIZTAZ/2700864.jpg',
+    restoredUrl: '/img/FOTOS VIZTAZ/RESTAURADAS/2700864-restaurada.png',
+    author: 'Corporación Cultural Viztaz / Restauración IA',
     collectionName: 'Corporación Cultural Viztaz',
-    description: 'Retrato de dos jóvenes mujeres vestidas con trajes de cuadros y lazos tradicionales en el interior de una residencia de Manrique.',
-    tags: ['juventud', 'moda', 'retrato', 'familia', 'vida cotidiana']
+    description: 'Retrato de dos jóvenes mujeres vestidas con trajes de cuadros y lazos tradicionales en el interior de una residencia de Manrique. La restauración digital clarifica el estampado de las telas, los peinados y la expresión afectiva de las hermanas.',
+    tags: ['juventud', 'moda', 'retrato', 'familia', 'vida cotidiana', 'restauración ia', 'antes y después'],
+    isBeforeAfter: true
   },
   {
     id: 'viztaz-3',
     title: 'Encuentro en el umbral del barrio',
     location: 'La 45, Manrique',
     year: 'c. 1950',
-    imageUrl: '/img/FOTOS VIZTAZ/2700968-me.jpg',
-    author: 'Corporación Cultural Viztaz',
+    imageUrl: '/img/FOTOS VIZTAZ/RESTAURADAS/2700968-me-restaurada.png',
+    originalUrl: '/img/FOTOS VIZTAZ/2700968-me.jpg',
+    restoredUrl: '/img/FOTOS VIZTAZ/RESTAURADAS/2700968-me-restaurada.png',
+    author: 'Corporación Cultural Viztaz / Restauración IA',
     collectionName: 'Corporación Cultural Viztaz',
-    description: 'Pareja en el acceso de una edificación barrial con rejas metálicas tradicionales; ella en las escalas y él con tirantes de época.',
-    tags: ['pareja', 'calle', 'arquitectura', 'vida de barrio', 'moda']
+    description: 'Pareja en el acceso de una edificación barrial con rejas metálicas tradicionales; ella en las escalas y él con tirantes de época. La restauración devuelve nitidez al revoque rústico de la pared, las texturas de la ropa y la profundidad del portal.',
+    tags: ['pareja', 'calle', 'arquitectura', 'vida de barrio', 'moda', 'restauración ia', 'antes y después'],
+    isBeforeAfter: true
   },
   {
     id: 'viztaz-4',
     title: 'Esquina comercial Unión Total y La Sonora',
     location: 'Carrera 45 con calle comercial, Manrique',
     year: 'c. 1955',
-    imageUrl: '/img/FOTOS VIZTAZ/2701047-me.jpg',
-    author: 'Corporación Cultural Viztaz',
+    imageUrl: '/img/FOTOS VIZTAZ/RESTAURADAS/2701047-me-restaurada.png',
+    originalUrl: '/img/FOTOS VIZTAZ/2701047-me.jpg',
+    restoredUrl: '/img/FOTOS VIZTAZ/RESTAURADAS/2701047-me-restaurada.png',
+    author: 'Corporación Cultural Viztaz / Restauración IA',
     collectionName: 'Corporación Cultural Viztaz',
-    description: 'Esquina comercial de dos pisos con tejado de barro, toldo de Unión Total, letrero de La Sonora, peatones y alumbrado público característico.',
-    tags: ['comercio', 'la 45', 'arquitectura', 'esquinas', 'urbanismo']
+    description: 'Esquina comercial de dos pisos con tejado de barro, toldo de Unión Total, letrero de La Sonora, peatones y alumbrado público característico. La versión restaurada resalta la tipografía de los anuncios comerciales, el tejado de barro cocido y el dinamismo peatonal de la 45.',
+    tags: ['comercio', 'la 45', 'arquitectura', 'esquinas', 'urbanismo', 'restauración ia', 'antes y después'],
+    isBeforeAfter: true
   },
   {
     id: 'viztaz-5',
     title: 'Hogar, sala y vida cotidiana',
     location: 'Manrique, Medellín',
     year: 'c. 1960',
-    imageUrl: '/img/FOTOS VIZTAZ/2702158-me.jpg',
-    author: 'Corporación Cultural Viztaz',
+    imageUrl: '/img/FOTOS VIZTAZ/RESTAURADAS/2702158-me-restaurada.png',
+    originalUrl: '/img/FOTOS VIZTAZ/2702158-me.jpg',
+    restoredUrl: '/img/FOTOS VIZTAZ/RESTAURADAS/2702158-me-restaurada.png',
+    author: 'Corporación Cultural Viztaz / Restauración IA',
     collectionName: 'Corporación Cultural Viztaz',
-    description: 'Hombre sentado en un sillón clásico en el interior de una vivienda familiar, con radio, teléfono antiguo y decoración hogareña de mediados del siglo XX.',
-    tags: ['hogar', 'interior', 'muebles', 'cotidianidad', 'familia']
+    description: 'Hombre sentado en un sillón clásico en el interior de una vivienda familiar, con radio, teléfono antiguo y decoración hogareña de mediados del siglo XX. La restauración enfatiza la iluminación ambiental, la textura de la tapicería y los detalles de los aparatos domésticos.',
+    tags: ['hogar', 'interior', 'muebles', 'cotidianidad', 'familia', 'restauración ia', 'antes y después'],
+    isBeforeAfter: true
   },
   {
     id: 'viztaz-6',
     title: 'Patio familiar y retrato generacional',
     location: 'Manrique, Medellín',
     year: 'c. 1958',
-    imageUrl: '/img/FOTOS VIZTAZ/2702218.jpg',
-    author: 'Corporación Cultural Viztaz',
+    imageUrl: '/img/FOTOS VIZTAZ/RESTAURADAS/2702218-restaurada.png',
+    originalUrl: '/img/FOTOS VIZTAZ/2702218.jpg',
+    restoredUrl: '/img/FOTOS VIZTAZ/RESTAURADAS/2702218-restaurada.png',
+    author: 'Corporación Cultural Viztaz / Restauración IA',
     collectionName: 'Corporación Cultural Viztaz',
-    description: 'Retrato de familia reunida en el patio embaldosado de una casa tradicional de Manrique, mostrando varias generaciones y plantas de jardín.',
-    tags: ['familia', 'patio', 'generaciones', 'niños', 'tradición']
+    description: 'Retrato de familia reunida en el patio embaldosado de una casa tradicional de Manrique, mostrando varias generaciones y plantas de jardín. La restauración permite apreciar los patrones del suelo ajedrezado, los rostros de niños y adultos y la vegetación del patio.',
+    tags: ['familia', 'patio', 'generaciones', 'niños', 'tradición', 'restauración ia', 'antes y después'],
+    isBeforeAfter: true
   },
   {
     id: 'viztaz-7',
     title: 'Infancia y juego en el patio interior',
     location: 'Manrique, Medellín',
     year: 'c. 1962',
-    imageUrl: '/img/FOTOS VIZTAZ/2704070.jpg',
-    author: 'Corporación Cultural Viztaz',
+    imageUrl: '/img/FOTOS VIZTAZ/RESTAURADAS/2704070-restaurada.png',
+    originalUrl: '/img/FOTOS VIZTAZ/2704070.jpg',
+    restoredUrl: '/img/FOTOS VIZTAZ/RESTAURADAS/2704070-restaurada.png',
+    author: 'Corporación Cultural Viztaz / Restauración IA',
     collectionName: 'Corporación Cultural Viztaz',
-    description: 'Grupo de niños y familiares compartiendo una tarde en el patio interior con piso de baldosín decorado y arquitectura doméstica clásica.',
-    tags: ['infancia', 'juego', 'patio', 'arquitectura doméstica', 'convivencia']
+    description: 'Grupo de niños y familiares compartiendo una tarde en el porche y patio interior con piso de baldosín decorado y arquitectura doméstica clásica. La restauración digital realza la calidez de las sonrisas infantiles, la ropa de época y los detalles ornamentales de la casa.',
+    tags: ['infancia', 'juego', 'patio', 'arquitectura doméstica', 'convivencia', 'restauración ia', 'antes y después'],
+    isBeforeAfter: true
   },
 
   // =========================================================================
@@ -409,12 +430,41 @@ export function Archivo() {
   const [activeCollection, setActiveCollection] = useState<'all' | 'antes_despues' | 'viztaz' | 'bpp'>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  const [isDownloading, setIsDownloading] = useState(false);
 
   // Combine Firestore with static fallback
   const allPhotos = useMemo(() => {
     if (firestorePhotos && firestorePhotos.length > 0) {
-      return firestorePhotos;
+      const merged = firestorePhotos.map(p => {
+        const fallback = ARCHIVE_PHOTOS.find(f => f.id === p.id);
+        const originalUrl = p.originalUrl || fallback?.originalUrl;
+        const restoredUrl = p.restoredUrl || fallback?.restoredUrl;
+        const isBeforeAfter = Boolean(
+          p.isBeforeAfter ?? 
+          fallback?.isBeforeAfter ?? 
+          (originalUrl && restoredUrl)
+        );
+
+        return {
+          ...fallback,
+          ...p,
+          imageUrl: p.imageUrl || fallback?.imageUrl,
+          originalUrl,
+          restoredUrl,
+          isBeforeAfter,
+          tags: (p.tags && p.tags.length > 0) ? p.tags : (fallback?.tags || []),
+          description: p.description || fallback?.description,
+          author: p.author || fallback?.author
+        };
+      });
+
+      // Preserve any fallback items not in Firestore
+      ARCHIVE_PHOTOS.forEach(fb => {
+        if (!merged.some(m => m.id === fb.id)) {
+          merged.push(fb);
+        }
+      });
+
+      return merged;
     }
     return ARCHIVE_PHOTOS;
   }, [firestorePhotos]);
@@ -513,30 +563,6 @@ export function Archivo() {
       setSelectedPhoto(filteredPhotos[currentIndex + 1]);
     } else if (filteredPhotos.length > 0) {
       setSelectedPhoto(filteredPhotos[0]);
-    }
-  };
-
-  // Direct download handler (Guardar en HD)
-  const handleDownload = async (url: string, filename: string, e?: MouseEvent) => {
-    e?.stopPropagation();
-    try {
-      setIsDownloading(true);
-      const res = await fetch(url);
-      const blob = await res.blob();
-      const blobUrl = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = blobUrl;
-      link.download = filename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(blobUrl);
-    } catch (err) {
-      console.error('Download error:', err);
-      // Fallback
-      window.open(url, '_blank');
-    } finally {
-      setIsDownloading(false);
     }
   };
 
@@ -779,13 +805,20 @@ export function Archivo() {
 
                   {/* Badge: Antes y Después vs Original */}
                   {isBeforeAfter ? (
-                    <div className="absolute top-3 left-3 bg-orange/95 backdrop-blur-md px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-white font-bold rounded shadow-md flex items-center gap-1.5">
-                      <MoveHorizontal size={13} />
-                      <Sparkles size={11} />
-                      <span>Antes y Después</span>
+                    <div className="absolute top-3 left-3 flex flex-wrap items-center gap-1.5 z-10">
+                      <div className="bg-orange/95 backdrop-blur-md px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-white font-bold rounded shadow-md flex items-center gap-1.5">
+                        <MoveHorizontal size={13} />
+                        <Sparkles size={11} />
+                        <span>Antes y Después</span>
+                      </div>
+                      {photo.collectionName?.includes('Viztaz') && (
+                        <div className="bg-blue/90 backdrop-blur-md px-2 py-1 text-[10px] font-mono uppercase tracking-wider text-white font-bold rounded shadow-md border border-white/20">
+                          Viztaz
+                        </div>
+                      )}
                     </div>
                   ) : (
-                    <div className="absolute top-3 left-3 bg-black/75 backdrop-blur-md px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-white/90 rounded border border-white/20">
+                    <div className="absolute top-3 left-3 bg-black/75 backdrop-blur-md px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-white/90 rounded border border-white/20 z-10">
                       {photo.author?.includes('Viztaz') ? 'Archivo Viztaz' : 'Archivo Piloto'}
                     </div>
                   )}
@@ -986,57 +1019,24 @@ export function Archivo() {
                   </div>
                 </div>
 
-                {/* Actions / Download */}
-                <div className="space-y-2.5 pt-4 border-t border-white/10">
-                  {selectedPhoto.isBeforeAfter && selectedPhoto.originalUrl && selectedPhoto.restoredUrl ? (
-                    <div className="grid grid-cols-2 gap-2">
-                      <button
-                        type="button"
-                        onClick={(e) => handleDownload(
-                          selectedPhoto.originalUrl!, 
-                          `${selectedPhoto.id}-original.jpg`, 
-                          e
-                        )}
-                        disabled={isDownloading}
-                        className="w-full py-2.5 px-3 bg-white/10 hover:bg-white/20 text-white rounded-lg text-xs font-mono uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors border border-white/15"
-                      >
-                        <Download size={13} />
-                        <span>Original</span>
-                      </button>
+                {/* Archival Preservation Notice (Sin descarga directa) */}
+                <div className="space-y-3 pt-4 border-t border-white/10">
+                  <div className="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+                    <p className="text-[11px] text-white/90 font-mono font-medium">
+                      Visualización interactiva y comparador de memoria barrial
+                    </p>
+                    <p className="text-[10px] text-white/50 font-mono mt-0.5">
+                      Archivo protegido para preservación comunitaria · Sin descarga directa
+                    </p>
+                  </div>
 
-                      <button
-                        type="button"
-                        onClick={(e) => handleDownload(
-                          selectedPhoto.restoredUrl!, 
-                          `${selectedPhoto.id}-restaurada.jpg`, 
-                          e
-                        )}
-                        disabled={isDownloading}
-                        className="w-full py-2.5 px-3 bg-orange hover:bg-orange/90 text-white rounded-lg text-xs font-mono uppercase tracking-wider font-bold flex items-center justify-center gap-1.5 transition-colors shadow-sm"
-                      >
-                        <Sparkles size={13} />
-                        <span>Restaurada</span>
-                      </button>
-                    </div>
-                  ) : (
-                    <button
-                      type="button"
-                      onClick={(e) => handleDownload(
-                        selectedPhoto.imageUrl, 
-                        `${selectedPhoto.id}-patrimonial.jpg`, 
-                        e
-                      )}
-                      disabled={isDownloading}
-                      className="w-full py-2.5 px-4 bg-orange hover:bg-orange/90 text-white rounded-lg text-xs font-mono uppercase tracking-wider font-bold flex items-center justify-center gap-2 transition-colors shadow-sm"
-                    >
-                      <Download size={14} />
-                      <span>{isDownloading ? 'Guardando...' : 'Guardar / Descargar'}</span>
-                    </button>
-                  )}
-
-                  <p className="text-[10px] text-center text-white/40 font-mono">
-                    Uso cultural y pedagógico · Comuna 3 Manrique
-                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedPhoto(null)}
+                    className="w-full py-2.5 px-4 bg-white/10 hover:bg-white/20 text-white rounded-lg text-xs font-mono uppercase tracking-wider font-bold flex items-center justify-center gap-2 transition-colors border border-white/15 cursor-pointer"
+                  >
+                    <span>Cerrar visor</span>
+                  </button>
                 </div>
               </div>
             </div>

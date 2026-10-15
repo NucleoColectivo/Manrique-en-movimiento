@@ -57,7 +57,7 @@ export function Navbar() {
             <img 
               src={BRAND_LOGOS.home.src} 
               alt={BRAND_LOGOS.home.alt} 
-              className="h-8 md:h-11 w-auto max-w-[150px] md:max-w-[190px] object-contain" 
+              className="h-9 sm:h-10 md:h-[48px] w-auto max-w-[170px] md:max-w-[215px] object-contain transition-transform group-hover:scale-105" 
               onError={(e) => handleImageFallback(e, BRAND_LOGOS.home.fallback)}
             />
           </Link>
@@ -95,9 +95,9 @@ export function Navbar() {
             <img
               src={BRAND_LOGOS.pp.src}
               alt={BRAND_LOGOS.pp.alt}
-              width={34}
-              height={34}
-              className="h-8 w-auto object-contain"
+              width={38}
+              height={38}
+              className="h-9 sm:h-10 w-auto object-contain"
               onError={(e) => handleImageFallback(e, BRAND_LOGOS.pp.fallback)}
             />
             <button
@@ -159,17 +159,17 @@ export function Navbar() {
               transition={{ delay: 0.7 }}
               className="mt-8 pt-6 border-t border-ink/10 flex flex-col items-center gap-4 text-center"
             >
-              <div className="flex items-center justify-center gap-6">
+              <div className="flex items-center justify-center gap-7">
                 <img
                   src={BRAND_LOGOS.pp.src}
                   alt={BRAND_LOGOS.pp.alt}
-                  className="h-10 w-auto object-contain"
+                  className="h-12 w-auto object-contain"
                   onError={(e) => handleImageFallback(e, BRAND_LOGOS.pp.fallback)}
                 />
                 <img
                   src={BRAND_LOGOS.alcaldia.src}
                   alt={BRAND_LOGOS.alcaldia.alt}
-                  className="h-10 w-auto object-contain"
+                  className="h-12 w-auto object-contain"
                   onError={(e) => handleImageFallback(e, BRAND_LOGOS.alcaldia.fallback)}
                 />
               </div>

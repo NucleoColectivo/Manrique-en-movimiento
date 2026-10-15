@@ -39,37 +39,37 @@ export function InstitutionalCredits({ className = '', variant = 'full' }: Insti
           </div>
 
           {/* Zona inferior derecha: Escudo oficial de la Alcaldía de Medellín y PP Cultura */}
-          <div className="flex flex-wrap items-center justify-center lg:justify-end gap-6 sm:gap-8 flex-shrink-0">
+          <div className="flex flex-wrap items-center justify-center lg:justify-end gap-7 sm:gap-9 flex-shrink-0">
             {/* Logo PP Cultura */}
             <div className="flex flex-col items-center lg:items-end">
-              <span className="text-[10px] uppercase font-montserrat tracking-widest text-foreground/50 mb-1.5 hidden sm:block">
+              <span className="text-[11px] font-semibold uppercase font-montserrat tracking-widest text-foreground/60 mb-2 hidden sm:block">
                 Programa
               </span>
               <img
                 src={BRAND_LOGOS.pp.src}
                 alt={BRAND_LOGOS.pp.alt}
-                width={70}
-                height={70}
-                className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform duration-200 hover:scale-105"
+                width={80}
+                height={80}
+                className="h-14 sm:h-16 md:h-[74px] w-auto object-contain transition-transform duration-200 hover:scale-105"
                 loading="lazy"
                 onError={(e) => handleImageFallback(e, BRAND_LOGOS.pp.fallback)}
               />
             </div>
 
             {/* Separador sutil */}
-            <div className="h-12 w-px bg-foreground/15 hidden sm:block" aria-hidden="true" />
+            <div className="h-14 sm:h-16 md:h-[70px] w-px bg-foreground/15 hidden sm:block" aria-hidden="true" />
 
             {/* Escudo oficial de la Alcaldía de Medellín */}
             <div className="flex flex-col items-center lg:items-end">
-              <span className="text-[10px] uppercase font-montserrat tracking-widest text-foreground/50 mb-1.5 hidden sm:block">
+              <span className="text-[11px] font-semibold uppercase font-montserrat tracking-widest text-foreground/60 mb-2 hidden sm:block">
                 Distrito de Medellín
               </span>
               <img
                 src={BRAND_LOGOS.alcaldia.src}
                 alt={BRAND_LOGOS.alcaldia.alt}
-                width={120}
-                height={92}
-                className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform duration-200 hover:scale-105"
+                width={140}
+                height={108}
+                className="h-14 sm:h-16 md:h-[74px] w-auto object-contain transition-transform duration-200 hover:scale-105"
                 loading="lazy"
                 onError={(e) => handleImageFallback(e, BRAND_LOGOS.alcaldia.fallback)}
               />
@@ -94,23 +94,23 @@ export function InstitutionalCredits({ className = '', variant = 'full' }: Insti
 export function InstitutionalTopRightLogo({ className = '' }: { className?: string }) {
   return (
     <div 
-      className={`inline-flex items-center gap-2.5 flex-shrink-0 ${className}`}
+      className={`inline-flex items-center gap-3 flex-shrink-0 ${className}`}
       title="Presupuesto Participativo Cultura · Alcaldía de Medellín"
     >
       <div className="hidden xl:flex flex-col text-right leading-tight">
-        <span className="text-[9px] font-montserrat font-bold uppercase tracking-wider text-ink/75">
+        <span className="text-[10px] font-montserrat font-bold uppercase tracking-wider text-ink/80">
           PP Cultura
         </span>
-        <span className="text-[8px] font-montserrat font-medium uppercase tracking-widest text-ink/50">
+        <span className="text-[9px] font-montserrat font-medium uppercase tracking-widest text-ink/55">
           Medellín 2026
         </span>
       </div>
       <img
         src={BRAND_LOGOS.pp.src}
         alt={BRAND_LOGOS.pp.alt}
-        width={40}
-        height={40}
-        className="h-8 md:h-9 w-auto object-contain transition-transform duration-200 hover:scale-105"
+        width={46}
+        height={46}
+        className="h-9 md:h-[42px] w-auto object-contain transition-transform duration-200 hover:scale-105"
         onError={(e) => handleImageFallback(e, BRAND_LOGOS.pp.fallback)}
       />
     </div>
