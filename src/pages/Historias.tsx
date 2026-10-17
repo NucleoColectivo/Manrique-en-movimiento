@@ -538,18 +538,21 @@ export function Historias() {
                       isThisActive ? 'border-orange ring-4 ring-orange/20 scale-[1.01]' : 'border-ink/10 hover:border-orange/40'
                     }`}
                   >
-                    {/* Top: Portrait Area */}
-                    <div className="relative h-[290px] overflow-hidden bg-ink/90">
+                    {/* Top: Portrait Area (Expanded height and fine-tuned framing to reveal the full face) */}
+                    <div className="relative h-[390px] sm:h-[420px] overflow-hidden bg-ink/95">
                       <AnimatedImage 
                         src={testimonio.imageUrl || FALLBACK_STORIES[index % FALLBACK_STORIES.length].imageUrl!} 
                         alt={testimonio.fullName || testimonio.authorId}
                         wrapperClassName="w-full h-full absolute inset-0 bg-ink"
-                        className="w-full h-full object-cover object-top transition-transform duration-[2.2s] ease-out group-hover:scale-108" 
+                        className="w-full h-full object-cover object-[center_8%] transition-transform duration-[2.2s] ease-out group-hover:scale-105" 
                         referrerPolicy="no-referrer"
                       />
 
-                      {/* Subtle Dark Vignette & Gradient for Badge Readability */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-black/50 z-10" />
+                      {/* Top subtle vignette for badge legibility */}
+                      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/50 via-black/20 to-transparent z-10 pointer-events-none" />
+
+                      {/* Bottom localized vignette over chest/shoulders, leaving the full face 100% visible */}
+                      <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-ink via-ink/75 to-transparent z-10 pointer-events-none" />
 
                       {/* Number & Duration Badge (Top Left) */}
                       <div className="absolute top-4 left-4 z-20 flex items-center gap-2">
@@ -572,12 +575,12 @@ export function Historias() {
                         <Maximize2 size={16} />
                       </button>
 
-                      {/* Character Name Ribbon at Bottom of Portrait */}
-                      <div className="absolute bottom-3 left-4 right-4 z-20 text-white">
-                        <div className="text-[0.72rem] uppercase tracking-[0.2em] font-extrabold text-gold flex items-center gap-1.5 mb-0.5 drop-shadow">
-                          <Music size={13} /> Testimonio Barrial
+                      {/* Character Name Ribbon at Bottom of Portrait (over chest area, below the face) */}
+                      <div className="absolute bottom-3.5 left-5 right-5 z-20 text-white">
+                        <div className="text-[0.68rem] uppercase tracking-[0.2em] font-extrabold text-gold flex items-center gap-1.5 mb-0.5 drop-shadow">
+                          <Music size={12} /> Testimonio Barrial
                         </div>
-                        <h2 className="text-2xl font-black font-barlow uppercase tracking-tight text-white drop-shadow-md">
+                        <h2 className="text-2xl sm:text-[1.75rem] font-black font-barlow uppercase tracking-tight text-white drop-shadow-md leading-none mb-1">
                           {testimonio.authorId}
                         </h2>
                         {testimonio.fullName && testimonio.fullName !== testimonio.authorId && (
