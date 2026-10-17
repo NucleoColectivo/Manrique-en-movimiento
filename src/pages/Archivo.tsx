@@ -421,6 +421,72 @@ export const ARCHIVE_PHOTOS: Photograph[] = [
     collectionName: 'Biblioteca Pública Piloto',
     description: 'Perspectiva histórica y dinámica de la comunidad organizada construyendo acueductos comunitarios y vías de acceso.',
     tags: ['paisaje', 'comunidad', 'acueducto']
+  },
+  {
+    id: 'bpp-12',
+    title: 'Esquinas y vida cotidiana en Manrique',
+    location: 'Manrique',
+    year: '1965',
+    imageUrl: '/img/fotos_piloto/Captura de pantalla 2026-08-10 212544.png',
+    author: 'Biblioteca Pública Piloto',
+    collectionName: 'Biblioteca Pública Piloto',
+    description: 'Encuentro barrial en la esquina, peatones y dinámica comercial tradicional de la comuna.',
+    tags: ['esquinas', 'comunidad', 'cotidianidad']
+  },
+  {
+    id: 'bpp-13',
+    title: 'Fachada y entorno del Cine Teatro Manrique',
+    location: 'Carrera 45, Manrique',
+    year: '1955',
+    imageUrl: '/img/fotos_piloto/Captura de pantalla 2026-08-10 212607.png',
+    author: 'Biblioteca Pública Piloto',
+    collectionName: 'Biblioteca Pública Piloto',
+    description: 'Registro histórico de la fachada original del emblemático Cine Teatro Manrique, hito del encuentro barrial.',
+    tags: ['teatro', 'cine manrique', 'patrimonio']
+  },
+  {
+    id: 'bpp-14',
+    title: 'Calles tradicionales y arquitectura de tapia',
+    location: 'Manrique Central',
+    year: '1958',
+    imageUrl: '/img/fotos_piloto/Captura de pantalla 2026-08-10 212904.png',
+    author: 'Biblioteca Pública Piloto',
+    collectionName: 'Biblioteca Pública Piloto',
+    description: 'Casas de tapia y calles empinadas en los primeros años de consolidación barrial.',
+    tags: ['arquitectura', 'calles', 'vivienda']
+  },
+  {
+    id: 'bpp-15',
+    title: 'Trazado urbano y ladera de Manrique (DAP 63270)',
+    location: 'Manrique, Medellín',
+    year: '1946',
+    imageUrl: '/img/fotos_piloto/DAP-F-04-63270.0001.jpg',
+    author: 'Biblioteca Pública Piloto / DAP',
+    collectionName: 'Biblioteca Pública Piloto',
+    description: 'Vista técnica y patrimonial del Archivo Histórico Medellín / Biblioteca Pública Piloto sobre la apertura de vías en la ladera.',
+    tags: ['archivo dap', 'urbanismo', 'ladera']
+  },
+  {
+    id: 'bpp-16',
+    title: 'La 45 y el transporte colectivo (DAP 63276)',
+    location: 'Carrera 45, Manrique',
+    year: '1952',
+    imageUrl: '/img/fotos_piloto/DAP-F-04-63276.0001.jpg',
+    author: 'Biblioteca Pública Piloto / DAP',
+    collectionName: 'Biblioteca Pública Piloto',
+    description: 'Primeros buses de escalera y colectivos transitando por la Carrera 45 en ascenso.',
+    tags: ['carrera 45', 'transporte', 'archivo dap']
+  },
+  {
+    id: 'bpp-17',
+    title: 'Fachada comercial y vida de barrio (DAP 63287)',
+    location: 'Manrique',
+    year: '1954',
+    imageUrl: '/img/fotos_piloto/DAP-F-04-63287.0001.jpg',
+    author: 'Biblioteca Pública Piloto / DAP',
+    collectionName: 'Biblioteca Pública Piloto',
+    description: 'Locales comerciales, billares y sastrerías de la época dorada de Manrique.',
+    tags: ['comercio', 'oficios', 'archivo dap']
   }
 ];
 

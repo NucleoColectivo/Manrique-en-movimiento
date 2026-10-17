@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, type MouseEvent } from 'react';
 import { motion, AnimatePresence, useScroll, useSpring } from 'motion/react';
 import { 
   Play, 
@@ -362,7 +362,7 @@ export function Historias() {
 
   const [copiedStoryId, setCopiedStoryId] = useState<string | null>(null);
 
-  const handleShareStory = async (story: Story, e?: React.MouseEvent) => {
+  const handleShareStory = async (story: Story, e?: MouseEvent) => {
     if (e) e.stopPropagation();
     const shareData = {
       title: `${story.authorId}: ${story.title} · Manrique en Movimiento`,
@@ -902,18 +902,20 @@ export function Historias() {
                   {isMuted ? <VolumeX size={18} className="text-orange" /> : <Volume2 size={18} />}
                 </button>
 
-                {/* Download audio */}
-                <a
-                  href={currentStory.audioUrl}
-                  download={`${currentStory.authorId}.mp3`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
-                  title="Descargar archivo MP3"
-                  aria-label="Descargar archivo MP3"
+                {/* Compartir audio/relato */}
+                <button
+                  type="button"
+                  onClick={() => handleShareStory(currentStory)}
+                  className={`p-2 rounded-lg transition-colors cursor-pointer ${
+                    copiedStoryId === currentStory.id
+                      ? 'text-orange bg-white/20'
+                      : 'text-white/70 hover:text-white hover:bg-white/10'
+                  }`}
+                  title={copiedStoryId === currentStory.id ? '¡Enlace copiado!' : 'Compartir relato'}
+                  aria-label="Compartir relato"
                 >
-                  <Download size={18} />
-                </a>
+                  <Share2 size={18} />
+                </button>
 
                 {/* Close/Stop button */}
                 <button
@@ -1038,16 +1040,15 @@ export function Historias() {
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <a
-                    href={selectedChronicle.audioUrl}
-                    download={`${selectedChronicle.authorId}.mp3`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-orange/10 hover:text-orange text-ink/75 border border-ink/15 transition-colors font-medium text-xs shadow-sm"
-                    title={`Descargar archivo de audio de ${selectedChronicle.authorId}`}
+                  <button
+                    type="button"
+                    onClick={() => handleShareStory(selectedChronicle)}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-orange/10 hover:text-orange text-ink/75 border border-ink/15 transition-colors font-medium text-xs shadow-sm cursor-pointer"
+                    title={`Compartir crónica de ${selectedChronicle.authorId}`}
                   >
-                    <Download size={13} /> Descargar MP3
-                  </a>
+                    <Share2 size={13} />
+                    <span>{copiedStoryId === selectedChronicle.id ? '¡Enlace copiado!' : 'Compartir crónica'}</span>
+                  </button>
                 </div>
               </div>
 
