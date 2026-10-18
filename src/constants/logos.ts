@@ -25,6 +25,13 @@ export const BRAND_LOGOS = {
     fallback: 'https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/logospng/logo_alcaldia.png',
     alt: 'Alcaldía de Medellín - Distrito de Ciencia, Tecnología e Innovación',
   },
+  nucleo: {
+    src: '/img/logospng/logo_nucleo_negro.png',
+    secondaryLocal: '/img/logospng/logo-negro.png',
+    fallback: 'https://raw.githubusercontent.com/NucleoColectivo/Manrique-en-movimiento/main/img/logospng/logo_nucleo_negro.png',
+    alt: 'Núcleo Colectivo',
+    url: 'http://nucleocolectivo.com/',
+  },
 } as const;
 
 /**

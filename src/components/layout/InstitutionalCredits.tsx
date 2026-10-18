@@ -25,17 +25,42 @@ export function InstitutionalCredits({ className = '', variant = 'full' }: Insti
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-8">
           
-          {/* Zona inferior izquierda: Leyenda obligatoria oficial */}
-          <div className="w-full lg:max-w-2xl text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 mb-3 bg-medellin-orange/10 border border-medellin-orange/20 text-medellin-orange text-[11px] font-montserrat font-bold uppercase tracking-widest">
-              <span>Alcaldía de Medellín · Comuna 3 Manrique</span>
+          {/* Zona inferior izquierda: Logo Núcleo Colectivo + Leyenda obligatoria oficial */}
+          <div className="w-full lg:max-w-3xl flex flex-col sm:flex-row items-center sm:items-center gap-5 sm:gap-6 text-center sm:text-left">
+            {/* Logo de Núcleo Colectivo con enlace oficial */}
+            <a
+              href="http://nucleocolectivo.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 transition-transform duration-200 hover:scale-105 inline-block group"
+              title="Núcleo Colectivo · Plataforma Cultural y Comunitaria (http://nucleocolectivo.com/)"
+            >
+              <img
+                src={BRAND_LOGOS.nucleo.src}
+                alt={BRAND_LOGOS.nucleo.alt}
+                width={130}
+                height={55}
+                className="h-12 sm:h-14 md:h-16 w-auto object-contain dark:invert transition-opacity group-hover:opacity-85"
+                loading="lazy"
+                onError={(e) => handleImageFallback(e, BRAND_LOGOS.nucleo.fallback)}
+              />
+            </a>
+
+            {/* Separador vertical sutil en pantallas medianas y grandes */}
+            <div className="h-14 w-px bg-foreground/15 hidden sm:block shrink-0" aria-hidden="true" />
+
+            {/* Texto y leyenda institucional */}
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 mb-2.5 bg-medellin-orange/10 border border-medellin-orange/20 text-medellin-orange text-[11px] font-montserrat font-bold uppercase tracking-widest">
+                <span>Alcaldía de Medellín · Comuna 3 Manrique</span>
+              </div>
+              <p className="font-editorial text-base sm:text-lg text-foreground/90 leading-snug italic mb-1.5">
+                “Proyecto beneficiado con recursos del programa de Planeación del Desarrollo Local y Presupuesto Participativo de Cultura.”
+              </p>
+              <p className="text-xs text-foreground/60 font-montserrat tracking-wide">
+                Manrique en Movimiento · Archivo Vivo y Memoria Comunitaria · 2026
+              </p>
             </div>
-            <p className="font-editorial text-base sm:text-lg text-foreground/90 leading-snug italic mb-2">
-              “Proyecto beneficiado con recursos del programa de Planeación del Desarrollo Local y Presupuesto Participativo de Cultura.”
-            </p>
-            <p className="text-xs text-foreground/60 font-montserrat tracking-wide">
-              Manrique en Movimiento · Archivo Vivo y Memoria Comunitaria · 2026
-            </p>
           </div>
 
           {/* Zona inferior derecha: Escudo oficial de la Alcaldía de Medellín y PP Cultura */}
