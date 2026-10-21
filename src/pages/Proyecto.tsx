@@ -171,7 +171,7 @@ export function Proyecto() {
     <VideoModal 
       isOpen={isVideoOpen} 
       onClose={() => setIsVideoOpen(false)} 
-      videoId="dJDJZqNPbcE"
+      videoId="X9kKGVD0gjE"
       title="Cortometraje: Manrique, Memoria en Movimiento"
     />
     </>

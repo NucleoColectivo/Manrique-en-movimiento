@@ -99,7 +99,7 @@ export function Home() {
           >
             <div className="relative aspect-video w-full">
               <iframe
-                src="https://www.youtube-nocookie.com/embed/dJDJZqNPbcE?rel=0&modestbranding=1"
+                src="https://www.youtube-nocookie.com/embed/X9kKGVD0gjE?rel=0&modestbranding=1"
                 title="Cortometraje Documental: Manrique, Memoria en Movimiento"
                 className="absolute inset-0 w-full h-full border-0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -129,7 +129,7 @@ export function Home() {
               </button>
 
               <a
-                href="https://www.youtube.com/watch?v=dJDJZqNPbcE"
+                href="https://youtu.be/X9kKGVD0gjE"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-xs md:text-sm font-extrabold text-orange hover:text-ink transition-colors py-2 px-3"
@@ -495,7 +495,7 @@ export function Home() {
       <VideoModal
         isOpen={isVideoOpen}
         onClose={() => setIsVideoOpen(false)}
-        videoId="dJDJZqNPbcE"
+        videoId="X9kKGVD0gjE"
         title="Cortometraje: Manrique, Memoria en Movimiento"
       />
     </div>
