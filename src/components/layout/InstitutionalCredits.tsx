@@ -20,83 +20,83 @@ export function InstitutionalCredits({ className = '', variant = 'full' }: Insti
   return (
     <section 
       aria-label="Créditos institucionales"
-      className={`border-t border-foreground/15 bg-background/50 pt-10 pb-6 transition-colors duration-300 ${className}`}
+      className={`border-t border-white/10 bg-[#080808] text-white pt-10 pb-6 transition-colors duration-300 ${className}`}
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-8">
           
-          {/* Zona inferior izquierda: Logo Núcleo Colectivo + Leyenda obligatoria oficial */}
+          {/* Zona inferior izquierda: Logo Núcleo Colectivo Blanco + Leyenda obligatoria oficial */}
           <div className="w-full lg:max-w-3xl flex flex-col sm:flex-row items-center sm:items-center gap-5 sm:gap-6 text-center sm:text-left">
-            {/* Logo de Núcleo Colectivo con enlace oficial */}
+            {/* Logo de Núcleo Colectivo blanco limpio sin ningún filtro ni efecto encima (+25% tamaño) */}
             <a
               href="http://nucleocolectivo.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 transition-transform duration-200 hover:scale-105 inline-block group"
+              className="shrink-0 inline-block transition-transform duration-200 hover:scale-105"
               title="Núcleo Colectivo · Plataforma Cultural y Comunitaria (http://nucleocolectivo.com/)"
             >
               <img
-                src={BRAND_LOGOS.nucleo.src}
-                alt={BRAND_LOGOS.nucleo.alt}
-                width={130}
-                height={55}
-                className="h-12 sm:h-14 md:h-16 w-auto object-contain dark:invert transition-opacity group-hover:opacity-85"
+                src={BRAND_LOGOS.nucleoBlanco.src}
+                alt={BRAND_LOGOS.nucleoBlanco.alt}
+                width={105}
+                height={105}
+                style={{ maxHeight: '105px', maxWidth: '105px', width: 'auto', height: 'auto' }}
+                className="h-20 sm:h-24 md:h-[105px] w-auto max-h-[105px] max-w-[105px] object-contain block"
                 loading="lazy"
-                onError={(e) => handleImageFallback(e, BRAND_LOGOS.nucleo.fallback)}
+                onError={(e) => handleImageFallback(e, BRAND_LOGOS.nucleoBlanco.fallback)}
               />
             </a>
 
             {/* Separador vertical sutil en pantallas medianas y grandes */}
-            <div className="h-14 w-px bg-foreground/15 hidden sm:block shrink-0" aria-hidden="true" />
+            <div className="h-20 md:h-24 w-px bg-white/15 hidden sm:block shrink-0" aria-hidden="true" />
 
             {/* Texto y leyenda institucional */}
             <div className="flex-1">
-              <div className="inline-flex items-center gap-2 px-2.5 py-1 mb-2.5 bg-medellin-orange/10 border border-medellin-orange/20 text-medellin-orange text-[11px] font-montserrat font-bold uppercase tracking-widest">
-                <span>Alcaldía de Medellín · Comuna 3 Manrique</span>
-              </div>
-              <p className="font-editorial text-base sm:text-lg text-foreground/90 leading-snug italic mb-1.5">
-                “Proyecto beneficiado con recursos del programa de Planeación del Desarrollo Local y Presupuesto Participativo de Cultura.”
+              <p className="font-editorial text-base sm:text-lg text-white/95 leading-snug italic mb-1.5">
+                Proyecto beneficiado con recursos del programa de Planeación del Desarrollo Local y Presupuesto Participativo de Cultura.
               </p>
-              <p className="text-xs text-foreground/60 font-montserrat tracking-wide">
+              <p className="text-xs text-white/60 font-montserrat tracking-wide">
                 Manrique en Movimiento · Archivo Vivo y Memoria Comunitaria · 2026
               </p>
             </div>
           </div>
 
-          {/* Zona inferior derecha: Escudo oficial de la Alcaldía de Medellín y PP Cultura */}
+          {/* Zona inferior derecha: Escudo oficial blanco de la Alcaldía de Medellín y PP Cultura (+20% tamaño) */}
           <div className="flex flex-wrap items-center justify-center lg:justify-end gap-7 sm:gap-9 flex-shrink-0">
             {/* Logo PP Cultura */}
             <div className="flex flex-col items-center lg:items-end">
-              <span className="text-[11px] font-semibold uppercase font-montserrat tracking-widest text-foreground/60 mb-2 hidden sm:block">
+              <span className="text-[11px] font-semibold uppercase font-montserrat tracking-widest text-white/60 mb-2 hidden sm:block">
                 Programa
               </span>
               <img
                 src={BRAND_LOGOS.pp.src}
                 alt={BRAND_LOGOS.pp.alt}
-                width={80}
-                height={80}
-                className="h-14 sm:h-16 md:h-[74px] w-auto object-contain transition-transform duration-200 hover:scale-105"
+                width={72}
+                height={72}
+                style={{ maxHeight: '72px', maxWidth: '72px', width: 'auto', height: 'auto' }}
+                className="h-14 sm:h-16 md:h-[72px] w-auto max-h-[72px] max-w-[72px] object-contain transition-transform duration-200 hover:scale-105"
                 loading="lazy"
                 onError={(e) => handleImageFallback(e, BRAND_LOGOS.pp.fallback)}
               />
             </div>
 
             {/* Separador sutil */}
-            <div className="h-14 sm:h-16 md:h-[70px] w-px bg-foreground/15 hidden sm:block" aria-hidden="true" />
+            <div className="h-16 md:h-[72px] w-px bg-white/15 hidden sm:block" aria-hidden="true" />
 
-            {/* Escudo oficial de la Alcaldía de Medellín */}
+            {/* Escudo oficial blanco de la Alcaldía de Medellín */}
             <div className="flex flex-col items-center lg:items-end">
-              <span className="text-[11px] font-semibold uppercase font-montserrat tracking-widest text-foreground/60 mb-2 hidden sm:block">
+              <span className="text-[11px] font-semibold uppercase font-montserrat tracking-widest text-white/60 mb-2 hidden sm:block">
                 Distrito de Medellín
               </span>
               <img
-                src={BRAND_LOGOS.alcaldia.src}
-                alt={BRAND_LOGOS.alcaldia.alt}
-                width={140}
-                height={108}
-                className="h-14 sm:h-16 md:h-[74px] w-auto object-contain transition-transform duration-200 hover:scale-105"
+                src={BRAND_LOGOS.alcaldiaBlanco.src}
+                alt={BRAND_LOGOS.alcaldiaBlanco.alt}
+                width={102}
+                height={72}
+                style={{ maxHeight: '72px', maxWidth: '125px', width: 'auto', height: 'auto' }}
+                className="h-14 sm:h-16 md:h-[72px] w-auto max-h-[72px] max-w-[125px] object-contain transition-transform duration-200 hover:scale-105"
                 loading="lazy"
-                onError={(e) => handleImageFallback(e, BRAND_LOGOS.alcaldia.fallback)}
+                onError={(e) => handleImageFallback(e, BRAND_LOGOS.alcaldiaBlanco.fallback)}
               />
             </div>
           </div>
@@ -104,9 +104,8 @@ export function InstitutionalCredits({ className = '', variant = 'full' }: Insti
         </div>
 
         {/* Fila de copyright y pie */}
-        <div className="mt-8 pt-6 border-t border-foreground/10 flex flex-col sm:flex-row items-center justify-between text-[11px] font-montserrat uppercase tracking-widest text-foreground/50 gap-3 text-center sm:text-left">
+        <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] font-montserrat uppercase tracking-widest text-white/50 gap-3 text-center sm:text-left">
           <span>© 2026 Núcleo Colectivo · Manrique, Memoria en Movimiento</span>
-          <span>Desarrollo Local y Presupuesto Participativo de Cultura</span>
         </div>
       </div>
     </section>

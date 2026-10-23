@@ -174,7 +174,7 @@ export function Navbar() {
                 />
               </div>
               <p className="text-[11px] text-ink/70 max-w-sm font-montserrat">
-                “Proyecto beneficiado con recursos del programa de Planeación del Desarrollo Local y Presupuesto Participativo de Cultura.”
+                Proyecto beneficiado con recursos del programa de Planeación del Desarrollo Local y Presupuesto Participativo de Cultura.
               </p>
             </motion.div>
           </motion.div>

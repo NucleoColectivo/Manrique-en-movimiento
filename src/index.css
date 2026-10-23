@@ -3,6 +3,7 @@
 @theme {
   --color-paper: #f4efe7;
   --color-ink: #090909;
+  --color-deep-black: #090909;
   --color-orange: #c65b2a;
   --color-blue: #07506c;
   --color-teal: #2d858e;
@@ -30,6 +31,9 @@
     --muted: #66615b;
     --border: rgba(17, 17, 17, 0.133);
     --brand-orange: #c65b2a;
+    --site-footer-bg: #080808;
+    --site-footer-text: #f5f5f5;
+    --site-heading-text: #090909;
   }
   
   .dark {
@@ -176,3 +180,46 @@ html.lenis, html.lenis body {
 .leaflet-popup-content {
   margin: 0 !important;
 }
+
+/* =========================================
+   MANRIQUE EN MOVIMIENTO
+   Correcciones responsive, footer y contraste
+   ========================================= */
+
+/* Footer consistente en todos los dispositivos */
+footer,
+.site-footer {
+  background-color: var(--site-footer-bg) !important;
+  color: var(--site-footer-text) !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+footer a,
+.site-footer a,
+footer p,
+.site-footer p {
+  color: inherit;
+}
+
+.site-footer img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Títulos sobre fondos claros */
+.archive-visual-title {
+  color: var(--site-heading-text) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Forzar persistencia del footer en móvil y escritorio */
+@media (max-width: 768px) {
+  footer,
+  .site-footer {
+    background-color: var(--site-footer-bg) !important;
+    color: var(--site-footer-text) !important;
+  }
+}
+

@@ -633,7 +633,7 @@ export function Archivo() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7] text-deep-black pt-28 pb-32">
+    <div className="min-h-screen bg-[#FDFBF7] text-[#090909] text-ink pt-28 pb-32">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
@@ -647,10 +647,10 @@ export function Archivo() {
           
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-8 border-b border-black/10">
             <div>
-              <h1 className="font-editorial text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-[0.95]">
+              <h1 className="archive-visual-title font-editorial text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-[0.95] text-[#090909] text-ink">
                 Archivo <span className="italic font-light">Visual</span>
               </h1>
-              <p className="mt-3 text-muted text-base sm:text-lg max-w-2xl font-sans leading-relaxed">
+              <p className="mt-3 text-stone-700 text-base sm:text-lg max-w-2xl font-sans leading-relaxed">
                 Fotografías patrimoniales de la Biblioteca Pública Piloto y la Corporación Cultural Viztaz, complementadas con el comparador exclusivo de <strong>Antes y Después</strong> mediante modelos generativos y restauración en alta definición.
               </p>
             </div>
