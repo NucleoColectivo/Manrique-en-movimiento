@@ -25,40 +25,14 @@ export function InstitutionalCredits({ className = '', variant = 'full' }: Insti
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-8">
           
-          {/* Zona inferior izquierda: Logo Núcleo Colectivo Blanco + Leyenda obligatoria oficial */}
-          <div className="w-full lg:max-w-3xl flex flex-col sm:flex-row items-center sm:items-center gap-5 sm:gap-6 text-center sm:text-left">
-            {/* Logo de Núcleo Colectivo blanco limpio sin ningún filtro ni efecto encima (+25% tamaño) */}
-            <a
-              href="http://nucleocolectivo.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="shrink-0 inline-block transition-transform duration-200 hover:scale-105"
-              title="Núcleo Colectivo · Plataforma Cultural y Comunitaria (http://nucleocolectivo.com/)"
-            >
-              <img
-                src={BRAND_LOGOS.nucleoBlanco.src}
-                alt={BRAND_LOGOS.nucleoBlanco.alt}
-                width={105}
-                height={105}
-                style={{ maxHeight: '105px', maxWidth: '105px', width: 'auto', height: 'auto' }}
-                className="h-20 sm:h-24 md:h-[105px] w-auto max-h-[105px] max-w-[105px] object-contain block"
-                loading="lazy"
-                onError={(e) => handleImageFallback(e, BRAND_LOGOS.nucleoBlanco.fallback)}
-              />
-            </a>
-
-            {/* Separador vertical sutil en pantallas medianas y grandes */}
-            <div className="h-20 md:h-24 w-px bg-white/15 hidden sm:block shrink-0" aria-hidden="true" />
-
-            {/* Texto y leyenda institucional */}
-            <div className="flex-1">
-              <p className="font-editorial text-base sm:text-lg text-white/95 leading-snug italic mb-1.5">
-                Proyecto beneficiado con recursos del programa de Planeación del Desarrollo Local y Presupuesto Participativo de Cultura.
-              </p>
-              <p className="text-xs text-white/60 font-montserrat tracking-wide">
-                Manrique en Movimiento · Archivo Vivo y Memoria Comunitaria · 2026
-              </p>
-            </div>
+          {/* Zona inferior izquierda: Leyenda obligatoria oficial */}
+          <div className="w-full lg:max-w-2xl text-center sm:text-left">
+            <p className="font-editorial text-base sm:text-lg text-white/95 leading-snug italic mb-1.5">
+              Proyecto beneficiado con recursos del programa de Planeación del Desarrollo Local y Presupuesto Participativo de Cultura.
+            </p>
+            <p className="text-xs text-white/60 font-montserrat tracking-wide">
+              Manrique en Movimiento · Archivo Vivo y Memoria Comunitaria · 2026
+            </p>
           </div>
 
           {/* Zona inferior derecha: Escudo oficial blanco de la Alcaldía de Medellín y PP Cultura (+20% tamaño) */}

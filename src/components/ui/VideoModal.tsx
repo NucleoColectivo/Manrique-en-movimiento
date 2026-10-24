@@ -12,7 +12,7 @@ interface VideoModalProps {
 export function VideoModal({
   isOpen,
   onClose,
-  videoId = 'X9kKGVD0gjE',
+  videoId = 'VFmeCbiblmI',
   title = 'Cortometraje: Manrique, Memoria en Movimiento'
 }: VideoModalProps) {
   // Close on Escape key

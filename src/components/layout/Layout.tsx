@@ -7,6 +7,7 @@ import { ThemeProvider } from '../ThemeProvider';
 import { Instagram, Youtube, Facebook, ArrowUpRight } from 'lucide-react';
 
 import { InstitutionalCredits } from './InstitutionalCredits';
+import { BRAND_LOGOS, handleImageFallback } from '../../constants/logos';
 
 export function Layout() {
   const lenisRef = useRef<Lenis | null>(null);
@@ -54,9 +55,32 @@ export function Layout() {
               <div className="md:col-span-2">
                 <span className="font-editorial text-4xl text-white leading-none block mb-2">Manrique</span>
                 <span className="font-montserrat text-sm text-gold font-light tracking-wider uppercase mb-6 block">en Movimiento</span>
-                <p className="text-white/70 font-light max-w-sm mb-8 leading-relaxed">
+                <p className="text-white/70 font-light max-w-sm mb-6 leading-relaxed">
                   Un archivo vivo del barrio Manrique mediante restauración fotográfica y colorización con Inteligencia Artificial.
                 </p>
+
+                {/* Logo Núcleo Colectivo (100% más grande) con enlace oficial */}
+                <div className="mb-8">
+                  <a
+                    href="http://nucleocolectivo.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block transition-transform duration-200 hover:scale-105"
+                    title="Núcleo Colectivo · Plataforma Cultural y Comunitaria (http://nucleocolectivo.com/)"
+                  >
+                    <img
+                      src={BRAND_LOGOS.nucleoBlanco.src}
+                      alt={BRAND_LOGOS.nucleoBlanco.alt}
+                      width={120}
+                      height={120}
+                      style={{ maxHeight: '115px', maxWidth: '140px', width: 'auto', height: 'auto' }}
+                      className="h-24 sm:h-28 w-auto max-h-[115px] max-w-[140px] object-contain block"
+                      loading="lazy"
+                      onError={(e) => handleImageFallback(e, BRAND_LOGOS.nucleoBlanco.fallback)}
+                    />
+                  </a>
+                </div>
+
                 <div className="flex space-x-6">
                   <a href="#" className="text-white/80 hover:text-orange transition-colors" aria-label="Instagram"><Instagram size={22} /></a>
                   <a href="#" className="text-white/80 hover:text-orange transition-colors" aria-label="YouTube"><Youtube size={22} /></a>
